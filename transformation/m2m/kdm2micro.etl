@@ -1,26 +1,39 @@
 rule KDM2MicroModel
 transform t : code!CodeModel
 to o : MicroKDM!MicroKDM {
-	var packages = t.codeElement.allInstances().select(s | s.type.name = "Package");
-	o.elements = packages.equivalent();
+	/*var packages = t.codeElement.select(s | s.type.name = "Package");
+	o.elements = packages.equivalent();*/
 }
 
-rule Class2CompilationUnit
+rule Package2Model
+transform t : code!CodeModel
+to o : MicroKDM!MicroKDM {
+	var packages = t.codeElement.select(s | s.type.name = "Package");
+	var module = new MicroKDM!Module;
+	
+	for(i in packages){
+		module.name = i.name;
+		
+		o.elements.add(module);
+	}
+}
+
+/*rule Class2CompilationUnit
 transform t : code!CodeModel
 to o : MicroKDM!Module{
-	var classes = t.codeElement.allInstances().select(s | s.type.name = "ClassUnit" or s.type.name = "Class");
+	var classes = t.codeElement.select(s | s.type.name = "ClassUnit" or s.type.name = "Class");
 	o.sourceFiles = classes.equivalent();
 	
-	var imports = t.codeRelation.allInstances().select(s | s.type.name = "Imports");
+	var imports = t.codeRelation.select(s | s.type.name = "Imports");
 	
 	for(i in imports){
 		var from = i.from;
 		var destino = i;
 		if(classes.select(c|c.name = destino.name).size()>0){
-			var compi = MicroKDM!CompilationUnit.allInstances().select(c| c.name = from.name).first();		
+			var compi = MicroKDM!CompilationUnit.select(c| c.name = from.name).first();		
 			var dependency = new MicroKDM!Dependency;
 			dependency.from = compi;
 			compi.codeRelation.add(dependecy);
 		}
 	}
-}
+}*/
