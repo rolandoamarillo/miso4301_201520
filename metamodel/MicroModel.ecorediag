@@ -143,7 +143,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_nSmKoUYOEeW7N-vUJFfzUA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_nSmKokYOEeW7N-vUJFfzUA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="MicroModel.ecore#//Module/EReference1"/>
+    <element xmi:type="ecore:EReference" href="MicroModel.ecore#//Module/sourceFiles"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nSmKo0YOEeW7N-vUJFfzUA" points="[17, 7, 0, -81]$[17, 8, 0, -80]$[17, 68, 0, -20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nSv7oEYOEeW7N-vUJFfzUA" id="(0.43478260869565216,0.9019607843137255)"/>
   </edges>
