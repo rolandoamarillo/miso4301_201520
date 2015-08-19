@@ -58,7 +58,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_PAAEEUX7EeW7N-vUJFfzUA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="MicroModel.ecore#//CompilationUnit"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PAAEEkX7EeW7N-vUJFfzUA" x="45" y="320" height="73"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PAAEEkX7EeW7N-vUJFfzUA" x="30" y="320" height="73"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_RjpskEX7EeW7N-vUJFfzUA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Rjpsk0X7EeW7N-vUJFfzUA" type="4001"/>
@@ -144,8 +144,8 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_nSmKoUYOEeW7N-vUJFfzUA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_nSmKokYOEeW7N-vUJFfzUA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="MicroModel.ecore#//Module/sourceFiles"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nSmKo0YOEeW7N-vUJFfzUA" points="[17, 7, 0, -81]$[17, 8, 0, -80]$[17, 68, 0, -20]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nSv7oEYOEeW7N-vUJFfzUA" id="(0.43478260869565216,0.9019607843137255)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nSmKo0YOEeW7N-vUJFfzUA" points="[8, 9, -13, -96]$[8, 20, -13, -85]$[15, 70, -6, -35]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nSv7oEYOEeW7N-vUJFfzUA" id="(0.41739130434782606,0.8235294117647058)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1djNcEYOEeW7N-vUJFfzUA" type="3002" source="_NXkGoEX7EeW7N-vUJFfzUA" target="_NXkGoEX7EeW7N-vUJFfzUA">
     <children xmi:type="notation:Node" xmi:id="_1djNdEYOEeW7N-vUJFfzUA" type="4011">
@@ -158,7 +158,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_1djNckYOEeW7N-vUJFfzUA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="MicroModel.ecore#//Module/subPackages"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1djNc0YOEeW7N-vUJFfzUA" points="[9, 3, 11, -23]$[71, 23, 73, -3]$[81, 62, 83, 36]$[26, 62, 28, 36]$[5, 36, 7, 10]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1djNeEYOEeW7N-vUJFfzUA" id="(0.9217391304347826,0.27450980392156865)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1djNeEYOEeW7N-vUJFfzUA" id="(0.8869565217391304,0.13725490196078433)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1djNeUYOEeW7N-vUJFfzUA" id="(0.9043478260869565,0.803921568627451)"/>
   </edges>
 </notation:Diagram>

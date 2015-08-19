@@ -10,23 +10,17 @@ transform t : code!CodeModel
 to o : MicroKDM!Module{
 	var classes = t.codeElement.allInstances().select(s | s.type.name = "ClassUnit" or s.type.name = "Class");
 	o.sourceFiles = classes.equivalent();
-}
-
-rule AbstractRelation2Dependency
-transform t : code!ClassUnit
-to o : MicroKDM!CompilationUnit{
+	
 	var imports = t.codeRelation.allInstances().select(s | s.type.name = "Imports");
 	
 	for(i in imports){
 		var from = i.from;
-		
-		var compi = MicroKDM!CompilationUnit.allInstances().select(c| c.name = from.name).first();
-		
-		var dependency = new MicroKDM!Dependency;
-		dependency.from = compi;
-		
-		if()
-		
-		compi.codeRelation.add(dependecy);
+		var destino = i;
+		if(classes.select(c|c.name = destino.name).size()>0){
+			var compi = MicroKDM!CompilationUnit.allInstances().select(c| c.name = from.name).first();		
+			var dependency = new MicroKDM!Dependency;
+			dependency.from = compi;
+			compi.codeRelation.add(dependecy);
+		}
 	}
 }
