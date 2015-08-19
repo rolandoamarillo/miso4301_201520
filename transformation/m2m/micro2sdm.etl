@@ -1,9 +1,38 @@
 pre {
   "Running Micro2SDM Transformation".println();
 }
+
+post {
+	"Done".println();
+}
  
 rule MicroModel2Observation 
 	transform microModel : sourcemodel!MicroKDM
 	to observation : targetmodel!Observation {
-	observation.whenObserved = new Date();
+	observation.whenObserved = new Native('java.util.Date');
+	observation.measures = new List();
+	observation.measures.add(microModel.dependencyNumber());
+	observation.measures.add(microModel.numberOfModules());
+}
+
+operation sourcemodel!MicroKDM dependencyNumber() : targetmodel!Measure {
+    var m = new targetmodel!Measure();
+    m.name = "Número de dependencias";
+    m.measurements = new List();
+   	var number = new targetmodel!DimensionalMeasurement();
+   	var size = sourcemodel!Dependency.allInstances().size().asDouble();
+   	number.value = size;
+   	m.measurements.add(number);
+	return m;
+}
+
+operation sourcemodel!MicroKDM numberOfModules(): targetmodel!Measure {
+    var m = new targetmodel!Measure();
+    m.name = "Número de modulos";
+    m.measurements = new List();
+   	var number = new targetmodel!DimensionalMeasurement();
+   	var size = sourcemodel!Module.allInstances().size().asDouble();
+   	number.value = size;
+   	m.measurements.add(number);
+	return m;
 }
