@@ -6,4 +6,5 @@
   <models xmi:type="kdm:Segment" href="models/n1_empleado_kdm.xmi#/0"/>
   <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
   <models xmi:type="kdm:Segment" href="models/n6_campeonato_kdm.xmi#/0"/>
+  <models xmi:type="kdm:Segment" href="models/n12_batallaNaval_kdm.xmi#/0"/>
 </viewpoint:DAnalysis>

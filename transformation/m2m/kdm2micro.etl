@@ -23,11 +23,7 @@ to o : MicroKDM!CompilationUnit{
 	//TODO ESTA PARTE NO FUNCIONA BIEN
 	for(i in imports){
 		var destino = i.`to`;
-		destino.name.println();
 		if(compis.select(c|c.name = destino.name).size()>0){
-			"to no vacío".println();	
-			//var dependency = new MicroKDM!Dependency;
-			//dependency = i.equivalent();
 			o.codeRelation.add(i.equivalent());
 		}
 	}
