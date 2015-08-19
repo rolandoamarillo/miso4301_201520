@@ -1,3 +1,9 @@
 pre {
   "Running Micro2SDM Transformation".println();
 }
+ 
+rule MicroModel2Observation 
+	transform microModel : sourcemodel!MicroKDM
+	to observation : targetmodel!Observation {
+	observation.whenObserved = new Date();
+}
