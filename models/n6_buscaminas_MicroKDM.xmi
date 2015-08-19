@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<micromodel:MicroKDM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:micromodel="http://micromodel/1.0" xsi:schemaLocation="http://micromodel/1.0 ../metamodel/MicroModel.ecore">
+  <elements name="uniandes">
+    <subPackages name="cupi2">
+      <subPackages name="buscaminas">
+        <subPackages name="interfaz">
+          <sourceFiles name="InterfazBuscaminas" description="">
+            <codeRelation from="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.0" to="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.0"/>
+          </sourceFiles>
+          <sourceFiles name="PanelBotones"/>
+          <sourceFiles name="PanelBuscaminas">
+            <codeRelation from="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2" to="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.0"/>
+            <codeRelation from="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2" to="//@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.1"/>
+          </sourceFiles>
+          <sourceFiles name="PanelEstado"/>
+        </subPackages>
+        <subPackages name="mundo">
+          <sourceFiles name="CampoMinado"/>
+          <sourceFiles name="Casilla"/>
+        </subPackages>
+      </subPackages>
+    </subPackages>
+  </elements>
+</micromodel:MicroKDM>
