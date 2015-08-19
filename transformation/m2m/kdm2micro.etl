@@ -1,39 +1,46 @@
 rule KDM2MicroModel
 transform t : code!CodeModel
 to o : MicroKDM!MicroKDM {
-	/*var packages = t.codeElement.select(s | s.type.name = "Package");
-	o.elements = packages.equivalent();*/
+	o.elements = t.codeElement.select(s | s.type.name = "Package").equivalent();
 }
 
 rule Package2Model
-transform t : code!CodeModel
-to o : MicroKDM!MicroKDM {
-	var packages = t.codeElement.select(s | s.type.name = "Package");
-	var module = new MicroKDM!Module;
+transform t : code!Package
+to o : MicroKDM!Module {
+	o.name= t.name;
+	o.subPackages.addAll(t.getPackageSubPackages().equivalent());
+	o.sourceFiles.addAll(t.codeElement.select(s | s.type.name = "ClassUnit").equivalent());
+}
+
+rule Class2CompilationUnit
+transform t : code!ClassUnit
+to o : MicroKDM!CompilationUnit{
+	o.name = t.name;
 	
-	for(i in packages){
-		module.name = i.name;
-		
-		o.elements.add(module);
+	var imports = t.codeRelation.select(s | s.type.name = "Imports");
+	var compis = MicroKDM!CompilationUnit.allInstances();
+	
+	//TODO ESTA PARTE NO FUNCIONA BIEN
+	for(i in imports){
+		var destino = i.`to`;
+		destino.name.println();
+		if(compis.select(c|c.name = destino.name).size()>0){
+			"to no vacío".println();	
+			//var dependency = new MicroKDM!Dependency;
+			//dependency = i.equivalent();
+			o.codeRelation.add(i.equivalent());
+		}
 	}
 }
 
-/*rule Class2CompilationUnit
-transform t : code!CodeModel
-to o : MicroKDM!Module{
-	var classes = t.codeElement.select(s | s.type.name = "ClassUnit" or s.type.name = "Class");
-	o.sourceFiles = classes.equivalent();
-	
-	var imports = t.codeRelation.select(s | s.type.name = "Imports");
-	
-	for(i in imports){
-		var from = i.from;
-		var destino = i;
-		if(classes.select(c|c.name = destino.name).size()>0){
-			var compi = MicroKDM!CompilationUnit.select(c| c.name = from.name).first();		
-			var dependency = new MicroKDM!Dependency;
-			dependency.from = compi;
-			compi.codeRelation.add(dependecy);
-		}
-	}
-}*/
+rule imports2dependency
+transform t : code!Imports
+to o : MicroKDM!Dependency{
+	o.from = MicroKDM!CompilationUnit.allInstances().select(s | s.name = t.from.name).first();
+	o.`to` = MicroKDM!CompilationUnit.allInstances().select(s | s.name = t.`to`.name).first();
+}
+
+operation code!Package getPackageSubPackages() : OrderedSet{
+	var inner = self.codeElement.select(s | s.type.name = "Package");
+	return inner;	
+}

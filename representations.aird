@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:micromodel="http://micromodel/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://micromodel/1.0 metamodel/MicroModel.ecore" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" version="8.1.1">
+  <models xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <models xmi:type="notation:Diagram" href="metamodel/SimplifiedDecisionMetrics.ecorediag#_Okeo4EX_EeWYeIof49VpUg"/>
+  <models xmi:type="kdm:Segment" href="models/n1_empleado_kdm.xmi#/0"/>
+  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
+  <models xmi:type="kdm:Segment" href="models/n6_campeonato_kdm.xmi#/0"/>
+</viewpoint:DAnalysis>

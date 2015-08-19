@@ -1,23 +1,141 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:micromodel="http://micromodel/1.0">
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:Module/>
-  <micromodel:Module/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:Module/>
-  <micromodel:Module/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:MicroKDM/>
-  <micromodel:Module/>
-  <micromodel:Module/>
+  <micromodel:MicroKDM>
+    <elements name="uniandes">
+      <subPackages name="cupi2">
+        <subPackages name="campeonato">
+          <subPackages name="interfaz">
+            <sourceFiles name="PanelBotones"/>
+            <sourceFiles name="PanelComboEquipos"/>
+            <sourceFiles name="PanelTablaGoles"/>
+            <sourceFiles name="PanelBotonesDialogo"/>
+            <sourceFiles name="InterfazCampeonato"/>
+            <sourceFiles name="PanelResultadoPartido"/>
+            <sourceFiles name="DialogoResultado"/>
+            <sourceFiles name="PanelTablaPosiciones"/>
+          </subPackages>
+          <subPackages name="mundo">
+            <sourceFiles name="Campeonato"/>
+            <sourceFiles name="Equipo"/>
+          </subPackages>
+          <subPackages name="test">
+            <sourceFiles name="CampeonatoTest"/>
+          </subPackages>
+        </subPackages>
+      </subPackages>
+    </elements>
+  </micromodel:MicroKDM>
+  <micromodel:MicroKDM>
+    <elements name="java">
+      <subPackages name="awt">
+        <sourceFiles name="Container"/>
+        <sourceFiles name="Component"/>
+        <sourceFiles name="AWTEvent"/>
+        <sourceFiles name="Font"/>
+        <sourceFiles name="GridLayout"/>
+        <sourceFiles name="Dialog"/>
+        <sourceFiles name="Window"/>
+        <sourceFiles name="Frame"/>
+        <sourceFiles name="BorderLayout"/>
+        <sourceFiles name="Color"/>
+        <subPackages name="event">
+          <sourceFiles name="ActionEvent"/>
+        </subPackages>
+        <subPackages name="image"/>
+      </subPackages>
+      <subPackages name="io">
+        <sourceFiles name="File"/>
+        <sourceFiles name="FileInputStream"/>
+        <sourceFiles name="InputStream"/>
+      </subPackages>
+      <subPackages name="util">
+        <sourceFiles name="EventObject"/>
+        <sourceFiles name="Properties"/>
+      </subPackages>
+      <subPackages name="lang">
+        <sourceFiles name="String"/>
+        <sourceFiles name="Object"/>
+        <sourceFiles name="Exception"/>
+        <sourceFiles name="Throwable"/>
+        <sourceFiles name="Integer"/>
+        <sourceFiles name="Number"/>
+        <sourceFiles name="NumberFormatException"/>
+        <sourceFiles name="IllegalArgumentException"/>
+        <sourceFiles name="RuntimeException"/>
+      </subPackages>
+    </elements>
+    <elements name="javax">
+      <subPackages name="swing">
+        <sourceFiles name="JPanel"/>
+        <sourceFiles name="JComponent"/>
+        <sourceFiles name="TransferHandler"/>
+        <sourceFiles name="JButton"/>
+        <sourceFiles name="AbstractButton"/>
+        <sourceFiles name="JLabel"/>
+        <sourceFiles name="JFrame"/>
+        <sourceFiles name="JOptionPane"/>
+        <sourceFiles name="JFileChooser"/>
+        <sourceFiles name="JTextField"/>
+        <sourceFiles name="JDialog"/>
+        <sourceFiles name="JScrollPane"/>
+        <sourceFiles name="JTextArea"/>
+        <subPackages name="event"/>
+        <subPackages name="border">
+          <sourceFiles name="TitledBorder"/>
+          <sourceFiles name="AbstractBorder"/>
+        </subPackages>
+        <subPackages name="text">
+          <sourceFiles name="JTextComponent"/>
+        </subPackages>
+      </subPackages>
+      <subPackages name="accessibility"/>
+    </elements>
+    <elements name="junit">
+      <subPackages name="framework">
+        <sourceFiles name="TestCase"/>
+        <sourceFiles name="Assert"/>
+      </subPackages>
+    </elements>
+  </micromodel:MicroKDM>
+  <micromodel:CompilationUnit name="ArrayList"/>
+  <micromodel:CompilationUnit name="AbstractList"/>
+  <micromodel:CompilationUnit name="AbstractCollection"/>
+  <micromodel:CompilationUnit name="Hashtable"/>
+  <micromodel:CompilationUnit name="Dictionary"/>
+  <micromodel:CompilationUnit name="DefaultComboBoxModel"/>
+  <micromodel:CompilationUnit name="AbstractListModel"/>
+  <micromodel:CompilationUnit name="JComboBox"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.1"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.1"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.1" to="/1/@elements.1/@subPackages.0/@sourceFiles.5"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.1" to="/1/@elements.1/@subPackages.0/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.1" to="/1/@elements.1/@subPackages.0/@subPackages.1/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.2"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.3"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.3"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.4"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.4"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.4"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.4"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.4"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.5"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.5"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.6"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.6"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.7"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.7"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.7"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.0/@sourceFiles.7"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.0" to="/1/@elements.0/@subPackages.1/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.0" to="/1/@elements.0/@subPackages.1/@sourceFiles.1"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.1/@sourceFiles.0" to="/1/@elements.0/@subPackages.2/@sourceFiles.1"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.2/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.2/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.2/@sourceFiles.0"/>
+  <micromodel:Dependency from="/0/@elements.0/@subPackages.0/@subPackages.0/@subPackages.2/@sourceFiles.0"/>
 </xmi:XMI>
