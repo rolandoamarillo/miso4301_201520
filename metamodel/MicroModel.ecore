@@ -3,11 +3,25 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="micromodel" nsURI="http://micromodel/1.0" nsPrefix="micromodel">
   <eClassifiers xsi:type="ecore:EClass" name="MicroKDM">
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Module"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Module">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Dependency"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" upperBound="-1"
+        eType="#//CompilationUnit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPackages" upperBound="-1"
+        eType="#//Module" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit" eSuperTypes="#//Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeRelation" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CompilationUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//CompilationUnit"/>
+  </eClassifiers>
 </ecore:EPackage>

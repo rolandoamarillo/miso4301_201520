@@ -1,0 +1,5 @@
+rule KDM2MicroModel
+transform o : code!Package
+to t: MicroModel!Module {
+	t.name = o.name;
+}
