@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code">
+  <code:CodeModel name="n6_campeonato">
+    <codeElement xsi:type="code:Package" name="uniandes">
+      <codeElement xsi:type="code:Package" name="cupi2">
+        <codeElement xsi:type="code:Package" name="campeonato">
+          <codeElement xsi:type="code:Package" name="interfaz">
+            <codeElement xsi:type="code:ClassUnit" name="PanelBotones"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelComboEquipos"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelTablaGoles"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelBotonesDialogo"/>
+            <codeElement xsi:type="code:ClassUnit" name="InterfazCampeonato"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelResultadoPartido"/>
+            <codeElement xsi:type="code:ClassUnit" name="DialogoResultado"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelTablaPosiciones"/>
+          </codeElement>
+          <codeElement xsi:type="code:Package" name="mundo">
+            <codeElement xsi:type="code:ClassUnit" name="Campeonato"/>
+            <codeElement xsi:type="code:ClassUnit" name="Equipo"/>
+          </codeElement>
+          <codeElement xsi:type="code:Package" name="test">
+            <codeElement xsi:type="code:ClassUnit" name="CampeonatoTest"/>
+          </codeElement>
+        </codeElement>
+      </codeElement>
+    </codeElement>
+  </code:CodeModel>
+  <code:CodeModel name="externals">
+    <codeElement xsi:type="code:Package" name="java">
+      <codeElement xsi:type="code:Package" name="awt">
+        <codeElement xsi:type="code:Package" name="event">
+          <codeElement xsi:type="code:ClassUnit" name="ActionEvent"/>
+        </codeElement>
+        <codeElement xsi:type="code:Package" name="image"/>
+        <codeElement xsi:type="code:ClassUnit" name="Container"/>
+        <codeElement xsi:type="code:ClassUnit" name="Component"/>
+        <codeElement xsi:type="code:ClassUnit" name="AWTEvent"/>
+        <codeElement xsi:type="code:ClassUnit" name="Font"/>
+        <codeElement xsi:type="code:ClassUnit" name="GridLayout"/>
+        <codeElement xsi:type="code:ClassUnit" name="Dialog"/>
+        <codeElement xsi:type="code:ClassUnit" name="Window"/>
+        <codeElement xsi:type="code:ClassUnit" name="Frame"/>
+        <codeElement xsi:type="code:ClassUnit" name="BorderLayout"/>
+        <codeElement xsi:type="code:ClassUnit" name="Color"/>
+      </codeElement>
+      <codeElement xsi:type="code:Package" name="io">
+        <codeElement xsi:type="code:ClassUnit" name="File"/>
+        <codeElement xsi:type="code:ClassUnit" name="FileInputStream"/>
+        <codeElement xsi:type="code:ClassUnit" name="InputStream"/>
+      </codeElement>
+      <codeElement xsi:type="code:Package" name="util">
+        <codeElement xsi:type="code:ClassUnit" name="EventObject"/>
+        <codeElement xsi:type="code:ClassUnit" name="Properties"/>
+      </codeElement>
+      <codeElement xsi:type="code:Package" name="lang">
+        <codeElement xsi:type="code:ClassUnit" name="String"/>
+        <codeElement xsi:type="code:ClassUnit" name="Object"/>
+        <codeElement xsi:type="code:ClassUnit" name="Exception"/>
+        <codeElement xsi:type="code:ClassUnit" name="Throwable"/>
+        <codeElement xsi:type="code:ClassUnit" name="Integer"/>
+        <codeElement xsi:type="code:ClassUnit" name="Number"/>
+        <codeElement xsi:type="code:ClassUnit" name="NumberFormatException"/>
+        <codeElement xsi:type="code:ClassUnit" name="IllegalArgumentException"/>
+        <codeElement xsi:type="code:ClassUnit" name="RuntimeException"/>
+      </codeElement>
+    </codeElement>
+    <codeElement xsi:type="code:Package" name="javax">
+      <codeElement xsi:type="code:Package" name="swing">
+        <codeElement xsi:type="code:Package" name="event"/>
+        <codeElement xsi:type="code:Package" name="border">
+          <codeElement xsi:type="code:ClassUnit" name="TitledBorder"/>
+          <codeElement xsi:type="code:ClassUnit" name="AbstractBorder"/>
+        </codeElement>
+        <codeElement xsi:type="code:Package" name="text">
+          <codeElement xsi:type="code:ClassUnit" name="JTextComponent"/>
+        </codeElement>
+        <codeElement xsi:type="code:ClassUnit" name="JPanel"/>
+        <codeElement xsi:type="code:ClassUnit" name="JComponent"/>
+        <codeElement xsi:type="code:ClassUnit" name="TransferHandler"/>
+        <codeElement xsi:type="code:ClassUnit" name="JButton"/>
+        <codeElement xsi:type="code:ClassUnit" name="AbstractButton"/>
+        <codeElement xsi:type="code:ClassUnit" name="JLabel"/>
+        <codeElement xsi:type="code:ClassUnit" name="JFrame"/>
+        <codeElement xsi:type="code:ClassUnit" name="JOptionPane"/>
+        <codeElement xsi:type="code:ClassUnit" name="JFileChooser"/>
+        <codeElement xsi:type="code:ClassUnit" name="JTextField"/>
+        <codeElement xsi:type="code:ClassUnit" name="JDialog"/>
+        <codeElement xsi:type="code:ClassUnit" name="JScrollPane"/>
+        <codeElement xsi:type="code:ClassUnit" name="JTextArea"/>
+      </codeElement>
+      <codeElement xsi:type="code:Package" name="accessibility"/>
+    </codeElement>
+    <codeElement xsi:type="code:Package" name="junit">
+      <codeElement xsi:type="code:Package" name="framework">
+        <codeElement xsi:type="code:ClassUnit" name="TestCase"/>
+        <codeElement xsi:type="code:ClassUnit" name="Assert"/>
+      </codeElement>
+    </codeElement>
+  </code:CodeModel>
+  <code:ClassUnit name="ArrayList"/>
+  <code:ClassUnit name="AbstractList"/>
+  <code:ClassUnit name="AbstractCollection"/>
+  <code:ClassUnit name="Hashtable"/>
+  <code:ClassUnit name="Dictionary"/>
+  <code:ClassUnit name="DefaultComboBoxModel"/>
+  <code:ClassUnit name="AbstractListModel"/>
+  <code:ClassUnit name="JComboBox"/>
+</xmi:XMI>

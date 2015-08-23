@@ -1,0 +1,31 @@
+rule KDM2KDM
+transform t : code!CodeModel
+to o : kdmMicro!CodeModel {
+	o.name = t.name;
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule Class2Class
+transform t : code!ClassUnit
+to o : kdmMicro!ClassUnit {
+	o.name= t.name;
+}
+
+rule Package2Package
+transform t : code!Package
+to o : kdmMicro!Package {
+	o.name= t.name;
+	o.codeElement.addAll(t.codeElement.select(s | s.type.name = "Package").equivalent());
+	
+	for(i in o.codeElement)
+	{	
+		i.name.println();
+		var pack = t.codeElement.select(s | s.type.name = "Package" and s.name = i.name).first();
+		i.codeElement.addAll(pack.codeElement.select(s | s.type.name = "ClassUnit").equivalent());
+	}
+}
+
+operation code!Package getClases() : OrderedSet{
+	var inner = self.codeElement.select(s | s.type.name = "ClassUnit");
+	return inner;	
+}
