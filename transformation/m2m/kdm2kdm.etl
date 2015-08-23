@@ -5,10 +5,18 @@ to o : kdmMicro!CodeModel {
 	o.codeElement = t.codeElement.equivalent();
 }
 
+rule Import2Import
+transform t : code!Imports
+to o : kdmMicro!Imports {
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
 rule Class2Class
 transform t : code!ClassUnit
 to o : kdmMicro!ClassUnit {
 	o.name= t.name;
+	o.codeRelation = t.codeRelation.equivalent();
 }
 
 rule Package2Package
@@ -21,7 +29,7 @@ to o : kdmMicro!Package {
 	{	
 		i.name.println();
 		var pack = t.codeElement.select(s | s.type.name = "Package" and s.name = i.name).first();
-		i.codeElement.addAll(pack.codeElement.select(s | s.type.name = "ClassUnit").equivalent());
+		i.codeElement.addAll(pack.getClases().equivalent());
 	}
 }
 

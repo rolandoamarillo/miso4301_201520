@@ -5,21 +5,163 @@
       <codeElement xsi:type="code:Package" name="cupi2">
         <codeElement xsi:type="code:Package" name="campeonato">
           <codeElement xsi:type="code:Package" name="interfaz">
-            <codeElement xsi:type="code:ClassUnit" name="PanelBotones"/>
-            <codeElement xsi:type="code:ClassUnit" name="PanelComboEquipos"/>
-            <codeElement xsi:type="code:ClassUnit" name="PanelTablaGoles"/>
-            <codeElement xsi:type="code:ClassUnit" name="PanelBotonesDialogo"/>
-            <codeElement xsi:type="code:ClassUnit" name="InterfazCampeonato"/>
-            <codeElement xsi:type="code:ClassUnit" name="PanelResultadoPartido"/>
-            <codeElement xsi:type="code:ClassUnit" name="DialogoResultado"/>
-            <codeElement xsi:type="code:ClassUnit" name="PanelTablaPosiciones"/>
+            <codeElement xsi:type="code:ClassUnit" name="PanelBotones">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="PanelComboEquipos">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:TemplateUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.9"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:TemplateUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.14"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.15"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.3"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="PanelTablaGoles">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="PanelBotonesDialogo">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="InterfazCampeonato">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.2"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="PanelResultadoPartido">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.5"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.5"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="DialogoResultado">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.6"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.6"/>
+              </codeRelation>
+            </codeElement>
+            <codeElement xsi:type="code:ClassUnit" name="PanelTablaPosiciones">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.2"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
+              </codeRelation>
+            </codeElement>
           </codeElement>
           <codeElement xsi:type="code:Package" name="mundo">
-            <codeElement xsi:type="code:ClassUnit" name="Campeonato"/>
+            <codeElement xsi:type="code:ClassUnit" name="Campeonato">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.2"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.2/@codeElement.8"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
+              </codeRelation>
+            </codeElement>
             <codeElement xsi:type="code:ClassUnit" name="Equipo"/>
           </codeElement>
           <codeElement xsi:type="code:Package" name="test">
-            <codeElement xsi:type="code:ClassUnit" name="CampeonatoTest"/>
+            <codeElement xsi:type="code:ClassUnit" name="CampeonatoTest">
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.0/@codeElement.2"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.1/@codeElement.2/@codeElement.0"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
+              </codeRelation>
+              <codeRelation xsi:type="code:Imports">
+                <to xsi:type="code:Package" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+                <from xsi:type="code:ClassUnit" href="n6_campeonato_kdm.xmi#/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
+              </codeRelation>
+            </codeElement>
           </codeElement>
         </codeElement>
       </codeElement>
