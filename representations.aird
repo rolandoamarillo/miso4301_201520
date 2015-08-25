@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:micromodel="http://micromodel/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" version="8.1.1">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:micromodel="http://micromodel/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" selectedViews="_gT3RoEpmEeW6AbXvikMMBA" version="8.1.1">
   <models xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
   <models xmi:type="notation:Diagram" href="metamodel/SimplifiedDecisionMetrics.ecorediag#_Okeo4EX_EeWYeIof49VpUg"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
   <models xmi:type="kdm:Segment" href="models/n6_campeonato_kdm.xmi#/0"/>
   <models xmi:type="kdm:Segment" href="models/n12_batallaNaval_kdm.xmi#/0"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
-  <models xmi:type="kdm:Segment" href="models/kdmResultadoMicro.xmi#/0"/>
+  <models xmi:type="code:CodeModel" href="models/kdmResultadoMicro.xmi#/0"/>
   <models xmi:type="kdm:Segment" href="models/n1_empleado_kdm.xmi#/0"/>
+  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
+  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
+  <models xmi:type="ecore:EPackage" href="metamodel/SubKDM.ecore#/"/>
+  <models xmi:type="notation:Diagram" href="metamodel/SubKDM.ecorediag#_JpcB8EqDEeW7S8JcGMoWHA"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_gfU6wUpmEeW6AbXvikMMBA" type="Sirius" element="_gfBYwEpmEeW6AbXvikMMBA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_gf6woEpmEeW6AbXvikMMBA" type="2001" element="_gfBYwUpmEeW6AbXvikMMBA">
+            <children xmi:type="notation:Node" xmi:id="_ggqXgEpmEeW6AbXvikMMBA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ggqXgUpmEeW6AbXvikMMBA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_gpvbAEpmEeW6AbXvikMMBA" type="3005" element="_gfBYwkpmEeW6AbXvikMMBA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_gpvbAUpmEeW6AbXvikMMBA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gpvbAkpmEeW6AbXvikMMBA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_gf6woUpmEeW6AbXvikMMBA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gf6wokpmEeW6AbXvikMMBA" width="672" height="67"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_gfU6wkpmEeW6AbXvikMMBA"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_gfBYwUpmEeW6AbXvikMMBA" width="-1" height="-1">
+        <target xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_gfBYwkpmEeW6AbXvikMMBA" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYw0pmEeW6AbXvikMMBA"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_gfBYxEpmEeW6AbXvikMMBA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_gfBYxUpmEeW6AbXvikMMBA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+      <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+      <target xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
 </viewpoint:DAnalysis>
