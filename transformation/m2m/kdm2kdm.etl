@@ -5,6 +5,19 @@ to o : kdmMicro!CodeModel {
 	o.codeElement = t.codeElement.equivalent();
 }
 
+rule parameterUnit2parameterUnit
+transform t : code!ParameterUnit
+to o : kdmMicro!ParameterUnit {
+	o.type= t.type;
+	o.kind= t.kind;
+}
+
+rule Signature2Signaturet
+transform t : code!Signature
+to o : kdmMicro!Signature {
+	o.name= t.name;
+	o.parameterUnit = t.parameterUnit.equivalent();
+}
 
 rule ActionElement2ActionElement
 transform t : code!ActionElement

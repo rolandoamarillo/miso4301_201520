@@ -95,13 +95,7 @@
                   <comment text="// Constructores"/>
                   <comment text="//-----------------------------------------------------------------"/>
                   <comment text="/**&#xD;&#xA;     * @param ic - Es una referencia a la clase principal de la interfaz&#xD;&#xA;     */"/>
-                  <codeElement xsi:type="code:Signature" name="PanelBotones">
-                    <parameterUnit name="ic" type="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4" kind="unknown">
-                      <source language="java">
-                        <region file="/0/@model.2/@inventoryElement.0" language="java"/>
-                      </source>
-                    </parameterUnit>
-                  </codeElement>
+                  <codeElement xsi:type="code:Signature" name="PanelBotones"/>
                   <codeElement xsi:type="action:BlockUnit">
                     <source language="java">
                       <region file="/0/@model.2/@inventoryElement.0" language="java"/>
@@ -115,7 +109,9 @@
                           <region file="/0/@model.2/@inventoryElement.0" language="java"/>
                         </source>
                         <actionRelation xsi:type="action:Writes" to="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.9/@codeElement.1/@codeElement.0/@codeElement.0"/>
-                        <actionRelation xsi:type="action:Reads" to="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.9/@codeElement.0/@parameterUnit.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.9/@codeElement.1/@codeElement.0/@codeElement.0"/>
+                        <actionRelation xsi:type="action:Reads" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.9/@codeElement.1/@codeElement.0/@codeElement.0">
+                          <to href="kdmResultadoMicro.xmi#/128/@parameterUnit.0"/>
+                        </actionRelation>
                       </codeElement>
                     </codeElement>
                     <codeElement xsi:type="action:ActionElement" name="expression statement" kind="expression statement">
