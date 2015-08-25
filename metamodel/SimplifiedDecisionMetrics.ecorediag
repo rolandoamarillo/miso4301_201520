@@ -18,7 +18,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_OolFwUX_EeWYeIof49VpUg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//Observation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OolFwkX_EeWYeIof49VpUg" x="312" y="72"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OolFwkX_EeWYeIof49VpUg" x="324" y="168"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ZuxsMEYBEeWYeIof49VpUg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_ZuzhYEYBEeWYeIof49VpUg" type="4001"/>
@@ -42,7 +42,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ZuxsMUYBEeWYeIof49VpUg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//Measure"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZuxsMkYBEeWYeIof49VpUg" x="204" y="192"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZuxsMkYBEeWYeIof49VpUg" x="216" y="288"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_ox7iUEYBEeWYeIof49VpUg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_ox-loEYBEeWYeIof49VpUg" type="4001"/>
@@ -58,7 +58,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ox7iUUYBEeWYeIof49VpUg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//Measurement"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ox7iUkYBEeWYeIof49VpUg" x="504" y="204"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ox7iUkYBEeWYeIof49VpUg" x="516" y="300"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tN6CwEYfEeWYeIof49VpUg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_tN738EYfEeWYeIof49VpUg" type="4001"/>
@@ -78,7 +78,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_tN6CwUYfEeWYeIof49VpUg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//Grade"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tN6CwkYfEeWYeIof49VpUg" x="706" y="200"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tN6CwkYfEeWYeIof49VpUg" x="718" y="296"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_vVJcEEYfEeWYeIof49VpUg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_vVKqMEYfEeWYeIof49VpUg" type="4001"/>
@@ -98,7 +98,23 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_vVKDIEYfEeWYeIof49VpUg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//DimensionalMeasurement"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vVKDIUYfEeWYeIof49VpUg" x="480" y="312"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vVKDIUYfEeWYeIof49VpUg" x="492" y="408"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_LppRAEtFEeWflv9NNPRVjw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_Lpya8EtFEeWflv9NNPRVjw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_Lp0QIEtFEeWflv9NNPRVjw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Lp0QIUtFEeWflv9NNPRVjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Lp0QIktFEeWflv9NNPRVjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Lp0QI0tFEeWflv9NNPRVjw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Lp2sYEtFEeWflv9NNPRVjw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Lp2sYUtFEeWflv9NNPRVjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Lp2sYktFEeWflv9NNPRVjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Lp2sY0tFEeWflv9NNPRVjw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_LppRAUtFEeWflv9NNPRVjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="SimplifiedDecisionMetrics.ecore#//SimplifiedDecisionMetrics"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LppRAktFEeWflv9NNPRVjw" x="444" y="39"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_OkfP8EX_EeWYeIof49VpUg"/>
   <element xmi:type="ecore:EPackage" href="SimplifiedDecisionMetrics.ecore#/"/>
@@ -141,5 +157,17 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_32pjE0YfEeWYeIof49VpUg" points="[-22, -4, 152, 0]$[-124, -4, 50, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_32ubkEYfEeWYeIof49VpUg" id="(0.22549019607843138,0.6976744186046512)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_N57RkEtFEeWflv9NNPRVjw" type="3002" source="_LppRAEtFEeWflv9NNPRVjw" target="_OolFwEX_EeWYeIof49VpUg">
+    <children xmi:type="notation:Node" xmi:id="_N5_jAEtFEeWflv9NNPRVjw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_N5_jAUtFEeWflv9NNPRVjw" x="-74" y="-29"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_N6BYMEtFEeWflv9NNPRVjw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_N6BYMUtFEeWflv9NNPRVjw" x="-61" y="20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_N57RkUtFEeWflv9NNPRVjw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_N57RkktFEeWflv9NNPRVjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="SimplifiedDecisionMetrics.ecore#//SimplifiedDecisionMetrics/observations"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_N57Rk0tFEeWflv9NNPRVjw" points="[-31, 21, 175, -112]$[-125, 128, 81, -5]"/>
   </edges>
 </notation:Diagram>
