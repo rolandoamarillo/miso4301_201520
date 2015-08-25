@@ -11,8 +11,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.0" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Este es el panel donde est&#xe1;n los botones que controlan la aplicaci&#xf3;n&#xD;&#xA; */"/>
-                <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
                 <codeRelation xsi:type="code:Implements" to="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
@@ -25,7 +23,6 @@
                   <comment text="//-----------------------------------------------------------------"/>
                   <comment text="// Constantes"/>
                   <comment text="//-----------------------------------------------------------------"/>
-                  <codeRelation xsi:type="code:HasValue" to="/0/@model.1/@codeElement.8" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
                 </codeElement>
                 <codeElement xsi:type="code:StorableUnit" name="REGISTRAR_RESULTADO" type="/0/@model.1/@codeElement.0/@codeElement.3/@codeElement.0" kind="static">
                   <attribute tag="export" value="private final"/>
@@ -559,8 +556,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.1" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * En este panel se muestran los combos para seleccionar los equipos&#xD;&#xA; */"/>
-                <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.9" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.14" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.15" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
@@ -862,8 +857,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.2" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Este es el panel donde se muestra la tabla de goles del campeonato&#xD;&#xA; */"/>
-                <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2"/>
@@ -1827,7 +1820,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.3" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Es el panel donde se muestran los botones para registrar un partido&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3"/>
@@ -2137,7 +2129,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.4" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Es la clase principal de la interfaz&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.1" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.4"/>
@@ -3633,7 +3624,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.5" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * En este panel el usuario escribe los goles del partido que est&#xe1; registrando&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.5"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.1" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.5"/>
@@ -3923,7 +3913,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.6" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Es el di&#xe1;logo donde se registra el resultado de un partido&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.6"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.1/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.6"/>
@@ -4346,7 +4335,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.7" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Es el panel donde se muestra la tabla de posiciones&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.0" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.2" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.7"/>
@@ -4977,7 +4965,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.8" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Esta clase representa un campeonato de f&#xfa;tbol&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.1" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.2" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
@@ -6906,7 +6893,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.9" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Es la clase que representa a un equipo&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeElement xsi:type="code:StorableUnit" name="nombre" type="/0/@model.1/@codeElement.0/@codeElement.3/@codeElement.0">
                   <attribute tag="export" value="private"/>
@@ -7017,7 +7003,6 @@
                 <source language="java">
                   <region file="/0/@model.2/@inventoryElement.10" language="java"/>
                 </source>
-                <comment text="/**&#xD;&#xA; * Esta clase sirve para probar la clase campeonato&#xD;&#xA; */"/>
                 <comment text="/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&#xD;&#xA; * $Id$ &#xD;&#xA; * Universidad de los Andes (Bogot&#xe1; - Colombia)&#xD;&#xA; * Departamento de Ingenier&#xed;a de Sistemas y Computaci&#xf3;n &#xD;&#xA; * Licenciado bajo el esquema Academic Free License version 2.1 &#xD;&#xA; *&#xD;&#xA; * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)&#xD;&#xA; * Ejercicio: n6_campeonato &#xD;&#xA; * Autor: Mario S&#xe1;nchez - 21/07/2005 &#xD;&#xA; * Autor: J. Villalobos - 28/11/2005&#xD;&#xA; * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &#xD;&#xA; */"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.1" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
                 <codeRelation xsi:type="code:Imports" to="/0/@model.1/@codeElement.0/@codeElement.2" from="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
