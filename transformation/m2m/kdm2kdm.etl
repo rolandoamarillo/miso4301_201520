@@ -5,6 +5,73 @@ to o : kdmMicro!CodeModel {
 	o.codeElement = t.codeElement.equivalent();
 }
 
+rule parameterUnit2parameterUnit
+transform t : code!ParameterUnit
+to o : kdmMicro!ParameterUnit {
+	o.type= t.type;
+	o.kind= t.kind;
+}
+
+rule Signature2Signaturet
+transform t : code!Signature
+to o : kdmMicro!Signature {
+	o.name= t.name;
+	o.parameterUnit = t.parameterUnit.equivalent();
+}
+
+rule ActionElement2ActionElement
+transform t : code!ActionElement
+to o : kdmMicro!ActionElement {
+	o.name= t.name;
+	o.kind = t.kind;
+}
+
+rule CommentUnit2CommentUnit
+transform t : code!CommentUnit
+to o : kdmMicro!CommentUnit {
+	o.text= t.text;
+}
+
+rule Call2Call
+transform t : code!Calls
+to o : kdmMicro!Calls {
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule HasValue2HasValue
+transform t : code!HasValue
+to o : kdmMicro!HasValue {
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule Storabl2Storable
+transform t : code!StorableUnit
+to o : kdmMicro!StorableUnit {
+	o.name= t.name;
+	o.codeElement = t.codeElement.equivalent();
+	o.attribute = t.attribute.equivalent();
+	o.comment = t.comment.equivalent();
+	o.codeRelation = t.codeRelation.equivalent(); //calls HasValue
+}
+
+rule Block2Block
+transform t : code!BlockUnit
+to o : kdmMicro!BlockUnit {
+	o.name= t.name;
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule Metod2Metod
+transform t : code!MethodUnit
+to o : kdmMicro!MethodUnit {
+	o.name= t.name;
+	o.type = t.type;
+	o.codeElement = t.codeElement.equivalent();
+	o.comment = t.comment.equivalent();
+}
+
 rule Import2Import
 transform t : code!Imports
 to o : kdmMicro!Imports {
@@ -16,24 +83,14 @@ rule Class2Class
 transform t : code!ClassUnit
 to o : kdmMicro!ClassUnit {
 	o.name= t.name;
-	o.codeRelation = t.codeRelation.equivalent();
+	o.comment = t.comment.equivalent();
+	o.codeRelation = t.codeRelation.equivalent(); //imports
+	o.codeElement = t.codeElement.equivalent();
 }
 
 rule Package2Package
 transform t : code!Package
 to o : kdmMicro!Package {
 	o.name= t.name;
-	o.codeElement.addAll(t.codeElement.select(s | s.type.name = "Package").equivalent());
-	
-	for(i in o.codeElement)
-	{	
-		i.name.println();
-		var pack = t.codeElement.select(s | s.type.name = "Package" and s.name = i.name).first();
-		i.codeElement.addAll(pack.getClases().equivalent());
-	}
-}
-
-operation code!Package getClases() : OrderedSet{
-	var inner = self.codeElement.select(s | s.type.name = "ClassUnit");
-	return inner;	
+	o.codeElement = t.codeElement.equivalent();
 }
