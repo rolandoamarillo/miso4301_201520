@@ -7,10 +7,9 @@
   <models xmi:type="kdm:Segment" href="models/n12_batallaNaval_kdm.xmi#/0"/>
   <models xmi:type="code:CodeModel" href="models/kdmResultadoMicro.xmi#/0"/>
   <models xmi:type="kdm:Segment" href="models/n1_empleado_kdm.xmi#/0"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
-  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
   <models xmi:type="ecore:EPackage" href="metamodel/SubKDM.ecore#/"/>
   <models xmi:type="notation:Diagram" href="metamodel/SubKDM.ecorediag#_JpcB8EqDEeW7S8JcGMoWHA"/>
+  <models xmi:type="code:CodeModel" href="metamodel/kdmResultadoMicro.xmi#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
@@ -48,4 +47,6 @@
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
   </ownedViews>
+  <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>
+  <models xmi:type="micromodel:MicroKDM" href="models/KDMMicro.xmi#/0"/>
 </viewpoint:DAnalysis>

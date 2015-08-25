@@ -1,3 +1,4 @@
+// Raiz
 rule KDM2KDM
 transform t : code!CodeModel
 to o : kdmMicro!CodeModel {
@@ -5,25 +6,13 @@ to o : kdmMicro!CodeModel {
 	o.codeElement = t.codeElement.equivalent();
 }
 
-rule parameterUnit2parameterUnit
-transform t : code!ParameterUnit
-to o : kdmMicro!ParameterUnit {
-	o.type= t.type;
-	o.kind= t.kind;
-}
-
-rule Signature2Signaturet
-transform t : code!Signature
-to o : kdmMicro!Signature {
-	o.name= t.name;
-	o.parameterUnit = t.parameterUnit.equivalent();
-}
-
-rule ActionElement2ActionElement
-transform t : code!ActionElement
-to o : kdmMicro!ActionElement {
-	o.name= t.name;
-	o.kind = t.kind;
+//Elementos principales de código
+rule AbstracCodeElement2AbstractCodeElement
+transform t: code!AbstractCodeElement
+to o: kdmMicro!AbstractCodeElement{
+	o.name = t.name;
+	o.codeRelation = t.codeRelation.equivalent();
+	o.comment = t.comment.equivalent();
 }
 
 rule CommentUnit2CommentUnit
@@ -32,65 +21,272 @@ to o : kdmMicro!CommentUnit {
 	o.text= t.text;
 }
 
-rule Call2Call
-transform t : code!Calls
-to o : kdmMicro!Calls {
+//Relaciones entre elementos de código
+rule AbstractCodeRelationship2AbstractCodeRelationship
+transform t: code!AbstractCodeRelationship
+to o: kdmMicro!AbstractCodeRelationship{
+	
+}
+
+rule CodeItem2CodeItem
+transform t: code!CodeItem
+to o: kdmMicro!CodeItem
+extends AbstracCodeElement2AbstractCodeElement{
+}
+
+//-----------------------
+//Elementos de tipo Modulo
+rule Module2Module
+transform t: code!Module
+to o : kdmMicro!Module
+extends CodeItem2CodeItem{
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule Package2Package
+transform t : code!Package
+to o : kdmMicro!Package 
+extends Module2Module{
+	//o.name= t.name;
+	//o.codeElement = t.codeElement.equivalent();
+}
+
+//--------------------------
+
+//--------------------------
+//Elementos de tipo ComputationalObject
+
+rule ComputationalObject2ComputationalObject
+transform t: code!ComputationalObject
+to o: kdmMicro!ComputationalObject
+extends CodeItem2CodeItem{
+	
+}
+
+rule DataElement2DataElement
+transform t : code!DataElement
+to o: kdmMicro!DataElement
+extends ComputationalObject2ComputationalObject{
+	o.type = t.type;
+	o.codeElement = o.codeElement.equivalent();
+	o.ext = t.ext;
+	o.size = t.size;
+}
+
+rule ParameterUnit2ParameterUnit
+transform t : code!ParameterUnit
+to o : kdmMicro!ParameterUnit 
+extends DataElement2DataElement{
+	o.kind = t.kind;
+	o.pos = t.pos;
+}
+
+rule StorableUnit2StorableUnit
+transform t : code!StorableUnit
+to o : kdmMicro!StorableUnit 
+extends DataElement2DataElement{
+	o.kind = o.kind;
+	//o.attribute = t.attribute.equivalent();	
+	//o.comment = t.comment.equivalent();
+	//o.codeRelation = t.codeRelation.equivalent(); //calls HasValue
+}
+
+rule ControlElement2ControlElement
+transform t : code!ControlElement
+to o: kdmMicro!ControlElement
+extends ComputationalObject2ComputationalObject{
+	o.type = t.type;
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule MethodUnit2MethodUnit
+transform t: code!MethodUnit
+to o: kdmMicro!MethodUnit
+extends ControlElement2ControlElement{
+	o.kind = t.kind;
+}
+
+rule CallabUnit2CallableUnit
+transform t: code!CallableUnit
+to o: kdmMicro!CallableUnit
+extends ControlElement2ControlElement{
+	o.kind = t.kind;
+}
+
+//----------------------------
+
+//----------------------------
+//Elementos de tipo DataType
+
+rule DataType2DataType
+transform t: code!Datatype
+to o: kdmMicro!Datatype
+extends CodeItem2CodeItem{
+	
+}
+
+rule TemplateUnit2TemplateUnit
+transform t: code!TemplateUnit
+to o: kdmMicro!TemplateUnit
+extends DataType2DataType{
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule ClassUnit2ClassUnit
+transform t : code!ClassUnit
+to o : kdmMicro!ClassUnit 
+extends DataType2DataType{
+	//o.name= t.name;
+	//o.comment = t.comment.equivalent();
+	//o.codeRelation = t.codeRelation.equivalent(); //imports
+	o.codeElement = t.codeElement.equivalent();
+	o.isAbstract = t.isAbstract;
+}
+
+rule InterfaceUnit2InterfaceUnit
+transform t: code!InterfaceUnit
+to o: kdmMicro!InterfaceUnit
+extends DataType2DataType{
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule Signature2Signature
+transform t : code!Signature
+to o : kdmMicro!Signature 
+extends DataType2DataType{
+	o.parameterUnit = t.parameterUnit.equivalent();
+}
+
+//-----------------------------------
+
+//-----------------------------------
+// Relaciones: Elementos de tipo 
+
+rule AbstractCodeRelationship
+transform t: code!AbstractCodeRelationship
+to o: kdmMicro!AbstractCodeRelationship{
+	
+}
+
+rule Imports2Imports
+transform t : code!Imports
+to o : kdmMicro!Imports 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule VisibleIn2VisibleIn
+transform t : code!VisibleIn
+to o : kdmMicro!VisibleIn
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule Implements2Implements
+transform t : code!Implements
+to o : kdmMicro!Implements
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule ImplementationOf2ImplementationOf
+transform t : code!ImplementationOf
+to o : kdmMicro!ImplementationOf 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule Extends2Extends
+transform t : code!Extends
+to o : kdmMicro!Extends
+extends AbstractCodeRelationship2AbstractCodeRelationship{
 	o.`to`= t.`to`;
 	o.`from` = t.`from`;
 }
 
 rule HasValue2HasValue
 transform t : code!HasValue
-to o : kdmMicro!HasValue {
+to o : kdmMicro!HasValue 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
 	o.`to`= t.`to`;
 	o.`from` = t.`from`;
 }
 
-rule Storabl2Storable
-transform t : code!StorableUnit
-to o : kdmMicro!StorableUnit {
-	o.name= t.name;
-	o.codeElement = t.codeElement.equivalent();
-	o.attribute = t.attribute.equivalent();
-	o.comment = t.comment.equivalent();
-	o.codeRelation = t.codeRelation.equivalent(); //calls HasValue
+rule HasType2HasType
+transform t : code!HasType
+to o : kdmMicro!HasType 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
 }
 
-rule Block2Block
+rule ParameterTo2ParameterTo
+transform t : code!ParameterTo
+to o : kdmMicro!ParameterTo 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule InstanceOf2InstanceOf
+transform t : code!InstanceOf
+to o : kdmMicro!InstanceOf 
+extends AbstractCodeRelationship2AbstractCodeRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+//------------------------------------
+//ACTION PACKAGE
+
+rule ActionElement2ActionElement
+transform t : code!ActionElement
+to o : kdmMicro!ActionElement 
+extends AbstracCodeElement2AbstractCodeElement{
+	o.name= t.name;
+	o.kind = t.kind;
+	o.codeElement = t.codeElement.equivalent();
+}
+
+rule BlockUnit2BlockUnit
 transform t : code!BlockUnit
-to o : kdmMicro!BlockUnit {
-	o.name= t.name;
-	o.codeElement = t.codeElement.equivalent();
+to o : kdmMicro!BlockUnit 
+extends ActionElement2ActionElement{
 }
 
-rule Metod2Metod
-transform t : code!MethodUnit
-to o : kdmMicro!MethodUnit {
-	o.name= t.name;
-	o.type = t.type;
-	o.codeElement = t.codeElement.equivalent();
-	o.comment = t.comment.equivalent();
+rule ExceptionUnit2ExceptionUnit
+transform t : code!ExceptionUnit
+to o : kdmMicro!ExceptionUnit 
+extends BlockUnit2BlockUnit{
 }
 
-rule Import2Import
-transform t : code!Imports
-to o : kdmMicro!Imports {
+rule CatchUnit2CatchUnit
+transform t : code!CatchUnit
+to o : kdmMicro!CatchUnit 
+extends ExceptionUnit2ExceptionUnit{
+}
+
+rule TryUnit2TryUnit
+transform t : code!TryUnit
+to o : kdmMicro!TryUnit 
+extends ExceptionUnit2ExceptionUnit{
+}
+
+rule FinallyUnit2FinallyUnit
+transform t : code!FinallyUnit
+to o : kdmMicro!FinallyUnit 
+extends ExceptionUnit2ExceptionUnit{
+}
+
+/*
+rule Call2Call
+transform t : code!Calls
+to o : kdmMicro!Calls {
 	o.`to`= t.`to`;
 	o.`from` = t.`from`;
-}
+}*/
 
-rule Class2Class
-transform t : code!ClassUnit
-to o : kdmMicro!ClassUnit {
-	o.name= t.name;
-	o.comment = t.comment.equivalent();
-	o.codeRelation = t.codeRelation.equivalent(); //imports
-	o.codeElement = t.codeElement.equivalent();
-}
-
-rule Package2Package
-transform t : code!Package
-to o : kdmMicro!Package {
-	o.name= t.name;
-	o.codeElement = t.codeElement.equivalent();
-}
