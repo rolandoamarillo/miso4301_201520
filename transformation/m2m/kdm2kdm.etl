@@ -250,6 +250,7 @@ extends AbstracCodeElement2AbstractCodeElement{
 	o.name= t.name;
 	o.kind = t.kind;
 	o.codeElement = t.codeElement.equivalent();
+	o.actionRelation = t.actionRelation.equivalent();
 }
 
 rule BlockUnit2BlockUnit
