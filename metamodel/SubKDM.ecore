@@ -4,6 +4,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="CodeModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
         eType="#//AbstractCodeElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="codeRelation" upperBound="-1"
@@ -98,12 +100,61 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//DataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterUnit" eSuperTypes="#//DataElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind : ParameterKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ParameterKind"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ParameterKind ">
-    <eLiterals name="external"/>
-    <eLiterals name="global" value="1"/>
-    <eLiterals name="local" value="2"/>
-    <eLiterals name="static" value="3"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateUnit" eSuperTypes="#//DataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+        eType="#//CodeUnit" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//DataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterUnit" upperBound="-1"
+        eType="#//ParameterUnit" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplementationOf" eSuperTypes="#//AbstractCodeRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//CodeItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CodeItem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasValue" eSuperTypes="#//AbstractCodeRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CodeItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//AbstractCodeElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+        eType="#//AbstractCodeElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BlockUnit" eSuperTypes="#//ActionElement #//ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TryUnit" eSuperTypes="#//ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CatchUnit" eSuperTypes="#//ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FinallyUnit" eSuperTypes="#//ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractActionRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Calls" eSuperTypes="#//AbstractActionRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ControlElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reads" eSuperTypes="#//AbstractActionRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Writes" eSuperTypes="#//AbstractActionRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Creates" eSuperTypes="#//AbstractActionRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParameterKind">
+    <eLiterals name="byValue"/>
+    <eLiterals name="byName" value="1"/>
+    <eLiterals name="byReference" value="2"/>
+    <eLiterals name="variadic" value="3"/>
+    <eLiterals name="return" value="4"/>
+    <eLiterals name="throws" value="5"/>
+    <eLiterals name="exception" value="6"/>
+    <eLiterals name="catchall" value="7"/>
+    <eLiterals name="unknown" value="8"/>
   </eClassifiers>
 </ecore:EPackage>
