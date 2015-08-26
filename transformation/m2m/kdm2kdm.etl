@@ -282,11 +282,41 @@ to o : kdmMicro!FinallyUnit
 extends ExceptionUnit2ExceptionUnit{
 }
 
-/*
+rule AbstracActionRelationship2AbstracActionRelationship
+transform t: code!AbstractActionRelationship
+to o: kdmMicro!AbstracActionRelationship{
+
+}
+
+
 rule Call2Call
 transform t : code!Calls
-to o : kdmMicro!Calls {
+to o : kdmMicro!Calls 
+extends AbstracActionRelationship2AbstracActionRelationship{
 	o.`to`= t.`to`;
 	o.`from` = t.`from`;
-}*/
+}
 
+rule Reads2Reads
+transform t : code!Reads
+to o : kdmMicro!Reads 
+extends AbstracActionRelationship2AbstracActionRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule Writes2Writes
+transform t : code!Writes
+to o : kdmMicro!Writes 
+extends AbstracActionRelationship2AbstracActionRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
+
+rule Creates2Creates
+transform t : code!Creates
+to o : kdmMicro!Creates
+extends AbstracActionRelationship2AbstracActionRelationship{
+	o.`to`= t.`to`;
+	o.`from` = t.`from`;
+}
