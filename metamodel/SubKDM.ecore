@@ -101,6 +101,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterUnit" eSuperTypes="#//DataElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ParameterKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateUnit" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
@@ -119,13 +120,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CodeItem"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//AbstractCodeElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionElement" eSuperTypes="#//AbstractCodeElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
         eType="#//AbstractCodeElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionRelation" upperBound="-1"
+        eType="#//AbstractActionRelationship" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockUnit" eSuperTypes="#//ActionElement #//ExceptionUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExceptionUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BlockUnit" eSuperTypes="#//ActionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionUnit" eSuperTypes="#//BlockUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="TryUnit" eSuperTypes="#//ExceptionUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="CatchUnit" eSuperTypes="#//ExceptionUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="FinallyUnit" eSuperTypes="#//ExceptionUnit"/>

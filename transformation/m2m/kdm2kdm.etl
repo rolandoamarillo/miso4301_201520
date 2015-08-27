@@ -67,7 +67,7 @@ rule DataElement2DataElement
 transform t : code!DataElement
 to o: kdmMicro!DataElement
 extends ComputationalObject2ComputationalObject{
-	o.type = t.type;
+	o.type = t.type.equivalent();
 	o.codeElement = o.codeElement.equivalent();
 	o.ext = t.ext;
 	o.size = t.size;
@@ -77,7 +77,7 @@ rule ParameterUnit2ParameterUnit
 transform t : code!ParameterUnit
 to o : kdmMicro!ParameterUnit 
 extends DataElement2DataElement{
-	o.kind = t.kind;
+	o.kind = t.kind.equivalent();
 	o.pos = t.pos;
 }
 
@@ -86,16 +86,13 @@ transform t : code!StorableUnit
 to o : kdmMicro!StorableUnit 
 extends DataElement2DataElement{
 	o.kind = o.kind;
-	//o.attribute = t.attribute.equivalent();	
-	//o.comment = t.comment.equivalent();
-	//o.codeRelation = t.codeRelation.equivalent(); //calls HasValue
 }
 
 rule ControlElement2ControlElement
 transform t : code!ControlElement
 to o: kdmMicro!ControlElement
 extends ComputationalObject2ComputationalObject{
-	o.type = t.type;
+	o.type = t.type.equivalent();
 	o.codeElement = t.codeElement.equivalent();
 }
 
@@ -103,14 +100,14 @@ rule MethodUnit2MethodUnit
 transform t: code!MethodUnit
 to o: kdmMicro!MethodUnit
 extends ControlElement2ControlElement{
-	o.kind = t.kind;
+	o.kind = t.kind.equivalent();
 }
 
 rule CallabUnit2CallableUnit
 transform t: code!CallableUnit
 to o: kdmMicro!CallableUnit
 extends ControlElement2ControlElement{
-	o.kind = t.kind;
+	o.kind = t.kind.equivalent();
 }
 
 //----------------------------
@@ -136,9 +133,6 @@ rule ClassUnit2ClassUnit
 transform t : code!ClassUnit
 to o : kdmMicro!ClassUnit 
 extends DataType2DataType{
-	//o.name= t.name;
-	//o.comment = t.comment.equivalent();
-	//o.codeRelation = t.codeRelation.equivalent(); //imports
 	o.codeElement = t.codeElement.equivalent();
 	o.isAbstract = t.isAbstract;
 }
@@ -172,72 +166,72 @@ rule Imports2Imports
 transform t : code!Imports
 to o : kdmMicro!Imports 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule VisibleIn2VisibleIn
 transform t : code!VisibleIn
 to o : kdmMicro!VisibleIn
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule Implements2Implements
 transform t : code!Implements
 to o : kdmMicro!Implements
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule ImplementationOf2ImplementationOf
 transform t : code!ImplementationOf
 to o : kdmMicro!ImplementationOf 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule Extends2Extends
 transform t : code!Extends
 to o : kdmMicro!Extends
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule HasValue2HasValue
 transform t : code!HasValue
 to o : kdmMicro!HasValue 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule HasType2HasType
 transform t : code!HasType
 to o : kdmMicro!HasType 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule ParameterTo2ParameterTo
 transform t : code!ParameterTo
 to o : kdmMicro!ParameterTo 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule InstanceOf2InstanceOf
 transform t : code!InstanceOf
 to o : kdmMicro!InstanceOf 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 //------------------------------------
@@ -247,7 +241,6 @@ rule ActionElement2ActionElement
 transform t : code!ActionElement
 to o : kdmMicro!ActionElement 
 extends AbstracCodeElement2AbstractCodeElement{
-	o.name= t.name;
 	o.kind = t.kind;
 	o.codeElement = t.codeElement.equivalent();
 	o.actionRelation = t.actionRelation.equivalent();
@@ -283,6 +276,11 @@ to o : kdmMicro!FinallyUnit
 extends ExceptionUnit2ExceptionUnit{
 }
 
+
+//--------------------------------
+
+//Relaciones a nivel de acciones
+
 rule AbstracActionRelationship2AbstracActionRelationship
 transform t: code!AbstractActionRelationship
 to o: kdmMicro!AbstracActionRelationship{
@@ -294,30 +292,30 @@ rule Call2Call
 transform t : code!Calls
 to o : kdmMicro!Calls 
 extends AbstracActionRelationship2AbstracActionRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule Reads2Reads
 transform t : code!Reads
 to o : kdmMicro!Reads 
 extends AbstracActionRelationship2AbstracActionRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule Writes2Writes
 transform t : code!Writes
 to o : kdmMicro!Writes 
 extends AbstracActionRelationship2AbstracActionRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
 
 rule Creates2Creates
 transform t : code!Creates
 to o : kdmMicro!Creates
 extends AbstracActionRelationship2AbstracActionRelationship{
-	o.`to`= t.`to`;
-	o.`from` = t.`from`;
+	o.`to`= t.`to`.equivalent();
+	o.`from` = t.`from`.equivalent();
 }
