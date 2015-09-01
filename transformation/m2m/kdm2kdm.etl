@@ -1,4 +1,26 @@
-// Raiz
+pre {
+  "Running kdm2kdm Transformation".println();
+}
+
+post {
+	"Done".println();
+}
+
+//Raiz
+rule ModelElement2ModelElement
+transform t: code!ModelElement
+to o: kdmMicro!ModelElement{
+}
+
+rule Segment2Segment	
+transform t : code!Segment
+to o : kdmMicro!Segment {
+	t.isKindOf(code!ModelElement).println();
+	o.name = t.name;
+	o.`model` = t.`model`.equivalent();
+}
+
+// CodeModel
 rule KDM2KDM
 transform t : code!CodeModel
 to o : kdmMicro!CodeModel {

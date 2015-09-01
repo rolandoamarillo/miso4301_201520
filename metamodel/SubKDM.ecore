@@ -1,163 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="subkdm" nsURI="http://subkdm/1.0" nsPrefix="subkdm">
-  <eClassifiers xsi:type="ecore:EClass" name="CodeModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//AbstractCodeElement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        derived="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeRelation" upperBound="-1"
-        eType="#//AbstractCodeRelationship" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" upperBound="-1"
-        eType="#//CommentUnit" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeItem" eSuperTypes="#//AbstractCodeElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//CodeItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//AbstractCodeElement" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Module"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//CodeItem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassUnit" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//CodeItem" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceUnit" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//CodeItem" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComputationalObject" eSuperTypes="#//CodeItem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlElement" eSuperTypes="#//ComputationalObject">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//AbstractCodeElement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MethoKind">
-    <eLiterals name="method"/>
-    <eLiterals name="constructos" value="1"/>
-    <eLiterals name="destructor" value="2"/>
-    <eLiterals name="operator" value="3"/>
-    <eLiterals name="virtual" value="4"/>
-    <eLiterals name="abstract" value="5"/>
-    <eLiterals name="unknown" value="6"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CallableKind">
-    <eLiterals name="external"/>
-    <eLiterals name="regular" value="1"/>
-    <eLiterals name="operator" value="2"/>
-    <eLiterals name="stored" value="3"/>
-    <eLiterals name="unknown" value="4"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CallableUnit" eSuperTypes="#//ControlElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//MethoKind"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MethodUnit" eSuperTypes="#//ControlElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//CallableKind"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//ComputationalObject">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//DataType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ext" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StorableUnit" eSuperTypes="#//DataElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//StorableKind"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="StorableKind">
-    <eLiterals name="global"/>
-    <eLiterals name="local" value="1"/>
-    <eLiterals name="static" value="2"/>
-    <eLiterals name="external" value="3"/>
-    <eLiterals name="register" value="4"/>
-    <eLiterals name="unknown" value="5"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ExportKind">
-    <eLiterals name="public"/>
-    <eLiterals name="private" value="1"/>
-    <eLiterals name="protected" value="2"/>
-    <eLiterals name="final" value="3"/>
-    <eLiterals name="unknown" value="4"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommentUnit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Imports" eSuperTypes="#//AbstractCodeRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//CodeItem"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//CodeItem"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Implements" eSuperTypes="#//AbstractCodeRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//CodeItem"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//CodeItem"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Extends" eSuperTypes="#//AbstractCodeRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//DataType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterUnit" eSuperTypes="#//DataElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ParameterKind"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TemplateUnit" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//CodeUnit" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterUnit" upperBound="-1"
-        eType="#//ParameterUnit" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImplementationOf" eSuperTypes="#//AbstractCodeRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//CodeItem"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CodeItem"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HasValue" eSuperTypes="#//AbstractCodeRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//CodeItem"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//AbstractCodeElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionElement" eSuperTypes="#//AbstractCodeElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-        eType="#//AbstractCodeElement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actionRelation" upperBound="-1"
-        eType="#//AbstractActionRelationship" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockUnit" eSuperTypes="#//ActionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExceptionUnit" eSuperTypes="#//BlockUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TryUnit" eSuperTypes="#//ExceptionUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CatchUnit" eSuperTypes="#//ExceptionUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FinallyUnit" eSuperTypes="#//ExceptionUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractActionRelationship"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Calls" eSuperTypes="#//AbstractActionRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//ControlElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Reads" eSuperTypes="#//AbstractActionRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Writes" eSuperTypes="#//AbstractActionRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Creates" eSuperTypes="#//AbstractActionRelationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//ActionElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//DataType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ParameterKind">
-    <eLiterals name="byValue"/>
-    <eLiterals name="byName" value="1"/>
-    <eLiterals name="byReference" value="2"/>
-    <eLiterals name="variadic" value="3"/>
-    <eLiterals name="return" value="4"/>
-    <eLiterals name="throws" value="5"/>
-    <eLiterals name="exception" value="6"/>
-    <eLiterals name="catchall" value="7"/>
-    <eLiterals name="unknown" value="8"/>
-  </eClassifiers>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="main" nsURI="http://subkdm/main" nsPrefix="main">
+  <eSubpackages name="subkdm" nsURI="http://subkdm/subkdm" nsPrefix="h">
+    <eClassifiers xsi:type="ecore:EClass" name="CodeModel" eSuperTypes="#//subkdm/ModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/AbstractCodeElement" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeElement" abstract="true"
+        eSuperTypes="#//subkdm/ModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeRelation" upperBound="-1"
+          eType="#//subkdm/AbstractCodeRelationship" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="comment" upperBound="-1"
+          eType="#//subkdm/CommentUnit" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CodeItem" eSuperTypes="#//subkdm/AbstractCodeElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Module" eSuperTypes="#//subkdm/CodeItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/AbstractCodeElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//subkdm/Module"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//subkdm/CodeItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassUnit" eSuperTypes="#//subkdm/DataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/CodeItem" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterfaceUnit" eSuperTypes="#//subkdm/DataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/CodeItem" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComputationalObject" eSuperTypes="#//subkdm/CodeItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlElement" eSuperTypes="#//subkdm/ComputationalObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/AbstractCodeElement" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//subkdm/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="MethoKind">
+      <eLiterals name="method"/>
+      <eLiterals name="constructos" value="1"/>
+      <eLiterals name="destructor" value="2"/>
+      <eLiterals name="operator" value="3"/>
+      <eLiterals name="virtual" value="4"/>
+      <eLiterals name="abstract" value="5"/>
+      <eLiterals name="unknown" value="6"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="CallableKind">
+      <eLiterals name="external"/>
+      <eLiterals name="regular" value="1"/>
+      <eLiterals name="operator" value="2"/>
+      <eLiterals name="stored" value="3"/>
+      <eLiterals name="unknown" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallableUnit" eSuperTypes="#//subkdm/ControlElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//subkdm/MethoKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodUnit" eSuperTypes="#//subkdm/ControlElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//subkdm/CallableKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//subkdm/ComputationalObject">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/DataType" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//subkdm/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ext" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StorableUnit" eSuperTypes="#//subkdm/DataElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//subkdm/StorableKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="StorableKind">
+      <eLiterals name="global"/>
+      <eLiterals name="local" value="1"/>
+      <eLiterals name="static" value="2"/>
+      <eLiterals name="external" value="3"/>
+      <eLiterals name="register" value="4"/>
+      <eLiterals name="unknown" value="5"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ExportKind">
+      <eLiterals name="public"/>
+      <eLiterals name="private" value="1"/>
+      <eLiterals name="protected" value="2"/>
+      <eLiterals name="final" value="3"/>
+      <eLiterals name="unknown" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CommentUnit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Imports" eSuperTypes="#//subkdm/AbstractCodeRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
+          eType="#//subkdm/CodeItem"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//subkdm/CodeItem"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Implements" eSuperTypes="#//subkdm/AbstractCodeRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
+          eType="#//subkdm/CodeItem"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//subkdm/CodeItem"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Extends" eSuperTypes="#//subkdm/AbstractCodeRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
+          eType="#//subkdm/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//subkdm/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterUnit" eSuperTypes="#//subkdm/DataElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//subkdm/ParameterKind"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TemplateUnit" eSuperTypes="#//subkdm/DataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/CodeUnit" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CodeUnit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//subkdm/DataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterUnit" upperBound="-1"
+          eType="#//subkdm/ParameterUnit" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ImplementationOf" eSuperTypes="#//subkdm/AbstractCodeRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/CodeItem"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/CodeItem"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HasValue" eSuperTypes="#//subkdm/AbstractCodeRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/CodeItem"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/AbstractCodeElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionElement" eSuperTypes="#//subkdm/AbstractCodeElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//subkdm/AbstractCodeElement" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionRelation" upperBound="-1"
+          eType="#//subkdm/AbstractActionRelationship" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlockUnit" eSuperTypes="#//subkdm/ActionElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExceptionUnit" eSuperTypes="#//subkdm/BlockUnit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TryUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CatchUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FinallyUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractActionRelationship"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Calls" eSuperTypes="#//subkdm/AbstractActionRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/ActionElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/ControlElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Reads" eSuperTypes="#//subkdm/AbstractActionRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/ActionElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/DataElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Writes" eSuperTypes="#//subkdm/AbstractActionRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/ActionElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/DataElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Creates" eSuperTypes="#//subkdm/AbstractActionRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/ActionElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ParameterKind">
+      <eLiterals name="byValue"/>
+      <eLiterals name="byName" value="1"/>
+      <eLiterals name="byReference" value="2"/>
+      <eLiterals name="variadic" value="3"/>
+      <eLiterals name="return" value="4"/>
+      <eLiterals name="throws" value="5"/>
+      <eLiterals name="exception" value="6"/>
+      <eLiterals name="catchall" value="7"/>
+      <eLiterals name="unknown" value="8"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Segment" eSuperTypes="#//subkdm/ModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="model" upperBound="-1"
+          eType="#//subkdm/CodeModel" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElement"/>
+  </eSubpackages>
+  <eSubpackages name="SimplifiedDecisionMetrics" nsURI="http://subkdm/sdm" nsPrefix="sdm">
+    <eClassifiers xsi:type="ecore:EClass" name="Observation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="whenObserved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
+          eType="#//SimplifiedDecisionMetrics/Measure" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Measure">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" upperBound="-1"
+          eType="#//SimplifiedDecisionMetrics/Measurement" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Measurement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurant" eType="#//SimplifiedDecisionMetrics/MofElement"
+          eOpposite="#//SimplifiedDecisionMetrics/MofElement/measurant"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Grade" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DimensionalMeasurement" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimplifiedDecisionMetrics">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observations" upperBound="-1"
+          eType="#//SimplifiedDecisionMetrics/Observation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MofElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measurant" upperBound="-1"
+          eType="#//SimplifiedDecisionMetrics/Measurement" eOpposite="#//SimplifiedDecisionMetrics/Measurement/measurant"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//subkdm/ModelElement"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

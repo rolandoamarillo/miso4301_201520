@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdm="http://subkdm/sdm">
+  <sdm:SimplifiedDecisionMetrics>
+    <observations whenObserved="2015-08-31T21:52:19.781-0500">
+      <measures name="N&#xfa;mero de m&#xe9;todos de: n12_batallaNaval">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/1" value="218.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de clases de: n12_batallaNaval">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/1" value="36.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de l&#xed;neas comentadas de: n12_batallaNaval">
+        <measurements xsi:type="sdm:DimensionalMeasurement" value="270.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de importaciones de: n12_batallaNaval">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/1" value="139.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de paquetes de: n12_batallaNaval">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/1" value="8.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de m&#xe9;todos de: externals">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/2" value="150.0"/>
+      </measures>
+      <measures name="N&#xfa;mero de clases de: externals">
+        <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/2" value="82.0"/>
+      </measures>
+    </observations>
+  </sdm:SimplifiedDecisionMetrics>
+  <sdm:MofElement measurant="/0/@observations.0/@measures.0/@measurements.0 /0/@observations.0/@measures.1/@measurements.0 /0/@observations.0/@measures.3/@measurements.0 /0/@observations.0/@measures.4/@measurements.0">
+    <element href="kdmResultadoSub.xmi#//@model.0"/>
+  </sdm:MofElement>
+  <sdm:MofElement measurant="/0/@observations.0/@measures.5/@measurements.0 /0/@observations.0/@measures.6/@measurements.0">
+    <element href="kdmResultadoSub.xmi#//@model.1"/>
+  </sdm:MofElement>
+</xmi:XMI>
