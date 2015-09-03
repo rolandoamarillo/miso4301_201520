@@ -1,0 +1,250 @@
+@namespace(uri="http://subkdm/main", prefix="main")
+package main;
+
+@namespace(uri="http://subkdm/subkdm", prefix="h")
+package subkdm {
+  class CodeModel extends ModelElement {
+    val AbstractCodeElement[*] codeElement;
+    attr String name;
+  }
+
+  abstract class AbstractCodeElement extends ModelElement {
+    val AbstractCodeRelationship[*] codeRelation;
+    val CommentUnit[*] comment;
+    attr String name = "";
+  }
+
+  class AbstractCodeRelationship {
+  }
+
+  class CodeItem extends AbstractCodeElement {
+  }
+
+  class Module extends CodeItem {
+    val AbstractCodeElement[*] codeElement;
+  }
+
+  class Package extends Module {
+  }
+
+  class DataType extends CodeItem {
+  }
+
+  class ClassUnit extends DataType {
+    val CodeItem[*] codeElement;
+    attr boolean isAbstract;
+  }
+
+  class InterfaceUnit extends DataType {
+    val CodeItem[*] codeElement;
+  }
+
+  class ComputationalObject extends CodeItem {
+  }
+
+  class ControlElement extends ComputationalObject {
+    val AbstractCodeElement[*] codeElement;
+    ref DataType type;
+  }
+
+  enum MethoKind {
+    method = 0;
+    constructos = 1;
+    destructor = 2;
+    operator = 3;
+    virtual = 4;
+    ~abstract = 5;
+    unknown = 6;
+  }
+
+  enum CallableKind {
+    external = 0;
+    regular = 1;
+    operator = 2;
+    stored = 3;
+    unknown = 4;
+  }
+
+  class CallableUnit extends ControlElement {
+    attr MethoKind kind;
+  }
+
+  class MethodUnit extends ControlElement {
+    attr CallableKind kind;
+  }
+
+  class DataElement extends ComputationalObject {
+    val DataType[*] codeElement;
+    ref DataType[1] type;
+    attr String ext;
+    attr int size;
+  }
+
+  class StorableUnit extends DataElement {
+    attr StorableKind kind;
+  }
+
+  enum StorableKind {
+    global = 0;
+    local = 1;
+    static = 2;
+    external = 3;
+    register = 4;
+    unknown = 5;
+  }
+
+  enum ExportKind {
+    public = 0;
+    private = 1;
+    protected = 2;
+    final = 3;
+    unknown = 4;
+  }
+
+  class CommentUnit {
+    attr String text;
+  }
+
+  class Imports extends AbstractCodeRelationship {
+    ref CodeItem[1] from;
+    ref CodeItem[1] to;
+  }
+
+  class Implements extends AbstractCodeRelationship {
+    ref CodeItem[1] from;
+    ref CodeItem[1] to;
+  }
+
+  class Extends extends AbstractCodeRelationship {
+    ref DataType[1] from;
+    ref DataType[1] to;
+  }
+
+  class ParameterUnit extends DataElement {
+    attr ParameterKind kind;
+    attr int pos;
+  }
+
+  class TemplateUnit extends DataType {
+    val CodeUnit[*] codeElement;
+  }
+
+  class CodeUnit {
+  }
+
+  class Signature extends DataType {
+    val ParameterUnit[*] parameterUnit;
+  }
+
+  class ImplementationOf extends AbstractCodeRelationship {
+    ref CodeItem to;
+    ref CodeItem from;
+  }
+
+  class HasValue extends AbstractCodeRelationship {
+    ref CodeItem from;
+    ref AbstractCodeElement to;
+  }
+
+  class ActionElement extends AbstractCodeElement {
+    attr String kind;
+    val AbstractCodeElement[*] codeElement;
+    val AbstractActionRelationship[*] actionRelation;
+  }
+
+  class BlockUnit extends ActionElement {
+  }
+
+  class ExceptionUnit extends BlockUnit {
+  }
+
+  class TryUnit extends ExceptionUnit {
+  }
+
+  class CatchUnit extends ExceptionUnit {
+  }
+
+  class FinallyUnit extends ExceptionUnit {
+  }
+
+  class AbstractActionRelationship {
+  }
+
+  class Calls extends AbstractActionRelationship {
+    ref ActionElement from;
+    ref ControlElement to;
+  }
+
+  class Reads extends AbstractActionRelationship {
+    ref ActionElement from;
+    ref DataElement to;
+  }
+
+  class Writes extends AbstractActionRelationship {
+    ref ActionElement from;
+    ref DataElement to;
+  }
+
+  class Creates extends AbstractActionRelationship {
+    ref ActionElement from;
+    ref DataType to;
+  }
+
+  enum ParameterKind {
+    byValue = 0;
+    byName = 1;
+    byReference = 2;
+    variadic = 3;
+    return = 4;
+    ~throws = 5;
+    exception = 6;
+    catchall = 7;
+    unknown = 8;
+  }
+
+  class Segment extends ModelElement {
+    val CodeModel[*] model;
+    attr String name;
+  }
+
+  class ModelElement {
+  }
+
+}
+
+@namespace(uri="http://subkdm/sdm", prefix="sdm")
+package SimplifiedDecisionMetrics {
+  class Observation {
+    attr EDate whenObserved;
+    val Measure[*] measures;
+  }
+
+  class Measure {
+    val Measurement[*] measurements;
+    attr String name;
+    attr String description;
+  }
+
+  abstract class Measurement {
+    ref MofElement#measurant measurant;
+  }
+
+  class Grade extends Measurement {
+    attr String value;
+  }
+
+  class DimensionalMeasurement extends Measurement {
+    attr double value;
+  }
+
+  class SimplifiedDecisionMetrics {
+    val Observation[*] observations;
+  }
+
+  class MofElement {
+    ref Measurement[*]#measurant measurant;
+    ref subkdm.ModelElement element;
+  }
+
+}
+

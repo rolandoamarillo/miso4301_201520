@@ -5,15 +5,18 @@ pre {
 post {
 	"Done".println();
 }
-	
+
 rule MicroModel2Observation 
 	transform microModel : sourcemodel!Segment
 	to sdm : targetmodel!SimplifiedDecisionMetrics {
+	var newSegment = new targetmodel!Segment();
+	newSegment.name = microModel.name;
+	newSegment.`model` = microModel.`model`;
 	sdm.observations = new List();
 	var observation = new targetmodel!Observation();
 	observation.whenObserved = new Native('java.util.Date');
 	observation.measures = new List();
-	for (mod in microModel.`model`) {
+	for (mod in newSegment.`model`) {
 	if(mod.isTypeOf(sourcemodel!CodeModel))
 	{
 	var contents = mod.codeElement.asSequence().closure(x | x.eContents());

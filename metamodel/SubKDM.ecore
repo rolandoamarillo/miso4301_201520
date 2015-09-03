@@ -138,7 +138,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="TryUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
     <eClassifiers xsi:type="ecore:EClass" name="CatchUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
     <eClassifiers xsi:type="ecore:EClass" name="FinallyUnit" eSuperTypes="#//subkdm/ExceptionUnit"/>
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractActionRelationship"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractActionRelationship" eSuperTypes="#//subkdm/ModelElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="Calls" eSuperTypes="#//subkdm/AbstractActionRelationship">
       <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//subkdm/ActionElement"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//subkdm/ControlElement"/>

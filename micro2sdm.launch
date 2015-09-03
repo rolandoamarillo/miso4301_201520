@@ -2,7 +2,7 @@
 <launchConfiguration type="org.epsilon.etl.eclipse.dt.launching.EtlLaunchConfigurationDelegate">
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <listAttribute key="models">
-<listEntry value="#&#13;&#10;#Mon Aug 31 17:40:51 COT 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=sourcemodel&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=sourcemodel&#13;&#10;cached=false&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://subkdm/main&#13;&#10;modelUri=platform\:/resource/KDM2Model/models/kdmResultadoSub.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/KDM2Model/models/kdmResultadoSub.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Thu Sep 03 10:36:23 COT 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=sourcemodel&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=sourcemodel&#13;&#10;cached=false&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://subkdm/main&#13;&#10;modelUri=platform\:/resource/KDM2Model/models/kdmResultadoSub.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/KDM2Model/models/kdmResultadoSub.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
 <listEntry value="#&#13;&#10;#Mon Aug 31 21:40:31 COT 2015&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=targetmodel&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=targetmodel&#13;&#10;cached=false&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://subkdm/main&#13;&#10;modelUri=platform\:/resource/KDM2Model/models/SDM.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/KDM2Model/models/SDM.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
 </listAttribute>
 <booleanAttribute key="profile_model_loading" value="false"/>

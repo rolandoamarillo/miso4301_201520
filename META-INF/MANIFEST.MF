@@ -1,6 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: KDM2Model
-Bundle-SymbolicName: KDM2Model; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: KDM2Model;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: main.SimplifiedDecisionMetrics,
+ main.SimplifiedDecisionMetrics.impl,
+ main.SimplifiedDecisionMetrics.util,
+ main.subkdm,
+ main.subkdm.impl,
+ main.subkdm.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SubKDM -->
+      <package
+            uri="http://subkdm/subkdm"
+            class="main.subkdm.SubkdmPackage"
+            genModel="metamodel/SubKDM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SubKDM -->
+      <package
+            uri="http://subkdm/sdm"
+            class="main.SimplifiedDecisionMetrics.SimplifiedDecisionMetricsPackage"
+            genModel="metamodel/SubKDM.genmodel"/>
+   </extension>
+
+</plugin>
