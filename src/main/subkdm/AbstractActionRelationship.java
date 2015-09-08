@@ -2,7 +2,6 @@
  */
 package main.subkdm;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +13,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AbstractActionRelationship extends EObject {
+public interface AbstractActionRelationship extends ModelElement {
 } // AbstractActionRelationship

@@ -5,7 +5,8 @@
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>SubKDM.ecore</foreignModel>
   <genPackages prefix="Main" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#/">
-    <nestedGenPackages prefix="Subkdm" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#//subkdm">
+    <nestedGenPackages prefix="Subkdm" basePackage="main" disposableProviderFactory="true"
+        ecorePackage="SubKDM.ecore#//subkdm">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/MethoKind">
         <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/method"/>
         <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/constructos"/>
@@ -178,7 +179,7 @@
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//subkdm/ModelElement"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="SimplifiedDecisionMetrics" disposableProviderFactory="true"
+    <nestedGenPackages prefix="SimplifiedDecisionMetrics" basePackage="main" disposableProviderFactory="true"
         ecorePackage="SubKDM.ecore#//SimplifiedDecisionMetrics">
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Observation">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Observation/whenObserved"/>

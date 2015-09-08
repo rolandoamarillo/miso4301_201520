@@ -1448,6 +1448,7 @@ public class SubkdmPackageImpl extends EPackageImpl implements SubkdmPackage {
 		tryUnitEClass.getESuperTypes().add(this.getExceptionUnit());
 		catchUnitEClass.getESuperTypes().add(this.getExceptionUnit());
 		finallyUnitEClass.getESuperTypes().add(this.getExceptionUnit());
+		abstractActionRelationshipEClass.getESuperTypes().add(this.getModelElement());
 		callsEClass.getESuperTypes().add(this.getAbstractActionRelationship());
 		readsEClass.getESuperTypes().add(this.getAbstractActionRelationship());
 		writesEClass.getESuperTypes().add(this.getAbstractActionRelationship());

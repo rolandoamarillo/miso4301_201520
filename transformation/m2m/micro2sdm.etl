@@ -1,15 +1,15 @@
 pre {
-  "Running Micro2SDM Transformation".println();
+  "Running SubKDM2SDM Transformation".println();
 }
 
 post {
 	"Done".println();
 }
 
-rule MicroModel2Observation 
+rule SubKDM2SimplifiedDecisionMetrics 
 	transform microModel : sourcemodel!Segment
 	to sdm : targetmodel!SimplifiedDecisionMetrics {
-	var newSegment = new targetmodel!Segment();
+	var newSegment = new sourcemodel!Segment();
 	newSegment.name = microModel.name;
 	newSegment.`model` = microModel.`model`;
 	sdm.observations = new List();
@@ -19,6 +19,7 @@ rule MicroModel2Observation
 	for (mod in newSegment.`model`) {
 	if(mod.isTypeOf(sourcemodel!CodeModel))
 	{
+	mod.isKindOf(targetmodel!ModelElement).println();
 	var contents = mod.codeElement.asSequence().closure(x | x.eContents());
 	observation.measures.add(mod.numberOfMethods(contents));
 	var classes = contents.select(x| x.isTypeOf(sourcemodel!ClassUnit));

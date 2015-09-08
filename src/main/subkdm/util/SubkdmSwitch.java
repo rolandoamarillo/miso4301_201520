@@ -382,6 +382,7 @@ public class SubkdmSwitch<T> extends Switch<T> {
 			case SubkdmPackage.ABSTRACT_ACTION_RELATIONSHIP: {
 				AbstractActionRelationship abstractActionRelationship = (AbstractActionRelationship)theEObject;
 				T result = caseAbstractActionRelationship(abstractActionRelationship);
+				if (result == null) result = caseModelElement(abstractActionRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -389,6 +390,7 @@ public class SubkdmSwitch<T> extends Switch<T> {
 				Calls calls = (Calls)theEObject;
 				T result = caseCalls(calls);
 				if (result == null) result = caseAbstractActionRelationship(calls);
+				if (result == null) result = caseModelElement(calls);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -396,6 +398,7 @@ public class SubkdmSwitch<T> extends Switch<T> {
 				Reads reads = (Reads)theEObject;
 				T result = caseReads(reads);
 				if (result == null) result = caseAbstractActionRelationship(reads);
+				if (result == null) result = caseModelElement(reads);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -403,6 +406,7 @@ public class SubkdmSwitch<T> extends Switch<T> {
 				Writes writes = (Writes)theEObject;
 				T result = caseWrites(writes);
 				if (result == null) result = caseAbstractActionRelationship(writes);
+				if (result == null) result = caseModelElement(writes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -410,6 +414,7 @@ public class SubkdmSwitch<T> extends Switch<T> {
 				Creates creates = (Creates)theEObject;
 				T result = caseCreates(creates);
 				if (result == null) result = caseAbstractActionRelationship(creates);
+				if (result == null) result = caseModelElement(creates);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

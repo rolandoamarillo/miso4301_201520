@@ -4,10 +4,7 @@ package main.subkdm.impl;
 
 import main.subkdm.AbstractActionRelationship;
 import main.subkdm.SubkdmPackage;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class AbstractActionRelationshipImpl extends MinimalEObjectImpl.Container implements AbstractActionRelationship {
+public class AbstractActionRelationshipImpl extends ModelElementImpl implements AbstractActionRelationship {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

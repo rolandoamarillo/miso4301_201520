@@ -167,7 +167,7 @@ package subkdm {
   class FinallyUnit extends ExceptionUnit {
   }
 
-  class AbstractActionRelationship {
+  class AbstractActionRelationship extends ModelElement {
   }
 
   class Calls extends AbstractActionRelationship {

@@ -21,5 +21,8 @@
             class="main.SimplifiedDecisionMetrics.SimplifiedDecisionMetricsPackage"
             genModel="metamodel/SubKDM.genmodel"/>
    </extension>
+   
+
+   
 
 </plugin>

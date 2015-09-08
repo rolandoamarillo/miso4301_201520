@@ -2113,7 +2113,7 @@ public interface SubkdmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_ACTION_RELATIONSHIP_FEATURE_COUNT = 0;
+	int ABSTRACT_ACTION_RELATIONSHIP_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Abstract Action Relationship</em>' class.
@@ -2122,7 +2122,7 @@ public interface SubkdmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_ACTION_RELATIONSHIP_OPERATION_COUNT = 0;
+	int ABSTRACT_ACTION_RELATIONSHIP_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link main.subkdm.impl.CallsImpl <em>Calls</em>}' class.
