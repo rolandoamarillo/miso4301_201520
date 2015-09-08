@@ -2,184 +2,127 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/KDM2Model/src" modelPluginID="KDM2Model" modelName="SubKDM"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>SubKDM.ecore</foreignModel>
-  <genPackages prefix="Main" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#/">
-    <nestedGenPackages prefix="Subkdm" basePackage="main" disposableProviderFactory="true"
-        ecorePackage="SubKDM.ecore#//subkdm">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/MethoKind">
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/method"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/constructos"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/destructor"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/operator"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/virtual"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/abstract"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/MethoKind/unknown"/>
+  <genPackages prefix="Subkdm" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#/">
+    <nestedGenPackages prefix="KdmObjects" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#//kdmObjects">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/MethoKind">
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/method"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/constructos"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/destructor"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/operator"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/virtual"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/abstract"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/unknown"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/CallableKind">
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/CallableKind/external"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/CallableKind/regular"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/CallableKind/operator"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/CallableKind/stored"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/CallableKind/unknown"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/CallableKind">
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/CallableKind/external"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/CallableKind/regular"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/CallableKind/operator"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/CallableKind/stored"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/CallableKind/unknown"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/StorableKind">
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/global"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/local"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/static"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/external"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/register"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/StorableKind/unknown"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/StorableKind">
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/global"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/local"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/static"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/external"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/register"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/StorableKind/unknown"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/ExportKind">
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ExportKind/public"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ExportKind/private"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ExportKind/protected"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ExportKind/final"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ExportKind/unknown"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/ExportKind">
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ExportKind/public"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ExportKind/private"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ExportKind/protected"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ExportKind/final"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ExportKind/unknown"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//subkdm/ParameterKind">
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/byValue"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/byName"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/byReference"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/variadic"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/return"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/throws"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/exception"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/catchall"/>
-        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//subkdm/ParameterKind/unknown"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/ParameterKind">
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/byValue"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/byName"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/byReference"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/variadic"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/return"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/throws"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/exception"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/catchall"/>
+        <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/ParameterKind/unknown"/>
       </genEnums>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CodeModel">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/CodeModel/codeElement"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/CodeModel/name"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CodeModel">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/CodeModel/codeElement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/CodeModel/name"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="SubKDM.ecore#//subkdm/AbstractCodeElement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/AbstractCodeElement/codeRelation"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/AbstractCodeElement/comment"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/AbstractCodeElement/name"/>
+      <genClasses image="false" ecoreClass="SubKDM.ecore#//kdmObjects/AbstractCodeElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/AbstractCodeElement/codeRelation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/AbstractCodeElement/comment"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/AbstractCodeElement/name"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/AbstractCodeRelationship"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CodeItem"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Module">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Module/codeElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CodeItem"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Module">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Module/codeElement"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Package"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/DataType"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ClassUnit">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ClassUnit/codeElement"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/ClassUnit/isAbstract"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Package"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/DataType"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ClassUnit">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ClassUnit/codeElement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/ClassUnit/isAbstract"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/InterfaceUnit">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/InterfaceUnit/codeElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/InterfaceUnit">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/InterfaceUnit/codeElement"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ComputationalObject"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ControlElement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ControlElement/codeElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ComputationalObject"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ControlElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ControlElement/codeElement"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ControlElement/type"/>
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ControlElement/type"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CallableUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/CallableUnit/kind"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CallableUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/CallableUnit/kind"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/MethodUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/MethodUnit/kind"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/MethodUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/MethodUnit/kind"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/DataElement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/DataElement/codeElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/DataElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/DataElement/codeElement"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/DataElement/type"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/DataElement/ext"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/DataElement/size"/>
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/DataElement/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/DataElement/ext"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/DataElement/size"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/StorableUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/StorableUnit/kind"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/StorableUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/StorableUnit/kind"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CommentUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/CommentUnit/text"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CommentUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/CommentUnit/text"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Imports">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Imports/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Imports/to"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ParameterUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/ParameterUnit/kind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/ParameterUnit/pos"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Implements">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Implements/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Implements/to"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/TemplateUnit">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/TemplateUnit/codeElement"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Extends">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Extends/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Extends/to"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CodeUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Signature">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Signature/parameterUnit"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ParameterUnit">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/ParameterUnit/kind"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/ParameterUnit/pos"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ActionElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/ActionElement/kind"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ActionElement/codeElement"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ActionElement/actionRelation"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/TemplateUnit">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/TemplateUnit/codeElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/BlockUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ExceptionUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/TryUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CatchUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/FinallyUnit"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Segment">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Segment/model"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/Segment/name"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CodeUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Signature">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Signature/parameterUnit"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ImplementationOf">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ImplementationOf/to"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ImplementationOf/from"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/HasValue">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/HasValue/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/HasValue/to"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ActionElement">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/ActionElement/kind"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ActionElement/codeElement"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/ActionElement/actionRelation"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/BlockUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ExceptionUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/TryUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/CatchUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/FinallyUnit"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/AbstractActionRelationship"/>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Calls">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Calls/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Calls/to"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Reads">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Reads/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Reads/to"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Writes">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Writes/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Writes/to"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Creates">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Creates/from"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Creates/to"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/Segment">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//subkdm/Segment/model"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//subkdm/Segment/name"/>
-      </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//subkdm/ModelElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ModelElement"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="SimplifiedDecisionMetrics" basePackage="main" disposableProviderFactory="true"
+    <nestedGenPackages prefix="SimplifiedDecisionMetrics" disposableProviderFactory="true"
         ecorePackage="SubKDM.ecore#//SimplifiedDecisionMetrics">
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Observation">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Observation/whenObserved"/>
@@ -209,6 +152,29 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/MofElement/element"/>
       </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="KdmRelations" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#//kdmRelations">
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/AbstractCodeRelationship">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractCodeRelationship/to"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractCodeRelationship/from"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Calls"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Reads"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Writes"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Creates"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/ImplementationOf"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/HasValue"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Imports"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Implements"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/AbstractActionRelationship">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractActionRelationship/to"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractActionRelationship/from"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Extends"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
