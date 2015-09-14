@@ -1,5 +1,5 @@
 pre {
-  "Running kdm2kdm Transformation".println();
+  "kdm2kdm Transformation".println();
 }
 
 post {
@@ -10,6 +10,7 @@ post {
 rule ModelElement2ModelElement
 transform t: code!ModelElement
 to o: kdmMicro!ModelElement{
+
 }
 
 rule Segment2Segment	
@@ -18,14 +19,23 @@ to o : kdmMicro!Segment {
 	t.isKindOf(code!ModelElement).println();
 	o.name = t.name;
 	o.`model` = t.`model`.equivalent();
+	o.annotation = t.annotation.equivalent();
+}
+
+rule Annotation2Annotation
+transform t: code!Annotation
+to o: kdmMicro!Annotation{
+	o.text = t.text;
 }
 
 // CodeModel
+
 rule KDM2KDM
 transform t : code!CodeModel
 to o : kdmMicro!CodeModel {
 	o.name = t.name;
 	o.codeElement = t.codeElement.equivalent();
+	o.annotation = t.annotation.equivalent();
 }
 
 //Elementos principales de código
@@ -35,6 +45,7 @@ to o: kdmMicro!AbstractCodeElement{
 	o.name = t.name;
 	o.codeRelation = t.codeRelation.equivalent();
 	o.comment = t.comment.equivalent();
+	   o.annotation = t.annotation.equivalent();
 }
 
 rule CommentUnit2CommentUnit
@@ -178,6 +189,7 @@ transform t: code!AbstractCodeRelationship
 to o: kdmMicro!AbstractCodeRelationship{
 	o.`to`= t.`to`.equivalent();
 	o.`from` = t.`from`.equivalent();
+	o.annotation  = t.annotation.equivalent();
 }
 
 rule Imports2Imports
@@ -224,6 +236,7 @@ to o : kdmMicro!HasType
 extends AbstractCodeRelationship2AbstractCodeRelationship{
 }
 
+/*
 rule ParameterTo2ParameterTo
 transform t : code!ParameterTo
 to o : kdmMicro!ParameterTo 
@@ -235,6 +248,7 @@ transform t : code!InstanceOf
 to o : kdmMicro!InstanceOf 
 extends AbstractCodeRelationship2AbstractCodeRelationship{
 }
+*/
 
 //------------------------------------
 //ACTION PACKAGE
@@ -288,6 +302,7 @@ transform t: code!AbstractActionRelationship
 to o: kdmMicro!AbstracActionRelationship{
 	o.`to`= t.`to`.equivalent();
 	o.`from` = t.`from`.equivalent();
+	o.annotation  = t.annotation.equivalent();
 }
 
 rule Call2Call
