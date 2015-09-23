@@ -3,6 +3,7 @@ pre {
 }
 
 post {
+	generateClassLevelRelations();
 	"Done".println();
 }
 
@@ -16,7 +17,6 @@ to o: kdmMicro!ModelElement{
 rule Segment2Segment	
 transform t : code!Segment
 to o : kdmMicro!Segment {
-	t.isKindOf(code!ModelElement).println();
 	o.name = t.name;
 	o.`model` = t.`model`.equivalent();
 	o.annotation = t.annotation.equivalent();
@@ -39,7 +39,7 @@ to o : kdmMicro!CodeModel {
 }
 
 //Elementos principales de código
-rule AbstracCodeElement2AbstractCodeElement
+rule AbstractCodeElement2AbstractCodeElement
 transform t: code!AbstractCodeElement
 to o: kdmMicro!AbstractCodeElement{
 	o.name = t.name;
@@ -58,7 +58,7 @@ to o : kdmMicro!CommentUnit {
 rule CodeItem2CodeItem
 transform t: code!CodeItem
 to o: kdmMicro!CodeItem
-extends AbstracCodeElement2AbstractCodeElement{
+extends AbstractCodeElement2AbstractCodeElement{
 }
 
 //-----------------------
@@ -112,7 +112,11 @@ rule StorableUnit2StorableUnit
 transform t : code!StorableUnit
 to o : kdmMicro!StorableUnit 
 extends DataElement2DataElement{
-	o.kind = o.kind;
+	o.kind = o.kind;/*
+	var crel = new kdmMicro!ClassLevelRelation;
+	crel.`from`= o.getParentClassUnit();
+	crel.`to`= o.type.getParentClassUnit();
+	crel.type = "SotorableUnit";*/
 }
 
 rule ControlElement2ControlElement
@@ -256,7 +260,7 @@ extends AbstractCodeRelationship2AbstractCodeRelationship{
 rule ActionElement2ActionElement
 transform t : code!ActionElement
 to o : kdmMicro!ActionElement 
-extends AbstracCodeElement2AbstractCodeElement{
+extends AbstractCodeElement2AbstractCodeElement{
 	o.kind = t.kind;
 	o.codeElement = t.codeElement.equivalent();
 	o.actionRelation = t.actionRelation.equivalent();
@@ -328,4 +332,49 @@ rule Creates2Creates
 transform t : code!Creates
 to o : kdmMicro!Creates
 extends AbstracActionRelationship2AbstracActionRelationship{
+}
+
+//-------HELPERS--------
+
+operation generateClassLevelRelations(){
+	var mod = kdmMicro!CodeModel.allInstances().first();
+	for ( e in kdmMicro!StorableUnit.allInstances() ){
+		if (e.type.isDefined()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from`= e.getParentClassUnit();
+			crel.`to`= e.type.getParentClassUnit();
+			crel.type = "SotorableUnit";			
+			mod.codeElement.add(crel);
+		}
+		
+	}
+	
+	/*for (e in mod.eAllContents()->select(a |a.isTypeOf(kdmMicro!ActionElement and a.name = 'method invocation' )){
+		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Calls)).first();
+		if (call.`from`.getParentClassUnit() <> call.`to`.getParentClassUnit()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from` = call.`from`.getParentClassUnit();
+			crel.`to` = call.`to`.getParentClassUnit();
+			crel.type = "MethodInvocation";
+			mod.codeElement.add(crel);
+		}	
+	}*/
+}
+
+operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
+	var class = self;
+	while (not (class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
+		class.println();
+		class = class.eContainer();
+	}
+	return class;
+}
+
+operation kdmMicro!ModelElement getAllContentsByType(type): OrderedSet{
+	var set := OrderedSet;
+	set.addAll(self.eContents);
+	for (e in  self.eContents()){
+		set.addAll(e.getAllContentsByType(type));
+	}
+	return set;
 }
