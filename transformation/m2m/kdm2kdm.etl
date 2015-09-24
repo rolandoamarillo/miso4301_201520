@@ -341,6 +341,7 @@ operation generateClassLevelRelations(){
 	
 	var sons = mod.getAllContentsByType();
 	
+	//A tiene un atributo de B
 	for ( e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
 		if (e.type.isDefined()){
 			var crel = new kdmMicro!ClassLevelRelation;
@@ -351,6 +352,7 @@ operation generateClassLevelRelations(){
 		}	
 	}
 	
+	//A llama un servicio de B "calls"
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'method invocation' )){
 		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Calls)).first();
 		if (call.`from`.getParentClassUnit() <> call.`to`.getParentClassUnit()){
@@ -360,6 +362,67 @@ operation generateClassLevelRelations(){
 			crel.type = "MethodInvocation";
 			mod.codeElement.add(crel);
 		}	
+	}
+	
+	//A tiene un método que referencia a B como parametro o como retorno
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))){
+		if (e.type.isDefined()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from`= e.getParentClassUnit();
+			crel.`to`= e.type.getParentClassUnit();
+			crel.type = "ParameterUnit";			
+			mod.codeElement.add(crel);
+		}
+	}
+
+	//A implementa B
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!Implements))){
+		if (e.`from`.isDefined()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from` = e.`from`.getParentClassUnit();
+			crel.`to` = e.`to`.getParentClassUnit();
+			crel.type = "Implements";			
+			mod.codeElement.add(crel);
+		}
+	}
+	
+	//A extiende de B
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!Extends))){
+		if (e.type.isDefined()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from` = e.`from`.getParentClassUnit();
+			crel.`to` = e.`to`.getParentClassUnit();
+			crel.type = "Extends";			
+			mod.codeElement.add(crel);
+		}
+	}
+	
+	//Dentro de un metodo de una clase A se usa, modifica o instancia una variabale de tipo B - Writes/Reads/Creates
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'ASSIGN' )){
+		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Writes) or c.isTypeOf(kdmMicro!Reads) or c.isTypeOf(kdmMicro!Creates)).first();	
+		if (call.isDefined()){
+			if (call.`to`.isDefined()){
+			   if (e.getParentClassUnit() <> call.`to`.getParentClassUnit()){
+					var crel = new kdmMicro!ClassLevelRelation;
+					crel.`from` = e.getParentClassUnit();
+					crel.`to` = call.`to`.getParentClassUnit();
+					crel.type = "assignment";
+					mod.codeElement.add(crel);
+			   }
+			}
+		}	
+	}
+	
+	//Anotaciones - HasValue
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!HasValue))){
+	    var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Annotation)).first(); 	
+		if (call.isDefined() and  e.`from`.getParentClassUnit() <> e.`to`.getParentClassUnit()){
+			var crel = new kdmMicro!ClassLevelRelation;
+			crel.`from` = e.`from`.getParentClassUnit();
+			crel.`to` = e.`to`.getParentClassUnit();
+			crel.type = "Annotation";			
+			mod.codeElement.add(crel);
+		}
 	}
 }
 
