@@ -86,7 +86,7 @@
       <eLiterals name="final" value="3"/>
       <eLiterals name="unknown" value="4"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CommentUnit">
+    <eClassifiers xsi:type="ecore:EClass" name="CommentUnit" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ParameterUnit" eSuperTypes="#//kdmObjects/DataElement">
@@ -95,9 +95,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TemplateUnit" eSuperTypes="#//kdmObjects/DataType">
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-          eType="#//kdmObjects/CodeUnit" containment="true"/>
+          eType="#//kdmObjects/CodeItem" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CodeUnit"/>
     <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//kdmObjects/DataType">
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterUnit" upperBound="-1"
           eType="#//kdmObjects/ParameterUnit" containment="true"/>

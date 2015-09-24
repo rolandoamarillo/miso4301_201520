@@ -338,18 +338,20 @@ extends AbstracActionRelationship2AbstracActionRelationship{
 
 operation generateClassLevelRelations(){
 	var mod = kdmMicro!CodeModel.allInstances().first();
-	for ( e in kdmMicro!StorableUnit.allInstances() ){
+	
+	var sons = mod.getAllContentsByType();
+	
+	for ( e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
 		if (e.type.isDefined()){
 			var crel = new kdmMicro!ClassLevelRelation;
 			crel.`from`= e.getParentClassUnit();
 			crel.`to`= e.type.getParentClassUnit();
 			crel.type = "SotorableUnit";			
 			mod.codeElement.add(crel);
-		}
-		
+		}	
 	}
 	
-	/*for (e in mod.eAllContents()->select(a |a.isTypeOf(kdmMicro!ActionElement and a.name = 'method invocation' )){
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'method invocation' )){
 		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Calls)).first();
 		if (call.`from`.getParentClassUnit() <> call.`to`.getParentClassUnit()){
 			var crel = new kdmMicro!ClassLevelRelation;
@@ -358,7 +360,7 @@ operation generateClassLevelRelations(){
 			crel.type = "MethodInvocation";
 			mod.codeElement.add(crel);
 		}	
-	}*/
+	}
 }
 
 operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
@@ -370,11 +372,11 @@ operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	return class;
 }
 
-operation kdmMicro!ModelElement getAllContentsByType(type): OrderedSet{
-	var set := OrderedSet;
+operation kdmMicro!ModelElement getAllContentsByType(): Sequence{
+	var set = new Sequence;
 	set.addAll(self.eContents);
 	for (e in  self.eContents()){
-		set.addAll(e.getAllContentsByType(type));
+		set.addAll(e.getAllContentsByType());
 	}
 	return set;
 }
