@@ -38,7 +38,7 @@ to o : kdmMicro!CodeModel {
 	o.annotation = t.annotation.equivalent();
 }
 
-//Elementos principales de código
+//Elementos principales de cï¿½digo
 rule AbstractCodeElement2AbstractCodeElement
 transform t: code!AbstractCodeElement
 to o: kdmMicro!AbstractCodeElement{
@@ -187,7 +187,7 @@ extends DataType2DataType{
 //-----------------------------------
 // Relaciones: Elementos de tipo 
 
-//Relaciones entre elementos de código
+//Relaciones entre elementos de cï¿½digo
 rule AbstractCodeRelationship2AbstractCodeRelationship
 transform t: code!AbstractCodeRelationship
 to o: kdmMicro!AbstractCodeRelationship{
@@ -336,9 +336,29 @@ extends AbstracActionRelationship2AbstracActionRelationship{
 
 //-------HELPERS--------
 
+operation OrderedSet AddRelation(crel : kdmMicro!ClassLevelRelation)
+{	
+	var rel = self->select(e| e.isTypeOf(kdmMicro!ClassLevelRelation)  and e.`from` = crel.`from`  and e.`to` = crel.`to`).first();
+	
+	if(rel.isDefined()){
+		var typeRel = new kdmMicro!TypeRelation;
+		typeRel.name = crel.type;
+		rel.typeRelations.add(typeRel);
+		
+		self.add(crel);
+		self.remove(crel);
+	}
+	else{
+		var typeRel = new kdmMicro!TypeRelation;
+		typeRel.name = crel.type;
+		crel.typeRelations.add(typeRel);
+		crel.type = "";
+		self.add(crel);
+	}
+}
+
 operation generateClassLevelRelations(){
 	var mod = kdmMicro!CodeModel.allInstances().first();
-	
 	var sons = mod.getAllContentsByType();
 	
 	//A tiene un atributo de B
@@ -347,8 +367,8 @@ operation generateClassLevelRelations(){
 			var crel = new kdmMicro!ClassLevelRelation;
 			crel.`from`= e.getParentClassUnit();
 			crel.`to`= e.type.getParentClassUnit();
-			crel.type = "SotorableUnit";			
-			mod.codeElement.add(crel);
+			crel.type = "StorableUnit";
+			mod.codeElement.AddRelation(crel);
 		}	
 	}
 	
@@ -360,18 +380,18 @@ operation generateClassLevelRelations(){
 			crel.`from` = call.`from`.getParentClassUnit();
 			crel.`to` = call.`to`.getParentClassUnit();
 			crel.type = "MethodInvocation";
-			mod.codeElement.add(crel);
+			mod.codeElement.AddRelation(crel);
 		}	
 	}
 	
-	//A tiene un método que referencia a B como parametro o como retorno
+	//A tiene un mï¿½todo que referencia a B como parametro o como retorno
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))){
 		if (e.type.isDefined()){
 			var crel = new kdmMicro!ClassLevelRelation;
 			crel.`from`= e.getParentClassUnit();
 			crel.`to`= e.type.getParentClassUnit();
 			crel.type = "ParameterUnit";			
-			mod.codeElement.add(crel);
+			mod.codeElement.AddRelation(crel);
 		}
 	}
 
@@ -382,7 +402,7 @@ operation generateClassLevelRelations(){
 			crel.`from` = e.`from`.getParentClassUnit();
 			crel.`to` = e.`to`.getParentClassUnit();
 			crel.type = "Implements";			
-			mod.codeElement.add(crel);
+			mod.codeElement.AddRelation(crel);
 		}
 	}
 	
@@ -393,7 +413,7 @@ operation generateClassLevelRelations(){
 			crel.`from` = e.`from`.getParentClassUnit();
 			crel.`to` = e.`to`.getParentClassUnit();
 			crel.type = "Extends";			
-			mod.codeElement.add(crel);
+			mod.codeElement.AddRelation(crel);
 		}
 	}
 	
@@ -407,7 +427,7 @@ operation generateClassLevelRelations(){
 					crel.`from` = e.getParentClassUnit();
 					crel.`to` = call.`to`.getParentClassUnit();
 					crel.type = "assignment";
-					mod.codeElement.add(crel);
+					mod.codeElement.AddRelation(crel);
 			   }
 			}
 		}	
@@ -421,7 +441,7 @@ operation generateClassLevelRelations(){
 			crel.`from` = e.`from`.getParentClassUnit();
 			crel.`to` = e.`to`.getParentClassUnit();
 			crel.type = "Annotation";			
-			mod.codeElement.add(crel);
+			mod.codeElement.AddRelation(crel);
 		}
 	}
 }
@@ -429,7 +449,7 @@ operation generateClassLevelRelations(){
 operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	var class = self;
 	while (not (class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
-		class.println();
+		//class.println();
 		class = class.eContainer();
 	}
 	return class;
