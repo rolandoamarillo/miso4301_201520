@@ -336,7 +336,7 @@ extends AbstracActionRelationship2AbstracActionRelationship{
 
 //-------HELPERS--------
 
-operation OrderedSet AddRelation(crel : kdmMicro!ClassLevelRelation)
+/*operation OrderedSet AddRelation(crel : kdmMicro!ClassLevelRelation)
 {	
 	var rel = self->select(e| e.isTypeOf(kdmMicro!ClassLevelRelation)  and e.`from` = crel.`from`  and e.`to` = crel.`to`).first();
 	
@@ -355,11 +355,108 @@ operation OrderedSet AddRelation(crel : kdmMicro!ClassLevelRelation)
 		crel.type = "";
 		self.add(crel);
 	}
-}
+}*/
 
 operation generateClassLevelRelations(){
 	var mod = kdmMicro!CodeModel.allInstances().first();
-	var sons = mod.getAllContentsByType();
+	var sons = mod.getAllContents();
+	
+	//A tiene un atributo de B
+	for (e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
+		if (e.type.isDefined()){
+			var ori = e.getParentClassUnit();
+			var dest = e.type.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new  kdmMicro!TypeRelation;
+			types.name = "Containment";
+			crel.typeRelations.add(types);
+		}	
+	}
+	
+	//A llama un servicio de B "calls"
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'method invocation' )){
+		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Calls)).first();
+		if (call.`from`.getParentClassUnit() <> call.`to`.getParentClassUnit()){
+
+			var ori = call.`from`.getParentClassUnit();
+			var dest = call.`to`.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new  kdmMicro!TypeRelation;
+			types.name = "Uses";
+			crel.typeRelations.add(types);
+		}	
+	}
+	
+	//A tiene un m�todo que referencia a B como parametro o como retorno
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))){
+		if (e.type.isDefined()){
+			var ori = e.getParentClassUnit();
+			var dest= e.type.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new kdmMicro!TypeRelation;
+			types.name = "Uses";
+			crel.typeRelations.add(types);
+		}
+	}
+
+	//A implementa B
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!Implements))){
+		if (e.`from`.isDefined()){
+			var ori = e.`from`.getParentClassUnit();
+			var dest = e.`to`.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new kdmMicro!TypeRelation;
+			types.name = "Implements";
+			crel.typeRelations.add(types);
+		}
+	}
+	
+	//A extiende de B
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!Extends))){
+		if (e.type.isDefined()){
+			var ori = e.`from`.getParentClassUnit();
+			var dest = e.`to`.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new kdmMicro!TypeRelation;
+			types.name = "Extends";
+			crel.typeRelations.add(types);
+		}
+	}
+	
+	//Dentro de un metodo de una clase A se usa, modifica o instancia una variabale de tipo B - Writes/Reads/Creates
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!ActionElement) and a.name = 'ASSIGN' )){
+		var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Writes) or c.isTypeOf(kdmMicro!Reads) or c.isTypeOf(kdmMicro!Creates)).first();	
+		if (call.isDefined()){
+			if (call.`to`.isDefined()){
+			   if (e.getParentClassUnit() <> call.`to`.getParentClassUnit()){
+					var ori = e.getParentClassUnit();
+					var dest = call.`to`.getParentClassUnit();
+					var crel := mod.darRelation(ori,dest);
+					var types = new kdmMicro!TypeRelation;
+					types.name = "Containment";
+					crel.typeRelations.add(types);
+			   }
+			}
+		}	
+	}
+	
+	//Anotaciones - HasValue
+	for (e in sons->select(a |a.isTypeOf(kdmMicro!HasValue))){
+	    var call = e.eContents()->select(c |c.isTypeOf(kdmMicro!Annotation)).first(); 	
+		if (call.isDefined() and  e.`from`.getParentClassUnit() <> e.`to`.getParentClassUnit()){
+			var ori = e.`from`.getParentClassUnit();
+			var dest = e.`to`.getParentClassUnit();
+			var crel := mod.darRelation(ori,dest);
+			var types = new kdmMicro!TypeRelation;
+			types.name = "Annotation";
+			crel.typeRelations.add(types);
+		}
+	}
+}
+
+/*operation generateClassLevelRelations(){
+	var mod = kdmMicro!CodeModel.allInstances().first();
+	var sons = mod.getAllContents();
 	
 	//A tiene un atributo de B
 	for ( e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
@@ -444,7 +541,7 @@ operation generateClassLevelRelations(){
 			mod.codeElement.AddRelation(crel);
 		}
 	}
-}
+}*/
 
 operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	var class = self;
@@ -455,11 +552,26 @@ operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	return class;
 }
 
-operation kdmMicro!ModelElement getAllContentsByType(): Sequence{
+operation kdmMicro!ModelElement getAllContents(): Sequence{
 	var set = new Sequence;
-	set.addAll(self.eContents);
+	set.addAll(self.eContents());
 	for (e in  self.eContents()){
-		set.addAll(e.getAllContentsByType());
+		set.addAll(e.getAllContents());
 	}
 	return set;
+}
+
+operation kdmMicro!CodeModel darRelation(a: kdmMicro!CodeItem, b: kdmMicro!CodeItem): kdmMicro!ClassLevelRelation{	
+	var relations = kdmMicro!ClassLevelRelation.allInstances();
+	var rel = relations->select(e | (e.`from` = a  and e.`to` = b) or (e.`from` = b  and e.`to` = a)).first();
+	if(rel.isDefined()){
+		return rel;
+	}
+	else{
+		var rel = new kdmMicro!ClassLevelRelation;
+		rel.`from` = a;
+		rel.`to` = b;
+		self.codeElement.add(rel);
+		return rel;
+	}
 }
