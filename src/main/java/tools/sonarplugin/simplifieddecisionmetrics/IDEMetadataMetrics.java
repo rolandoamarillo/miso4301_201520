@@ -9,18 +9,18 @@ import org.sonar.api.measures.Metrics;
 
 public class IDEMetadataMetrics implements Metrics {
 
-	public static final Metric IDE_IS_JAVA = new Metric.Builder("ide_is_java", // metric
-																				// identifier
-			"Java project", // metric name
-			Metric.ValueType.BOOL)
+	public static final Metric NUMBER_OF_PACKAGES = new Metric.Builder(
+			"number_of_packages", // metric
+			// identifier
+			"Number of packages", // metric name
+			Metric.ValueType.INT)
 			// metric data type
-			.setDescription(
-					"Whether the project is configured as Java in the IDE")
+			.setDescription("The name of packages used on the project")
 			.setQualitative(false).setDomain(CoreMetrics.DOMAIN_GENERAL)
 			.create();
 
 	public List<Metric> getMetrics() {
-		return Arrays.asList(IDE_IS_JAVA);
+		return Arrays.asList(NUMBER_OF_PACKAGES);
 	}
 
 }

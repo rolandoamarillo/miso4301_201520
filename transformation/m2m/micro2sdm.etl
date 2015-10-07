@@ -8,18 +8,15 @@ post {
 
 rule SubKDM2SimplifiedDecisionMetrics 
 	transform microModel : sourcemodel!Segment
-	to sdm : targetmodel!SimplifiedDecisionMetrics {
-	var newSegment = new sourcemodel!Segment();
-	newSegment.name = microModel.name;
-	newSegment.`model` = microModel.`model`;
+	to sdm : sourcemodel!SimplifiedDecisionMetrics {
 	sdm.observations = new List();
-	var observation = new targetmodel!Observation();
+	var observation = new sourcemodel!Observation();
 	observation.whenObserved = new Native('java.util.Date');
 	observation.measures = new List();
-	for (mod in newSegment.`model`) {
+	for (mod in microModel.`model`) {
 	if(mod.isTypeOf(sourcemodel!CodeModel))
 	{
-	mod.isKindOf(targetmodel!ModelElement).println();
+	mod.isKindOf(sourcemodel!ModelElement).println();
 	var contents = mod.codeElement.asSequence().closure(x | x.eContents());
 	observation.measures.add(mod.numberOfMethods(contents));
 	var classes = contents.select(x| x.isTypeOf(sourcemodel!ClassUnit));
@@ -40,17 +37,17 @@ rule SubKDM2SimplifiedDecisionMetrics
 	sdm.observations.add(observation);
 	}
 	
-	--var elemento = new targetmodel!MofElement();
-	--microModel.isKindOf(targetmodel!ModelElement).println();
+	--var elemento = new sourcemodel!MofElement();
+	--microModel.isKindOf(sourcemodel!ModelElement).println();
 	--elemento.element = microModel;
 }
 
-operation sourcemodel!CodeModel importsNumber(sequence : Sequence) : targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel importsNumber(sequence : Sequence) : sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     var mof = getMofElementFromModelElement(self);
     m.name = "Número de importaciones de: " + self.name;
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var size =  sequence.select(x| x.isTypeOf(sourcemodel!Imports)).size().asDouble();
    	number.value = size;
    	number.measurant = mof;
@@ -58,13 +55,13 @@ operation sourcemodel!CodeModel importsNumber(sequence : Sequence) : targetmodel
 	return m;
 }
 
-operation sourcemodel!CodeModel numberOfPackages(sequence : Sequence): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel numberOfPackages(sequence : Sequence): sourcemodel!Measure {
+    var m = new sourcemodel!NumberOfPackagesMeasure();
     var mof = getMofElementFromModelElement(self);
     m.name = "Número de paquetes de: " + self.name;
     m.measurements = new List();
     var mof = getMofElementFromModelElement(self);
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var numba = sequence.select(x| x.isTypeOf(sourcemodel!Package));
    	var size = numba.size().asDouble();
    	number.value = size;
@@ -73,12 +70,12 @@ operation sourcemodel!CodeModel numberOfPackages(sequence : Sequence): targetmod
 	return m;
 }
 
-operation sourcemodel!CodeModel numberOfClasses(sequence: Sequence): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel numberOfClasses(sequence: Sequence): sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     var mof = getMofElementFromModelElement(self);
     m.name = "Número de clases de: " + self.name;
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var size = sequence.size().asDouble();
    	number.value = size;
    	number.measurant = mof;
@@ -86,12 +83,12 @@ operation sourcemodel!CodeModel numberOfClasses(sequence: Sequence): targetmodel
 	return m;
 }
 
-operation sourcemodel!InventoryModel numberOfFiles(): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!InventoryModel numberOfFiles(): sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     var mof = getMofElementFromModelElement(self);
     m.name = "Número de archivos ";
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var size = self.inventoryElement.size().asDouble();
    	number.value = size;
    	number.measurant = mof;
@@ -99,12 +96,12 @@ operation sourcemodel!InventoryModel numberOfFiles(): targetmodel!Measure {
 	return m;
 }
 
-operation sourcemodel!CodeModel numberOfMethods(sequence: Sequence): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel numberOfMethods(sequence: Sequence): sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     var mof = getMofElementFromModelElement(self);
     m.name = "Número de métodos de: " + self.name;
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var methods = sequence.select(x| x.isTypeOf(sourcemodel!MethodUnit));
    	var size = methods.size().asDouble();
    	number.value = size;
@@ -113,11 +110,11 @@ operation sourcemodel!CodeModel numberOfMethods(sequence: Sequence): targetmodel
 	return m;
 }
 
-operation sourcemodel!CodeModel numberOfCommentLines(sequence: Sequence): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel numberOfCommentLines(sequence: Sequence): sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     m.name = "Número de líneas comentadas de: " + self.name;
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var splChrs = 
    	"^.*[a-zA-Z0-9].*$";
    	--"[-\\[/@#$%^&_+=()~*.\\W\\s]+" ;
@@ -127,11 +124,11 @@ operation sourcemodel!CodeModel numberOfCommentLines(sequence: Sequence): target
 	return m;
 }
 
-operation sourcemodel!CodeModel numberPublicAPI(sequence: Sequence): targetmodel!Measure {
-    var m = new targetmodel!Measure();
+operation sourcemodel!CodeModel numberPublicAPI(sequence: Sequence): sourcemodel!Measure {
+    var m = new sourcemodel!Measure();
     m.name = "Número de API público: " + self.name;
     m.measurements = new List();
-   	var number = new targetmodel!DimensionalMeasurement();
+   	var number = new sourcemodel!DimensionalMeasurement();
    	var classes = sequence.select(x1| x1.isTypeOf(sourcemodel!ClassUnit) and x1.attribute.value.contains("public"));
    	var methods = sequence.select(x| x.isTypeOf(sourcemodel!MethodUnit) and x.attribute.value.contains("public") );
    	var properties = sequence.select(x2| x2.isTypeOf(sourcemodel!StorableUnit) and x2.attribute.value.contains("public"));
@@ -142,12 +139,12 @@ operation sourcemodel!CodeModel numberPublicAPI(sequence: Sequence): targetmodel
 	return m;
 }
 
-operation getMofElementFromModelElement(modelElement : sourcemodel!ModelElement) : targetmodel!MofElement
+operation getMofElementFromModelElement(modelElement : sourcemodel!ModelElement) : sourcemodel!MofElement
 {
- var mof = targetmodel!MofElement.allInstances().selectOne( x | x.element = modelElement);
+ var mof = sourcemodel!MofElement.allInstances().selectOne( x | x.element = modelElement);
  if(mof = null)
  {
- mof = new targetmodel!MofElement();
+ mof = new sourcemodel!MofElement();
  mof.element = modelElement;
  }
 	return mof;
