@@ -5,6 +5,34 @@ pre {
 post {
 	generateClassLevelRelations();
 	"Done".println();
+	var segment = kdmMicro!CodeModel.allInstances().first();
+	var classLR = kdmMicro!ClassLevelRelation.allInstances();
+	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(kdmMicro!ClassUnit) or e.isTypeOf(kdmMicro!InterfaceUnit) or e.isTypeOf(kdmMicro!TemplateUnit)));
+	segment.println();
+	var clusterTool =
+  new Native("subkdm.tools.ClusterCalculation");
+  
+  clusterTool.sayHello().println();
+  
+  clusterTool.segment = segment;
+  
+  clusterTool.relations = classLR->asSet();
+  
+  clusterTool.classes = classes->asSet();
+  
+  //clusterTool.segment.println();
+  
+  var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
+  clusterSet.println();
+  for(c in clusterSet){
+  		c.println();
+  }
+//  for (cluster in clusterSet){
+//  	for(c in cluster){
+//  		c.println();
+//  	}
+//  }
+	
 }
 
 //Raiz
