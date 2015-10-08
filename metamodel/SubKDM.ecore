@@ -171,6 +171,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//kdmObjects/ModelElement"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CouplingBetweenObjectsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="WeightedMethodsPerClassMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
   </eSubpackages>
   <eSubpackages name="kdmRelations" nsURI="http://subkdm/kdmrelations" nsPrefix="kdmrelations">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship" eSuperTypes="#//kdmObjects/ModelElement">

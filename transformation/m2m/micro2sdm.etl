@@ -13,6 +13,7 @@ rule SubKDM2SimplifiedDecisionMetrics
 	sdm.observations = new List();
 	var observation = new sourcemodel!Observation();
 	observation.whenObserved = new Native('java.util.Date');
+	observation.measurements = calculateMeasurements();
 	sdm.observations.add(observation);
 }
 
@@ -25,7 +26,64 @@ operation sourcemodel!Segment defineMeasures () : List {
 	cbo.description = "Two classes are coupled when methods declared in one class use methods or instance variables defined by the other class. The uses relationship can go either way: both uses and used-by relationships are taken into account, but only once.";
 	resp.add(cbo);
 	}
+	if(sourcemodel!ClassUnit.allInstances().size() > 0)
+	{
+	var wmc = new sourcemodel!WeightedMethodsPerClassMeasure();
+	wmc.name = "WMC Weighted Methods Per Class";
+	wmc.description = "WMC is simply the method count for a class";
+	resp.add(wmc);
+	}
 	return resp;
+}
+
+operation calculateMeasurements () : List {
+	var resp = new List();
+	var cbos = sourcemodel!CouplingBetweenObjectsMeasure.allInstances();
+	if(cbos.size() > 0)
+	{
+	calculateCouplingBetweenObjects(resp, cbos.get(0));
+	}
+	var wmcs = sourcemodel!WeightedMethodsPerClassMeasure.allInstances();
+	if(wmcs.size() > 0)
+	{
+	calculateWeightedMethodsPerClass(resp, wmcs.get(0));
+	}
+	return resp;
+}
+
+operation calculateCouplingBetweenObjects(measurements : List, cbo : sourcemodel!CouplingBetweenObjectsMeasure) {
+	for(dataType in sourcemodel!DataType.allInstances())
+	{
+	var value = 0.0;
+	-- Se esta tomando el from/to sin mirar objeto. Se debe revisar que no sean duplicados. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
+	value = sourcemodel!ClassLevelRelation.allInstances().select( clr | clr.from = dataType or clr.`to` = dataType).size;
+	if(value > 0)
+	{
+	var measurement = new DimensionalMeasurement();
+	measurement.measurant = getMofElementFromModelElement(dataType);
+	measurement.measure = cbo;
+	measurement.value = value.asDouble();
+	measurements.add(measurement);
+	}
+	}
+}
+
+operation calculateWeightedMethodsPerClass(measurements: List, wmc: WeightedMethodsPerClassMeasure)
+{
+	for(class in sourcemodel!ClassUnit.allInstances())
+	{
+	var value = 0.0;
+	-- Se esta tomando getters y setters, se debe remover estos. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
+	value = class.codeElement.select( ce | ce.isTypeOf(sourcemodel!MethodUnit) ).size;
+	if(value > 0)
+	{
+	var measurement = new DimensionalMeasurement();
+	measurement.measurant = getMofElementFromModelElement(class);
+	measurement.measure = wmc;
+	measurement.value = value.asDouble();
+	measurements.add(measurement);
+	}
+	}
 }
 
 operation getMofElementFromModelElement(modelElement : sourcemodel!ModelElement) : sourcemodel!MofElement

@@ -3163,7 +3163,145 @@
     </model>
   </kdmObjects:Segment>
   <sdm:SimplifiedDecisionMetrics>
+    <observations whenObserved="2015-10-08T14:47:12.695-0500">
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/2" measure="/1/@measures.0" value="6.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/3" measure="/1/@measures.0" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/4" measure="/1/@measures.0" value="9.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/5" measure="/1/@measures.0" value="8.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/6" measure="/1/@measures.0" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/7" measure="/1/@measures.0" value="7.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/8" measure="/1/@measures.0" value="23.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/9" measure="/1/@measures.0" value="7.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/10" measure="/1/@measures.0" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/11" measure="/1/@measures.0" value="6.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/12" measure="/1/@measures.0" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/13" measure="/1/@measures.0" value="7.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/14" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/15" measure="/1/@measures.0" value="7.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/16" measure="/1/@measures.0" value="9.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/17" measure="/1/@measures.0" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/18" measure="/1/@measures.0" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/19" measure="/1/@measures.0" value="10.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/20" measure="/1/@measures.0" value="28.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/21" measure="/1/@measures.0" value="7.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/22" measure="/1/@measures.0" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/23" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/24" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/25" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/26" measure="/1/@measures.0" value="9.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/27" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/28" measure="/1/@measures.0" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/29" measure="/1/@measures.0" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/30" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/31" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/32" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/33" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/34" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/35" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/36" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/37" measure="/1/@measures.0" value="3.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/38" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/39" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/40" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/41" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/42" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/43" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/44" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/45" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/46" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/47" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/48" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/49" measure="/1/@measures.0" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/50" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/51" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/52" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/53" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/54" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/55" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/56" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/57" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/58" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/59" measure="/1/@measures.0" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/4" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/5" measure="/1/@measures.1" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/7" measure="/1/@measures.1" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/8" measure="/1/@measures.1" value="9.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/11" measure="/1/@measures.1" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/15" measure="/1/@measures.1" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/16" measure="/1/@measures.1" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/17" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/19" measure="/1/@measures.1" value="5.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/20" measure="/1/@measures.1" value="9.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/60" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/24" measure="/1/@measures.1" value="3.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/25" measure="/1/@measures.1" value="4.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/26" measure="/1/@measures.1" value="2.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/29" measure="/1/@measures.1" value="3.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/31" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/33" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/55" measure="/1/@measures.1" value="1.0"/>
+      <measurements xsi:type="sdm:DimensionalMeasurement" measurant="/57" measure="/1/@measures.1" value="5.0"/>
+    </observations>
     <measures xsi:type="sdm:CouplingBetweenObjectsMeasure" name="CBO Coupling between Object Classes" description="Two classes are coupled when methods declared in one class use methods or instance variables defined by the other class. The uses relationship can go either way: both uses and used-by relationships are taken into account, but only once."/>
+    <measures xsi:type="sdm:WeightedMethodsPerClassMeasure" name="WMC Weighted Methods Per Class" description="WMC is simply the method count for a class"/>
   </sdm:SimplifiedDecisionMetrics>
-  <sdm:Observation whenObserved="2015-10-08T13:40:03.439-0500"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.0" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.1" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.2 /1/@observations.0/@measurements.58" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.3 /1/@observations.0/@measurements.59" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.4" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.5 /1/@observations.0/@measurements.60" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.6 /1/@observations.0/@measurements.61" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.7" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.2/@codeElement.2/@codeElement.13"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.8" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.9 /1/@observations.0/@measurements.62" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.3/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.10" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.11" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.12" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.1/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.13 /1/@observations.0/@measurements.63" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.1/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.14 /1/@observations.0/@measurements.64" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.2/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.15 /1/@observations.0/@measurements.65" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.2/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.16" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.3"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.17 /1/@observations.0/@measurements.66" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.4"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.18 /1/@observations.0/@measurements.67" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.5"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.19" element="/0/@model.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.1/@codeElement.5/@codeElement.14"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.20" element="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.21" element="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.22 /1/@observations.0/@measurements.69" element="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.7"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.23 /1/@observations.0/@measurements.70" element="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.8"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.24 /1/@observations.0/@measurements.71" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.25" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.7"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.26" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.8"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.27 /1/@observations.0/@measurements.72" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.10/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.28" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.12"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.29 /1/@observations.0/@measurements.73" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.13"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.30" element="/0/@model.1/@codeElement.0/@codeElement.1/@codeElement.14"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.31 /1/@observations.0/@measurements.74" element="/0/@model.1/@codeElement.0/@codeElement.2/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.32" element="/0/@model.1/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.33" element="/0/@model.1/@codeElement.1/@codeElement.1/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.34" element="/0/@model.1/@codeElement.1/@codeElement.1/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.35" element="/0/@model.1/@codeElement.1/@codeElement.2/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.36" element="/0/@model.1/@codeElement.1/@codeElement.2/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.37" element="/0/@model.1/@codeElement.1/@codeElement.3/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.38" element="/0/@model.1/@codeElement.1/@codeElement.3/@codeElement.0/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.39" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.40" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.1"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.41" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.42" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.3"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.43" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.4"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.44" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.5"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.45" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.6"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.46" element="/0/@model.1/@codeElement.1/@codeElement.4/@codeElement.7"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.47" element="/0/@model.1/@codeElement.1/@codeElement.5/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.48" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.49" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.0/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.50" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.1/@codeElement.1/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.51" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.1/@codeElement.2/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.52" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.1/@codeElement.5/@codeElement.0"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.53 /1/@observations.0/@measurements.75" element="/0/@model.1/@codeElement.2/@codeElement.0/@codeElement.1/@codeElement.0/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.54" element="/0/@model.1/@codeElement.2/@codeElement.1/@codeElement.1/@codeElement.3"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.55 /1/@observations.0/@measurements.76" element="/0/@model.1/@codeElement.2/@codeElement.1/@codeElement.2"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.56" element="/0/@model.1/@codeElement.2/@codeElement.1/@codeElement.3"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.57" element="/0/@model.1/@codeElement.2/@codeElement.1/@codeElement.4"/>
+  <sdm:MofElement measurant="/1/@observations.0/@measurements.68" element="/0/@model.1/@codeElement.0/@codeElement.0/@codeElement.3/@codeElement.0"/>
 </xmi:XMI>
