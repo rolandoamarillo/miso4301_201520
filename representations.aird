@@ -12,6 +12,7 @@
   <models xmi:type="code:CodeModel" href="metamodel/kdmResultadoMicro.xmi#/"/>
   <models xmi:type="kdm:Segment" href="models/EJB_kdm.xmi#/0"/>
   <models xmi:type="modisco.xml:Root" href="pom.xml#/"/>
+  <models xmi:type="ecore:EPackage" href="src/main/resources/SubKDM.ecore#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">

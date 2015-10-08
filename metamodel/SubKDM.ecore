@@ -140,18 +140,18 @@
   <eSubpackages name="SimplifiedDecisionMetrics" nsURI="http://subkdm/sdm" nsPrefix="sdm">
     <eClassifiers xsi:type="ecore:EClass" name="Observation">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="whenObserved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
-          eType="#//SimplifiedDecisionMetrics/Measure" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Measure">
       <eStructuralFeatures xsi:type="ecore:EReference" name="measurements" upperBound="-1"
           eType="#//SimplifiedDecisionMetrics/Measurement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Measure">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Measurement" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="measurant" eType="#//SimplifiedDecisionMetrics/MofElement"
           eOpposite="#//SimplifiedDecisionMetrics/MofElement/measurant"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measure" lowerBound="1"
+          eType="#//SimplifiedDecisionMetrics/Measure"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Grade" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -162,12 +162,15 @@
     <eClassifiers xsi:type="ecore:EClass" name="SimplifiedDecisionMetrics">
       <eStructuralFeatures xsi:type="ecore:EReference" name="observations" upperBound="-1"
           eType="#//SimplifiedDecisionMetrics/Observation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
+          eType="#//SimplifiedDecisionMetrics/Measure" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MofElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="measurant" upperBound="-1"
           eType="#//SimplifiedDecisionMetrics/Measurement" eOpposite="#//SimplifiedDecisionMetrics/Measurement/measurant"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//kdmObjects/ModelElement"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CouplingBetweenObjectsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
   </eSubpackages>
   <eSubpackages name="kdmRelations" nsURI="http://subkdm/kdmrelations" nsPrefix="kdmrelations">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship" eSuperTypes="#//kdmObjects/ModelElement">
