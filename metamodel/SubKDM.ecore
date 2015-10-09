@@ -4,7 +4,7 @@
   <eSubpackages name="kdmObjects" nsURI="http://subkdm/kdmobjects" nsPrefix="kdmObjects">
     <eClassifiers xsi:type="ecore:EClass" name="CodeModel" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
-          eType="#//kdmObjects/AbstractCodeElement" containment="true"/>
+          eType="#//kdmObjects/ModelElement" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeElement" abstract="true"
