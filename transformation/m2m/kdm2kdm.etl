@@ -368,20 +368,28 @@ extends AbstracActionRelationship2AbstracActionRelationship{
 
 //-------HELPERS--------
 
-
+//Recorre todo el modelo y genera las relaciones que existen enre ClassUnit
 operation generateClassLevelRelations(){
 	var mod = kdmMicro!CodeModel.allInstances().first();
 	var sons = mod.getAllContents();
+    
+    var modExt = kdmMicro!CodeModel.allInstances().select(x| x.name = "externals").first();
+	var sonsExt = modExt.getAllContents();
 	
 	//A tiene un atributo de B
 	for (e in sons->select(a| a.isTypeOf(kdmMicro!StorableUnit)) ){
 		if (e.type.isDefined()){
-			var ori = e.getParentClassUnit();
+		    var ori = e.getParentClassUnit();
 			var dest = e.type.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new  kdmMicro!TypeRelation;
-			types.name = "Containment";
-			crel.typeRelations.add(types);
+		    var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+		    
+			if(not exists)
+			{  
+				var crel := mod.darRelation(ori,dest);
+				var types = new  kdmMicro!TypeRelation;
+				types.name = "Containment";
+				crel.typeRelations.add(types);
+			}
 		}	
 	}
 	
@@ -392,22 +400,33 @@ operation generateClassLevelRelations(){
 
 			var ori = call.`from`.getParentClassUnit();
 			var dest = call.`to`.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new  kdmMicro!TypeRelation;
-			types.name = "Uses";
-			crel.typeRelations.add(types);
+			
+			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+			
+			if(not exists)
+			{
+				var crel := mod.darRelation(ori,dest);
+				var types = new  kdmMicro!TypeRelation;
+				types.name = "Uses";
+				crel.typeRelations.add(types);
+			}
 		}	
 	}
 	
-	//A tiene un m�todo que referencia a B como parametro o como retorno
+	//A tiene un metodo que referencia a B como parametro o como retorno
 	for (e in sons->select(a |a.isTypeOf(kdmMicro!ParameterUnit))){
 		if (e.type.isDefined()){
 			var ori = e.getParentClassUnit();
 			var dest= e.type.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new kdmMicro!TypeRelation;
-			types.name = "Uses";
-			crel.typeRelations.add(types);
+			
+			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+			if(not exists)
+			{
+				var crel := mod.darRelation(ori,dest);
+				var types = new kdmMicro!TypeRelation;
+				types.name = "Uses";
+				crel.typeRelations.add(types);
+			}
 		}
 	}
 
@@ -416,10 +435,15 @@ operation generateClassLevelRelations(){
 		if (e.`from`.isDefined()){
 			var ori = e.`from`.getParentClassUnit();
 			var dest = e.`to`.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new kdmMicro!TypeRelation;
-			types.name = "Implements";
-			crel.typeRelations.add(types);
+			
+			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+			if(not exists)
+			{
+				var crel := mod.darRelation(ori,dest);
+				var types = new kdmMicro!TypeRelation;
+				types.name = "Implements";
+				crel.typeRelations.add(types);
+			}
 		}
 	}
 	
@@ -428,10 +452,15 @@ operation generateClassLevelRelations(){
 		if (e.type.isDefined()){
 			var ori = e.`from`.getParentClassUnit();
 			var dest = e.`to`.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new kdmMicro!TypeRelation;
-			types.name = "Extends";
-			crel.typeRelations.add(types);
+			
+			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+			if(not exists)
+			{
+				var crel := mod.darRelation(ori,dest);
+				var types = new kdmMicro!TypeRelation;
+				types.name = "Extends";
+				crel.typeRelations.add(types);
+			}
 		}
 	}
 	
@@ -443,10 +472,14 @@ operation generateClassLevelRelations(){
 			   if (e.getParentClassUnit() <> call.`to`.getParentClassUnit()){
 					var ori = e.getParentClassUnit();
 					var dest = call.`to`.getParentClassUnit();
-					var crel := mod.darRelation(ori,dest);
-					var types = new kdmMicro!TypeRelation;
-					types.name = "Containment";
-					crel.typeRelations.add(types);
+					var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+					if(not exists)
+					{
+						var crel := mod.darRelation(ori,dest);
+						var types = new kdmMicro!TypeRelation;
+						types.name = "Containment";
+						crel.typeRelations.add(types);
+					}
 			   }
 			}
 		}	
@@ -458,16 +491,20 @@ operation generateClassLevelRelations(){
 		if (call.isDefined() and  e.`from`.getParentClassUnit() <> e.`to`.getParentClassUnit()){
 			var ori = e.`from`.getParentClassUnit();
 			var dest = e.`to`.getParentClassUnit();
-			var crel := mod.darRelation(ori,dest);
-			var types = new kdmMicro!TypeRelation;
-			types.name = "Annotation";
-			crel.typeRelations.add(types);
+			
+			var exists = sonsExt.ValidateClassUnitExistsInExternals(dest);
+			if(not exists)
+			{
+				var crel := mod.darRelation(ori,dest);
+				var types = new kdmMicro!TypeRelation;
+				types.name = "Annotation";
+				crel.typeRelations.add(types);
+			}
 		}
 	}
 }
 
-
-
+//Obtiene la clase "CodeItem" que contiene o a la que pertenece el AbstractCodeElement 
 operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	var class = self;
 	while (not (class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit))){
@@ -477,6 +514,7 @@ operation kdmMicro!AbstractCodeElement getParentClassUnit() : kdmMicro!CodeItem{
 	return class;
 }
 
+//Obtiene la lista de todos los elementos que conetiene un Modelo 
 operation kdmMicro!ModelElement getAllContents(): Sequence{
 	var set = new Sequence;
 	set.addAll(self.eContents());
@@ -486,6 +524,8 @@ operation kdmMicro!ModelElement getAllContents(): Sequence{
 	return set;
 }
 
+//A partir de una Clase "CodeItem" a y una Clase b se genera la relacion estere estas
+//Si la relacion ya existe se adiciona el tipo de asociacion a la relacion ya existente
 operation kdmMicro!CodeModel darRelation(a: kdmMicro!CodeItem, b: kdmMicro!CodeItem): kdmMicro!ClassLevelRelation{	
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var rel = relations->select(e | (e.`from` = a  and e.`to` = b) or (e.`from` = b  and e.`to` = a)).first();
@@ -499,4 +539,13 @@ operation kdmMicro!CodeModel darRelation(a: kdmMicro!CodeItem, b: kdmMicro!CodeI
 		self.codeElement.add(rel);
 		return rel;
 	}
+}
+
+// identifica si un ClassUnit esta en el paquete de externos
+// para no inlcuirlas en las relaciones
+operation Sequence ValidateClassUnitExistsInExternals(class: kdmMicro!CodeItem): Boolean{
+	if(self.exists(a | a.equals(class)))
+	 return true;
+	else
+	 return false; 	
 }
