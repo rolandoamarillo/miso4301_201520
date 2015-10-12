@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: KDM2Model;singleton:=true
+Bundle-SymbolicName: miso4301_201520;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -27,5 +27,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmt.modisco.java;bundle-version="0.12.2",
  org.eclipse.modisco.kdm.source.discoverer;bundle-version="0.12.2",
  org.eclipse.gmt.modisco.kdm.source.discoverer;bundle-version="0.12.2",
- KDM2Model
+ KDM2Model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

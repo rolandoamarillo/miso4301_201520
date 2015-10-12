@@ -6,21 +6,15 @@ post {
 	generateClassLevelRelations();
 	"Done".println();
 	
-	/*
-	var segment = kdmMicro!CodeModel.allInstances().first();
+	/*var segment = kdmMicro!CodeModel.allInstances().first();
 	var classLR = kdmMicro!ClassLevelRelation.allInstances();
 	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(kdmMicro!ClassUnit) or e.isTypeOf(kdmMicro!InterfaceUnit) or e.isTypeOf(kdmMicro!TemplateUnit)));
 	
 	var clusterTool =new Native("subkdm.tools.ClusterCalculation");
-  
     clusterTool.sayHello().println();
-  
     clusterTool.segment = segment;
-  
     clusterTool.relations = classLR->asSet();
-  
     clusterTool.classes = classes->asSet();
-  
     clusterTool.segment.println();
   
     var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
@@ -33,7 +27,6 @@ post {
   	  	c.println();
       }
     }*/
-	
 }
 
 //Raiz
