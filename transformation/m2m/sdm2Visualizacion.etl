@@ -4,13 +4,25 @@ pre {
 
 post {
 	"Done".println();
-	
-	/*var segment = kdmMicro!CodeModel.allInstances().first();
-	var classLR = kdmMicro!ClassLevelRelation.allInstances();
-	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(kdmMicro!ClassUnit) or e.isTypeOf(kdmMicro!InterfaceUnit) or e.isTypeOf(kdmMicro!TemplateUnit)));
+}
+
+//Raiz
+rule Segment2Aplicacion
+transform t: source!Segment
+to o: target!Aplicacion{
+  guard : t.name <> "externals"
+  
+  o.EjectCluster();
+}
+
+//Ejecuta el algoritmo de clouster y mapea con los respectivos objetos de VisualizacionMetricascs
+operation target!Aplicacion EjectCluster(){
+    var count = 0;
+   	var segment = source!CodeModel.allInstances().first();
+   	var classLR = source!ClassLevelRelation.allInstances();
+	var classes = source!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(source!ClassUnit) or e.isTypeOf(source!InterfaceUnit) or e.isTypeOf(source!TemplateUnit)));
 	
 	var clusterTool =new Native("subkdm.tools.ClusterCalculation");
-  
     clusterTool.sayHello().println();
     clusterTool.segment = segment;
     clusterTool.relations = classLR->asSet();
@@ -19,12 +31,42 @@ post {
   
     var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
     clusterSet.println();
-     for(c in clusterSet){
-		c.println();
-    }
+    
     for (cluster in clusterSet){
+      var nodoCluster = new target!Cluster();
+  	  count = count + 1;
+  	  nodoCluster.name ="Couster" + count;
+  	   
   	  for(c in cluster){
-  	  	c.println();
+  	     var nodoClasses = new target!Nodo();
+  	     c.println();
+  	     nodoClasses.name = c.name;
+  	     c.name.println();
+  	     nodoClasses.GetRelationsClass(classLR);
+  	     nodoCluster.hijos.add(nodoClasses);
       }
-    }*/
+      
+     self.clusters.add(nodoCluster);
+    }
+}
+
+//Obtiene las relaciones de cada clase para mapear a dependencias
+operation target!Nodo GetRelationsClass(classLR: Sequence){
+	var relations = classLR.select(x | x.`from`.name == self.name);
+	for(rel in relations)
+	{
+	    var dep = new target!Dependencia();
+		dep.tipoRelacion = "pendiente!!";
+		self.hijos.add(dep);
+	}
+}
+
+//Obtiene la lista de todos los elementos que conetiene un Modelo 
+operation source!ModelElement getAllContents(): Sequence{
+	var set = new Sequence;
+	set.addAll(self.eContents());
+	for (e in  self.eContents()){
+		set.addAll(e.getAllContents());
+	}
+	return set;
 }
