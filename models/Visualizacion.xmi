@@ -1,2444 +1,759 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2">
   <visualizacionMetricas2:Aplicacion>
-    <clusters name="Couster1">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator&lt;E>"/>
-    </clusters>
-    <clusters name="Couster2">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JComponent"/>
-    </clusters>
-    <clusters name="Couster3">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Readable"/>
-    </clusters>
-    <clusters name="Couster4">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster5">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuElement"/>
-    </clusters>
-    <clusters name="Couster6">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Icon"/>
-    </clusters>
-    <clusters name="Couster7">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Wrapper"/>
-    </clusters>
-    <clusters name="Couster8">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Component"/>
-    </clusters>
-    <clusters name="Couster9">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionEvent"/>
-    </clusters>
-    <clusters name="Couster10">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SQLException"/>
-    </clusters>
-    <clusters name="Couster11">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList"/>
-    </clusters>
-    <clusters name="Couster12">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable"/>
-    </clusters>
-    <clusters name="Couster13">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager2"/>
-    </clusters>
-    <clusters name="Couster14">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator"/>
-    </clusters>
-    <clusters name="Couster15">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AWTEvent"/>
-    </clusters>
-    <clusters name="Couster16">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro"/>
-    </clusters>
-    <clusters name="Couster17">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ItemSelectable"/>
-    </clusters>
-    <clusters name="Couster18">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Test"/>
-    </clusters>
-    <clusters name="Couster19">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Connection"/>
-    </clusters>
-    <clusters name="Couster20">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection"/>
-    </clusters>
-    <clusters name="Couster21">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterruptedException"/>
-    </clusters>
-    <clusters name="Couster22">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RuntimeException"/>
-    </clusters>
-    <clusters name="Couster23">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Serializable"/>
-    </clusters>
-    <clusters name="Couster24">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Scrollable"/>
-    </clusters>
-    <clusters name="Couster25">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dialog"/>
-    </clusters>
-    <clusters name="Couster26">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IOException"/>
-    </clusters>
-    <clusters name="Couster27">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster28">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Properties"/>
-    </clusters>
-    <clusters name="Couster29">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PrintWriter"/>
-    </clusters>
-    <clusters name="Couster30">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStream"/>
-    </clusters>
-    <clusters name="Couster31">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormat"/>
-    </clusters>
-    <clusters name="Couster32">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension2D"/>
-    </clusters>
-    <clusters name="Couster33">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="File"/>
-    </clusters>
-    <clusters name="Couster34">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster35">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecimalFormat"/>
-    </clusters>
-    <clusters name="Couster36">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Image"/>
-    </clusters>
-    <clusters name="Couster37">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Color"/>
-    </clusters>
-    <clusters name="Couster38">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Writer"/>
-    </clusters>
-    <clusters name="Couster39">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractButton"/>
-    </clusters>
-    <clusters name="Couster40">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DriverManager"/>
-    </clusters>
-    <clusters name="Couster41">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable"/>
-    </clusters>
-    <clusters name="Couster42">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List&lt;E>"/>
-    </clusters>
-    <clusters name="Couster43">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GenericDeclaration"/>
-    </clusters>
-    <clusters name="Couster44">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class&lt;T>"/>
-    </clusters>
-    <clusters name="Couster45">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="HasGetTransferHandler"/>
-    </clusters>
-    <clusters name="Couster46">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector"/>
-    </clusters>
-    <clusters name="Couster47">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Reader"/>
-    </clusters>
-    <clusters name="Couster48">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension"/>
-    </clusters>
-    <clusters name="Couster49">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Frame"/>
-    </clusters>
-    <clusters name="Couster50">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageIcon"/>
-    </clusters>
-    <clusters name="Couster51">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JLabel"/>
-    </clusters>
-    <clusters name="Couster52">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CharSequence"/>
-    </clusters>
-    <clusters name="Couster53">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
+    <clusters name="Cluster1">
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazServidor" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/1">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/2">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/3">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/4">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/5">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/6">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores" tipo="Class"/>
       </hijos>
     </clusters>
-    <clusters name="Couster54">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AnnotatedElement"/>
-    </clusters>
-    <clusters name="Couster55">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TestCase"/>
-    </clusters>
-    <clusters name="Couster56">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Graphics"/>
-    </clusters>
-    <clusters name="Couster57">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuBar"/>
-    </clusters>
-    <clusters name="Couster58">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenu"/>
-    </clusters>
-    <clusters name="Couster59">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="UnknownHostException"/>
-    </clusters>
-    <clusters name="Couster60">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RootPaneContainer"/>
-    </clusters>
-    <clusters name="Couster61">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList"/>
-    </clusters>
-    <clusters name="Couster62">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue"/>
-    </clusters>
-    <clusters name="Couster63">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
+    <clusters name="Cluster2">
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazCliente" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/7">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/16">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/17">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/18">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes" tipo="Class"/>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/31">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/32">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/33">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/34">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/35">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="testCliente" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente" tipo="Class"/>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/11">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/12">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/13">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/14">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/15">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/23">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/24">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/25">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/43">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/44">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/45">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/46">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="cliente" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/8">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/9">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/10">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/19">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/20">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/21">
+            <tiposrelacion name="Extends"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco" tipo="Class"/>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/22">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/26">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/27">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/28">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/29">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/30">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/36">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/37">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/38">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/39">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/40">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/41">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/42">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException" tipo="Class"/>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores"/>
     </clusters>
-    <clusters name="Couster64">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStreamReader"/>
-    </clusters>
-    <clusters name="Couster65">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster66">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class"/>
-    </clusters>
-    <clusters name="Couster67">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue&lt;E>"/>
-    </clusters>
-    <clusters name="Couster68">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Integer"/>
-    </clusters>
-    <clusters name="Couster69">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager"/>
-    </clusters>
-    <clusters name="Couster70">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextArea"/>
-    </clusters>
-    <clusters name="Couster71">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AutoCloseable"/>
-    </clusters>
-    <clusters name="Couster72">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RandomAccess"/>
-    </clusters>
-    <clusters name="Couster73">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList"/>
-    </clusters>
-    <clusters name="Couster74">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Format"/>
-    </clusters>
-    <clusters name="Couster75">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SocketException"/>
-    </clusters>
-    <clusters name="Couster76">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JPanel"/>
-    </clusters>
-    <clusters name="Couster77">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="OutputStream"/>
-    </clusters>
-    <clusters name="Couster78">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuContainer"/>
-    </clusters>
-    <clusters name="Couster79">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TransferHandler"/>
-    </clusters>
-    <clusters name="Couster80">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="String"/>
-    </clusters>
-    <clusters name="Couster81">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageObserver"/>
-    </clusters>
-    <clusters name="Couster82">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="WindowConstants"/>
-    </clusters>
-    <clusters name="Couster83">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ScrollPaneConstants"/>
-    </clusters>
-    <clusters name="Couster84">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster85">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridLayout"/>
-    </clusters>
-    <clusters name="Couster86">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable"/>
-    </clusters>
-    <clusters name="Couster87">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map"/>
-    </clusters>
-    <clusters name="Couster88">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagLayout"/>
-    </clusters>
-    <clusters name="Couster89">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList"/>
-    </clusters>
-    <clusters name="Couster90">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Runnable"/>
-    </clusters>
-    <clusters name="Couster91">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Cloneable"/>
-    </clusters>
-    <clusters name="Couster92">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection"/>
-    </clusters>
-    <clusters name="Couster93">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Throwable"/>
-    </clusters>
-    <clusters name="Couster94">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServerSocket"/>
-    </clusters>
-    <clusters name="Couster95">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Statement"/>
-    </clusters>
-    <clusters name="Couster96">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BufferedReader"/>
-    </clusters>
-    <clusters name="Couster97">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Thread"/>
-    </clusters>
-    <clusters name="Couster98">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Object"/>
-    </clusters>
-    <clusters name="Couster99">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Math"/>
-    </clusters>
-    <clusters name="Couster100">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Paint"/>
-    </clusters>
-    <clusters name="Couster101">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary"/>
-    </clusters>
-    <clusters name="Couster102">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="System"/>
-    </clusters>
-    <clusters name="Couster103">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventListener"/>
-    </clusters>
-    <clusters name="Couster104">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionListener"/>
-    </clusters>
-    <clusters name="Couster105">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Socket"/>
-    </clusters>
-    <clusters name="Couster106">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Border"/>
-    </clusters>
-    <clusters name="Couster107">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster108">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextField"/>
-    </clusters>
-    <clusters name="Couster109">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque"/>
-    </clusters>
-    <clusters name="Couster110">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TitledBorder"/>
-    </clusters>
-    <clusters name="Couster111">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Type"/>
-    </clusters>
-    <clusters name="Couster112">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Exception"/>
-    </clusters>
-    <clusters name="Couster113">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LineBorder"/>
-    </clusters>
-    <clusters name="Couster114">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster115">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SwingConstants"/>
-    </clusters>
-    <clusters name="Couster116">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractBorder"/>
-    </clusters>
-    <clusters name="Couster117">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Appendable"/>
-    </clusters>
-    <clusters name="Couster118">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List"/>
-    </clusters>
-    <clusters name="Couster119">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JDialog"/>
-    </clusters>
-    <clusters name="Couster120">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster121">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Transparency"/>
-    </clusters>
-    <clusters name="Couster122">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JButton"/>
-    </clusters>
-    <clusters name="Couster123">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Assert"/>
-    </clusters>
-    <clusters name="Couster124">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextComponent"/>
-    </clusters>
-    <clusters name="Couster125">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Closeable"/>
-    </clusters>
-    <clusters name="Couster126">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormatException"/>
-    </clusters>
-    <clusters name="Couster127">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque&lt;E>"/>
-    </clusters>
-    <clusters name="Couster128">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JFrame"/>
-    </clusters>
-    <clusters name="Couster129">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster130">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
+    <clusters name="Cluster3">
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="testServidor" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/47">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/48">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/49">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/50">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/51">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro" tipo="Class"/>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/53">
+            <tiposrelacion name="Containment"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/54">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/55">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/56">
+            <tiposrelacion name="Extends"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/57">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/58">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/59">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/60">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/61">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/62">
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/63">
+            <tiposrelacion name="Extends"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/68">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/71">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/72">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/73">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+          </hijos>
+        </hijos>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego"/>
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="servidor" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/52">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador" tipo="Class"/>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/64">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/65">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/66">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/67">
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/69">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/70">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/74">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+      </hijos>
     </clusters>
-    <clusters name="Couster131">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector&lt;E>"/>
-    </clusters>
-    <clusters name="Couster132">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BorderLayout"/>
-    </clusters>
-    <clusters name="Couster133">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="FileInputStream"/>
-    </clusters>
-    <clusters name="Couster134">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Insets"/>
-    </clusters>
-    <clusters name="Couster135">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventObject"/>
-    </clusters>
-    <clusters name="Couster136">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JScrollPane"/>
-    </clusters>
-    <clusters name="Couster137">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Container"/>
-    </clusters>
-    <clusters name="Couster138">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ResultSet"/>
-    </clusters>
-    <clusters name="Couster139">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IllegalArgumentException"/>
-    </clusters>
-    <clusters name="Couster140">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Number"/>
-    </clusters>
-    <clusters name="Couster141">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster142">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Window"/>
-    </clusters>
-    <clusters name="Couster143">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuItem"/>
-    </clusters>
-    <clusters name="Couster144">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagConstraints"/>
-    </clusters>
-    <clusters name="Couster145">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Accessible"/>
-    </clusters>
-    <clusters name="Couster146">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JOptionPane"/>
-    </clusters>
-    <clusters name="Couster147">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Flushable"/>
-    </clusters>
-    <clusters name="Couster148">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList&lt;E>"/>
+    <clusters name="Cluster4">
+      <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazCliente" tipo="Package">
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar" tipo="Class">
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/75">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+          <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="/76">
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Containment"/>
+            <tiposrelacion name="Uses"/>
+            <tiposrelacion name="Uses"/>
+          </hijos>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego" tipo="Class"/>
+      </hijos>
     </clusters>
   </visualizacionMetricas2:Aplicacion>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia tipoRelacion=""/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Aplicacion/>
-  <visualizacionMetricas2:Cluster name="Couster1"/>
-  <visualizacionMetricas2:Nodo name="AWTEvent"/>
-  <visualizacionMetricas2:Dependencia/>
-  <visualizacionMetricas2:Aplicacion>
-    <clusters name="Couster1">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension"/>
-    </clusters>
-    <clusters name="Couster2">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JFrame"/>
-    </clusters>
-    <clusters name="Couster3">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Appendable"/>
-    </clusters>
-    <clusters name="Couster4">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TransferHandler"/>
-    </clusters>
-    <clusters name="Couster5">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension2D"/>
-    </clusters>
-    <clusters name="Couster6">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Test"/>
-    </clusters>
-    <clusters name="Couster7">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TestCase"/>
-    </clusters>
-    <clusters name="Couster8">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BufferedReader"/>
-    </clusters>
-    <clusters name="Couster9">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RootPaneContainer"/>
-    </clusters>
-    <clusters name="Couster10">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector&lt;E>"/>
-    </clusters>
-    <clusters name="Couster11">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractBorder"/>
-    </clusters>
-    <clusters name="Couster12">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Border"/>
-    </clusters>
-    <clusters name="Couster13">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator"/>
-    </clusters>
-    <clusters name="Couster14">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageIcon"/>
-    </clusters>
-    <clusters name="Couster15">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenu"/>
-    </clusters>
-    <clusters name="Couster16">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster17">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AWTEvent"/>
-    </clusters>
-    <clusters name="Couster18">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventListener"/>
-    </clusters>
-    <clusters name="Couster19">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JDialog"/>
-    </clusters>
-    <clusters name="Couster20">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuElement"/>
-    </clusters>
-    <clusters name="Couster21">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridLayout"/>
-    </clusters>
-    <clusters name="Couster22">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JOptionPane"/>
-    </clusters>
-    <clusters name="Couster23">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List&lt;E>"/>
-    </clusters>
-    <clusters name="Couster24">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RuntimeException"/>
-    </clusters>
-    <clusters name="Couster25">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractButton"/>
-    </clusters>
-    <clusters name="Couster26">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster27">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SocketException"/>
-    </clusters>
-    <clusters name="Couster28">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PrintWriter"/>
-    </clusters>
-    <clusters name="Couster29">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList"/>
-    </clusters>
-    <clusters name="Couster30">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Color"/>
-    </clusters>
-    <clusters name="Couster31">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Graphics"/>
-    </clusters>
-    <clusters name="Couster32">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque"/>
-    </clusters>
-    <clusters name="Couster33">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList"/>
-    </clusters>
-    <clusters name="Couster34">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Closeable"/>
-    </clusters>
-    <clusters name="Couster35">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionEvent"/>
-    </clusters>
-    <clusters name="Couster36">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster37">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster38">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary"/>
-    </clusters>
-    <clusters name="Couster39">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextComponent"/>
-    </clusters>
-    <clusters name="Couster40">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RandomAccess"/>
-    </clusters>
-    <clusters name="Couster41">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AnnotatedElement"/>
-    </clusters>
-    <clusters name="Couster42">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SwingConstants"/>
-    </clusters>
-    <clusters name="Couster43">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Connection"/>
-    </clusters>
-    <clusters name="Couster44">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuContainer"/>
-    </clusters>
-    <clusters name="Couster45">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ScrollPaneConstants"/>
-    </clusters>
-    <clusters name="Couster46">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Object"/>
-    </clusters>
-    <clusters name="Couster47">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque&lt;E>"/>
-    </clusters>
-    <clusters name="Couster48">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map"/>
-    </clusters>
-    <clusters name="Couster49">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster50">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector"/>
-    </clusters>
-    <clusters name="Couster51">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagConstraints"/>
-    </clusters>
-    <clusters name="Couster52">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JComponent"/>
-    </clusters>
-    <clusters name="Couster53">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageObserver"/>
-    </clusters>
-    <clusters name="Couster54">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Socket"/>
-    </clusters>
-    <clusters name="Couster55">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Frame"/>
-    </clusters>
-    <clusters name="Couster56">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JLabel"/>
-    </clusters>
-    <clusters name="Couster57">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Type"/>
-    </clusters>
-    <clusters name="Couster58">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Statement"/>
-    </clusters>
-    <clusters name="Couster59">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuItem"/>
-    </clusters>
-    <clusters name="Couster60">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Thread"/>
-    </clusters>
-    <clusters name="Couster61">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TitledBorder"/>
-    </clusters>
-    <clusters name="Couster62">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ItemSelectable"/>
-    </clusters>
-    <clusters name="Couster63">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="HasGetTransferHandler"/>
-    </clusters>
-    <clusters name="Couster64">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Insets"/>
-    </clusters>
-    <clusters name="Couster65">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="WindowConstants"/>
-    </clusters>
-    <clusters name="Couster66">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormatException"/>
-    </clusters>
-    <clusters name="Couster67">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster68">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List"/>
-    </clusters>
-    <clusters name="Couster69">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection"/>
-    </clusters>
-    <clusters name="Couster70">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormat"/>
-    </clusters>
-    <clusters name="Couster71">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="FileInputStream"/>
-    </clusters>
-    <clusters name="Couster72">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager"/>
-    </clusters>
-    <clusters name="Couster73">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Properties"/>
-    </clusters>
-    <clusters name="Couster74">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Number"/>
-    </clusters>
-    <clusters name="Couster75">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServerSocket"/>
-    </clusters>
-    <clusters name="Couster76">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LineBorder"/>
-    </clusters>
-    <clusters name="Couster77">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Paint"/>
-    </clusters>
-    <clusters name="Couster78">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Accessible"/>
-    </clusters>
-    <clusters name="Couster79">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Reader"/>
-    </clusters>
-    <clusters name="Couster80">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Window"/>
-    </clusters>
-    <clusters name="Couster81">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable"/>
-    </clusters>
-    <clusters name="Couster82">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Serializable"/>
-    </clusters>
-    <clusters name="Couster83">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Image"/>
-    </clusters>
-    <clusters name="Couster84">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Format"/>
-    </clusters>
-    <clusters name="Couster85">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuBar"/>
-    </clusters>
-    <clusters name="Couster86">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Writer"/>
-    </clusters>
-    <clusters name="Couster87">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="OutputStream"/>
-    </clusters>
-    <clusters name="Couster88">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Container"/>
-    </clusters>
-    <clusters name="Couster89">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable"/>
-    </clusters>
-    <clusters name="Couster90">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GenericDeclaration"/>
-    </clusters>
-    <clusters name="Couster91">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster92">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Scrollable"/>
-    </clusters>
-    <clusters name="Couster93">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DriverManager"/>
-    </clusters>
-    <clusters name="Couster94">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster95">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Exception"/>
-    </clusters>
-    <clusters name="Couster96">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Throwable"/>
-    </clusters>
-    <clusters name="Couster97">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="String"/>
-    </clusters>
-    <clusters name="Couster98">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JScrollPane"/>
-    </clusters>
-    <clusters name="Couster99">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IOException"/>
-    </clusters>
-    <clusters name="Couster100">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster101">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue&lt;E>"/>
-    </clusters>
-    <clusters name="Couster102">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Component"/>
-    </clusters>
-    <clusters name="Couster103">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList"/>
-    </clusters>
-    <clusters name="Couster104">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionListener"/>
-    </clusters>
-    <clusters name="Couster105">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Transparency"/>
-    </clusters>
-    <clusters name="Couster106">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster107">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ResultSet"/>
-    </clusters>
-    <clusters name="Couster108">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Wrapper"/>
-    </clusters>
-    <clusters name="Couster109">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JButton"/>
-    </clusters>
-    <clusters name="Couster110">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CharSequence"/>
-    </clusters>
-    <clusters name="Couster111">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator&lt;E>"/>
-    </clusters>
-    <clusters name="Couster112">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class"/>
-    </clusters>
-    <clusters name="Couster113">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Math"/>
-    </clusters>
-    <clusters name="Couster114">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Icon"/>
-    </clusters>
-    <clusters name="Couster115">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster116">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster117">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection"/>
-    </clusters>
-    <clusters name="Couster118">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class&lt;T>"/>
-    </clusters>
-    <clusters name="Couster119">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="File"/>
-    </clusters>
-    <clusters name="Couster120">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Flushable"/>
-    </clusters>
-    <clusters name="Couster121">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="System"/>
-    </clusters>
-    <clusters name="Couster122">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecimalFormat"/>
-    </clusters>
-    <clusters name="Couster123">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="UnknownHostException"/>
-    </clusters>
-    <clusters name="Couster124">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JPanel"/>
-    </clusters>
-    <clusters name="Couster125">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster126">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable"/>
-    </clusters>
-    <clusters name="Couster127">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextArea"/>
-    </clusters>
-    <clusters name="Couster128">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AutoCloseable"/>
-    </clusters>
-    <clusters name="Couster129">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagLayout"/>
-    </clusters>
-    <clusters name="Couster130">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Cloneable"/>
-    </clusters>
-    <clusters name="Couster131">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterruptedException"/>
-    </clusters>
-    <clusters name="Couster132">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BorderLayout"/>
-    </clusters>
-    <clusters name="Couster133">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster134">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue"/>
-    </clusters>
-    <clusters name="Couster135">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster136">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SQLException"/>
-    </clusters>
-    <clusters name="Couster137">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList"/>
-    </clusters>
-    <clusters name="Couster138">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Runnable"/>
-    </clusters>
-    <clusters name="Couster139">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventObject"/>
-    </clusters>
-    <clusters name="Couster140">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextField"/>
-    </clusters>
-    <clusters name="Couster141">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Integer"/>
-    </clusters>
-    <clusters name="Couster142">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IllegalArgumentException"/>
-    </clusters>
-    <clusters name="Couster143">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStream"/>
-    </clusters>
-    <clusters name="Couster144">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Assert"/>
-    </clusters>
-    <clusters name="Couster145">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Readable"/>
-    </clusters>
-    <clusters name="Couster146">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dialog"/>
-    </clusters>
-    <clusters name="Couster147">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager2"/>
-    </clusters>
-    <clusters name="Couster148">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStreamReader"/>
-    </clusters>
-  </visualizacionMetricas2:Aplicacion>
-  <visualizacionMetricas2:Aplicacion>
-    <clusters name="Couster1">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Exception"/>
-    </clusters>
-    <clusters name="Couster2">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Appendable"/>
-    </clusters>
-    <clusters name="Couster3">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuItem"/>
-    </clusters>
-    <clusters name="Couster4">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="WindowConstants"/>
-    </clusters>
-    <clusters name="Couster5">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Assert"/>
-    </clusters>
-    <clusters name="Couster6">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Readable"/>
-    </clusters>
-    <clusters name="Couster7">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Insets"/>
-    </clusters>
-    <clusters name="Couster8">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Icon"/>
-    </clusters>
-    <clusters name="Couster9">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStream"/>
-    </clusters>
-    <clusters name="Couster10">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RandomAccess"/>
-    </clusters>
-    <clusters name="Couster11">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Reader"/>
-    </clusters>
-    <clusters name="Couster12">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AWTEvent"/>
-    </clusters>
-    <clusters name="Couster13">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable"/>
-    </clusters>
-    <clusters name="Couster14">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue&lt;E>"/>
-    </clusters>
-    <clusters name="Couster15">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Integer"/>
-    </clusters>
-    <clusters name="Couster16">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionListener"/>
-    </clusters>
-    <clusters name="Couster17">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormat"/>
-    </clusters>
-    <clusters name="Couster18">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Cloneable"/>
-    </clusters>
-    <clusters name="Couster19">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster20">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map"/>
-    </clusters>
-    <clusters name="Couster21">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AutoCloseable"/>
-    </clusters>
-    <clusters name="Couster22">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BorderLayout"/>
-    </clusters>
-    <clusters name="Couster23">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList"/>
-    </clusters>
-    <clusters name="Couster24">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServerSocket"/>
-    </clusters>
-    <clusters name="Couster25">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="UnknownHostException"/>
-    </clusters>
-    <clusters name="Couster26">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JLabel"/>
-    </clusters>
-    <clusters name="Couster27">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ItemSelectable"/>
-    </clusters>
-    <clusters name="Couster28">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormatException"/>
-    </clusters>
-    <clusters name="Couster29">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Closeable"/>
-    </clusters>
-    <clusters name="Couster30">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SQLException"/>
-    </clusters>
-    <clusters name="Couster31">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ResultSet"/>
-    </clusters>
-    <clusters name="Couster32">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TitledBorder"/>
-    </clusters>
-    <clusters name="Couster33">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster34">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Paint"/>
-    </clusters>
-    <clusters name="Couster35">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Transparency"/>
-    </clusters>
-    <clusters name="Couster36">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AnnotatedElement"/>
-    </clusters>
-    <clusters name="Couster37">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenu"/>
-    </clusters>
-    <clusters name="Couster38">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuElement"/>
-    </clusters>
-    <clusters name="Couster39">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Connection"/>
-    </clusters>
-    <clusters name="Couster40">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractButton"/>
-    </clusters>
-    <clusters name="Couster41">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Image"/>
-    </clusters>
-    <clusters name="Couster42">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JOptionPane"/>
-    </clusters>
-    <clusters name="Couster43">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster44">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Wrapper"/>
-    </clusters>
-    <clusters name="Couster45">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster46">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Socket"/>
-    </clusters>
-    <clusters name="Couster47">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList"/>
-    </clusters>
-    <clusters name="Couster48">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RootPaneContainer"/>
-    </clusters>
-    <clusters name="Couster49">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Type"/>
-    </clusters>
-    <clusters name="Couster50">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractBorder"/>
-    </clusters>
-    <clusters name="Couster51">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterruptedException"/>
-    </clusters>
-    <clusters name="Couster52">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension"/>
-    </clusters>
-    <clusters name="Couster53">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridLayout"/>
-    </clusters>
-    <clusters name="Couster54">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStreamReader"/>
-    </clusters>
-    <clusters name="Couster55">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Border"/>
-    </clusters>
-    <clusters name="Couster56">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster57">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class"/>
-    </clusters>
-    <clusters name="Couster58">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BufferedReader"/>
-    </clusters>
-    <clusters name="Couster59">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Window"/>
-    </clusters>
-    <clusters name="Couster60">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList"/>
-    </clusters>
-    <clusters name="Couster61">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable"/>
-    </clusters>
-    <clusters name="Couster62">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DriverManager"/>
-    </clusters>
-    <clusters name="Couster63">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JDialog"/>
-    </clusters>
-    <clusters name="Couster64">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecimalFormat"/>
-    </clusters>
-    <clusters name="Couster65">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster66">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SwingConstants"/>
-    </clusters>
-    <clusters name="Couster67">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IOException"/>
-    </clusters>
-    <clusters name="Couster68">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextComponent"/>
-    </clusters>
-    <clusters name="Couster69">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable"/>
-    </clusters>
-    <clusters name="Couster70">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster71">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JScrollPane"/>
-    </clusters>
-    <clusters name="Couster72">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JButton"/>
-    </clusters>
-    <clusters name="Couster73">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventListener"/>
-    </clusters>
-    <clusters name="Couster74">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Color"/>
-    </clusters>
-    <clusters name="Couster75">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextField"/>
-    </clusters>
-    <clusters name="Couster76">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque"/>
-    </clusters>
-    <clusters name="Couster77">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster78">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Object"/>
-    </clusters>
-    <clusters name="Couster79">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="String"/>
-    </clusters>
-    <clusters name="Couster80">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Format"/>
-    </clusters>
-    <clusters name="Couster81">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster82">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RuntimeException"/>
-    </clusters>
-    <clusters name="Couster83">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GenericDeclaration"/>
-    </clusters>
-    <clusters name="Couster84">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Number"/>
-    </clusters>
-    <clusters name="Couster85">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Throwable"/>
-    </clusters>
-    <clusters name="Couster86">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Statement"/>
-    </clusters>
-    <clusters name="Couster87">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue"/>
-    </clusters>
-    <clusters name="Couster88">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster89">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster90">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="OutputStream"/>
-    </clusters>
-    <clusters name="Couster91">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Graphics"/>
-    </clusters>
-    <clusters name="Couster92">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextArea"/>
-    </clusters>
-    <clusters name="Couster93">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Writer"/>
-    </clusters>
-    <clusters name="Couster94">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Container"/>
-    </clusters>
-    <clusters name="Couster95">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagConstraints"/>
-    </clusters>
-    <clusters name="Couster96">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Serializable"/>
-    </clusters>
-    <clusters name="Couster97">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator"/>
-    </clusters>
-    <clusters name="Couster98">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster99">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TransferHandler"/>
-    </clusters>
-    <clusters name="Couster100">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TestCase"/>
-    </clusters>
-    <clusters name="Couster101">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Component"/>
-    </clusters>
-    <clusters name="Couster102">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster103">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagLayout"/>
-    </clusters>
-    <clusters name="Couster104">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager2"/>
-    </clusters>
-    <clusters name="Couster105">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary"/>
-    </clusters>
-    <clusters name="Couster106">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LineBorder"/>
-    </clusters>
-    <clusters name="Couster107">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List"/>
-    </clusters>
-    <clusters name="Couster108">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionEvent"/>
-    </clusters>
-    <clusters name="Couster109">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection"/>
-    </clusters>
-    <clusters name="Couster110">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="HasGetTransferHandler"/>
-    </clusters>
-    <clusters name="Couster111">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster112">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension2D"/>
-    </clusters>
-    <clusters name="Couster113">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="FileInputStream"/>
-    </clusters>
-    <clusters name="Couster114">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Accessible"/>
-    </clusters>
-    <clusters name="Couster115">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dialog"/>
-    </clusters>
-    <clusters name="Couster116">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Scrollable"/>
-    </clusters>
-    <clusters name="Couster117">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ScrollPaneConstants"/>
-    </clusters>
-    <clusters name="Couster118">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventObject"/>
-    </clusters>
-    <clusters name="Couster119">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Properties"/>
-    </clusters>
-    <clusters name="Couster120">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Thread"/>
-    </clusters>
-    <clusters name="Couster121">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JFrame"/>
-    </clusters>
-    <clusters name="Couster122">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuContainer"/>
-    </clusters>
-    <clusters name="Couster123">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageIcon"/>
-    </clusters>
-    <clusters name="Couster124">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList"/>
-    </clusters>
-    <clusters name="Couster125">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector"/>
-    </clusters>
-    <clusters name="Couster126">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Math"/>
-    </clusters>
-    <clusters name="Couster127">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Test"/>
-    </clusters>
-    <clusters name="Couster128">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster129">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageObserver"/>
-    </clusters>
-    <clusters name="Couster130">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JPanel"/>
-    </clusters>
-    <clusters name="Couster131">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class&lt;T>"/>
-    </clusters>
-    <clusters name="Couster132">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="File"/>
-    </clusters>
-    <clusters name="Couster133">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IllegalArgumentException"/>
-    </clusters>
-    <clusters name="Couster134">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Frame"/>
-    </clusters>
-    <clusters name="Couster135">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SocketException"/>
-    </clusters>
-    <clusters name="Couster136">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector&lt;E>"/>
-    </clusters>
-    <clusters name="Couster137">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator&lt;E>"/>
-    </clusters>
-    <clusters name="Couster138">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuBar"/>
-    </clusters>
-    <clusters name="Couster139">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Runnable"/>
-    </clusters>
-    <clusters name="Couster140">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CharSequence"/>
-    </clusters>
-    <clusters name="Couster141">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque&lt;E>"/>
-    </clusters>
-    <clusters name="Couster142">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List&lt;E>"/>
-    </clusters>
-    <clusters name="Couster143">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Flushable"/>
-    </clusters>
-    <clusters name="Couster144">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection"/>
-    </clusters>
-    <clusters name="Couster145">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JComponent"/>
-    </clusters>
-    <clusters name="Couster146">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager"/>
-    </clusters>
-    <clusters name="Couster147">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PrintWriter"/>
-    </clusters>
-    <clusters name="Couster148">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="System"/>
-    </clusters>
-  </visualizacionMetricas2:Aplicacion>
-  <visualizacionMetricas2:Aplicacion>
-    <clusters name="Couster1">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster2">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList"/>
-    </clusters>
-    <clusters name="Couster3">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Accessible"/>
-    </clusters>
-    <clusters name="Couster4">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Thread"/>
-    </clusters>
-    <clusters name="Couster5">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster6">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList"/>
-    </clusters>
-    <clusters name="Couster7">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Image"/>
-    </clusters>
-    <clusters name="Couster8">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster9">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventListener"/>
-    </clusters>
-    <clusters name="Couster10">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RootPaneContainer"/>
-    </clusters>
-    <clusters name="Couster11">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractBorder"/>
-    </clusters>
-    <clusters name="Couster12">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Closeable"/>
-    </clusters>
-    <clusters name="Couster13">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Connection"/>
-    </clusters>
-    <clusters name="Couster14">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque"/>
-    </clusters>
-    <clusters name="Couster15">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Frame"/>
-    </clusters>
-    <clusters name="Couster16">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageIcon"/>
-    </clusters>
-    <clusters name="Couster17">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Graphics"/>
-    </clusters>
-    <clusters name="Couster18">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Socket"/>
-    </clusters>
-    <clusters name="Couster19">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List"/>
-    </clusters>
-    <clusters name="Couster20">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class"/>
-    </clusters>
-    <clusters name="Couster21">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator&lt;E>"/>
-    </clusters>
-    <clusters name="Couster22">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TestCase"/>
-    </clusters>
-    <clusters name="Couster23">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TitledBorder"/>
-    </clusters>
-    <clusters name="Couster24">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Properties"/>
-    </clusters>
-    <clusters name="Couster25">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecimalFormat"/>
-    </clusters>
-    <clusters name="Couster26">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStream"/>
-    </clusters>
-    <clusters name="Couster27">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="OutputStream"/>
-    </clusters>
-    <clusters name="Couster28">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuElement"/>
-    </clusters>
-    <clusters name="Couster29">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Test"/>
-    </clusters>
-    <clusters name="Couster30">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AnnotatedElement"/>
-    </clusters>
-    <clusters name="Couster31">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable&lt;T>"/>
-    </clusters>
-    <clusters name="Couster32">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Object"/>
-    </clusters>
-    <clusters name="Couster33">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JScrollPane"/>
-    </clusters>
-    <clusters name="Couster34">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Insets"/>
-    </clusters>
-    <clusters name="Couster35">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension"/>
-    </clusters>
-    <clusters name="Couster36">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Format"/>
-    </clusters>
-    <clusters name="Couster37">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection"/>
-    </clusters>
-    <clusters name="Couster38">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector"/>
-    </clusters>
-    <clusters name="Couster39">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Scrollable"/>
-    </clusters>
-    <clusters name="Couster40">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Class&lt;T>"/>
-    </clusters>
-    <clusters name="Couster41">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterruptedException"/>
-    </clusters>
-    <clusters name="Couster42">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuBar"/>
-    </clusters>
-    <clusters name="Couster43">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridLayout"/>
-    </clusters>
-    <clusters name="Couster44">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AutoCloseable"/>
-    </clusters>
-    <clusters name="Couster45">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Vector&lt;E>"/>
-    </clusters>
-    <clusters name="Couster46">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Icon"/>
-    </clusters>
-    <clusters name="Couster47">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Appendable"/>
-    </clusters>
-    <clusters name="Couster48">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionListener"/>
-    </clusters>
-    <clusters name="Couster49">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SwingConstants"/>
-    </clusters>
-    <clusters name="Couster50">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractCollection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster51">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable"/>
-    </clusters>
-    <clusters name="Couster52">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ScrollPaneConstants"/>
-    </clusters>
-    <clusters name="Couster53">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ItemSelectable"/>
-    </clusters>
-    <clusters name="Couster54">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Deque&lt;E>"/>
-    </clusters>
-    <clusters name="Couster55">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RandomAccess"/>
-    </clusters>
-    <clusters name="Couster56">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary"/>
-    </clusters>
-    <clusters name="Couster57">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterator"/>
-    </clusters>
-    <clusters name="Couster58">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Component"/>
-    </clusters>
-    <clusters name="Couster59">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection&lt;E>"/>
-    </clusters>
-    <clusters name="Couster60">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Iterable"/>
-    </clusters>
-    <clusters name="Couster61">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LineBorder"/>
-    </clusters>
-    <clusters name="Couster62">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EventObject"/>
-    </clusters>
-    <clusters name="Couster63">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JButton"/>
-    </clusters>
-    <clusters name="Couster64">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster65">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CharSequence"/>
-    </clusters>
-    <clusters name="Couster66">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BorderLayout"/>
-    </clusters>
-    <clusters name="Couster67">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster68">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Throwable"/>
-    </clusters>
-    <clusters name="Couster69">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="List&lt;E>"/>
-    </clusters>
-    <clusters name="Couster70">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Readable"/>
-    </clusters>
-    <clusters name="Couster71">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextField"/>
-    </clusters>
-    <clusters name="Couster72">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormat"/>
-    </clusters>
-    <clusters name="Couster73">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Reader"/>
-    </clusters>
-    <clusters name="Couster74">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="File"/>
-    </clusters>
-    <clusters name="Couster75">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractList"/>
-    </clusters>
-    <clusters name="Couster76">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Exception"/>
-    </clusters>
-    <clusters name="Couster77">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Cloneable"/>
-    </clusters>
-    <clusters name="Couster78">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Assert"/>
-    </clusters>
-    <clusters name="Couster79">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Paint"/>
-    </clusters>
-    <clusters name="Couster80">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="System"/>
-    </clusters>
-    <clusters name="Couster81">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SQLException"/>
-    </clusters>
-    <clusters name="Couster82">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PrintWriter"/>
-    </clusters>
-    <clusters name="Couster83">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JPanel"/>
-    </clusters>
-    <clusters name="Couster84">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Hashtable&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster85">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenu"/>
-    </clusters>
-    <clusters name="Couster86">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="SocketException"/>
-    </clusters>
-    <clusters name="Couster87">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Writer"/>
-    </clusters>
-    <clusters name="Couster88">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Comparable"/>
-    </clusters>
-    <clusters name="Couster89">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dictionary&lt;K, V>"/>
-    </clusters>
-    <clusters name="Couster90">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Color"/>
-    </clusters>
-    <clusters name="Couster91">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ActionEvent"/>
-    </clusters>
-    <clusters name="Couster92">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JDialog"/>
-    </clusters>
-    <clusters name="Couster93">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IllegalArgumentException"/>
-    </clusters>
-    <clusters name="Couster94">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager"/>
-    </clusters>
-    <clusters name="Couster95">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Map"/>
-    </clusters>
-    <clusters name="Couster96">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="UnknownHostException"/>
-    </clusters>
-    <clusters name="Couster97">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Window"/>
-    </clusters>
-    <clusters name="Couster98">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="WindowConstants"/>
-    </clusters>
-    <clusters name="Couster99">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="HasGetTransferHandler"/>
-    </clusters>
-    <clusters name="Couster100">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DriverManager"/>
-    </clusters>
-    <clusters name="Couster101">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Transparency"/>
-    </clusters>
-    <clusters name="Couster102">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServerSocket"/>
-    </clusters>
-    <clusters name="Couster103">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ImageObserver"/>
-    </clusters>
-    <clusters name="Couster104">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue"/>
-    </clusters>
-    <clusters name="Couster105">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="IOException"/>
-    </clusters>
-    <clusters name="Couster106">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Runnable"/>
-    </clusters>
-    <clusters name="Couster107">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ResultSet"/>
-    </clusters>
-    <clusters name="Couster108">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dimension2D"/>
-    </clusters>
-    <clusters name="Couster109">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster110">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster111">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagLayout"/>
-    </clusters>
-    <clusters name="Couster112">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster113">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="String"/>
-    </clusters>
-    <clusters name="Couster114">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BufferedReader"/>
-    </clusters>
-    <clusters name="Couster115">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractSequentialList"/>
-    </clusters>
-    <clusters name="Couster116">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Queue&lt;E>"/>
-    </clusters>
-    <clusters name="Couster117">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Wrapper"/>
-    </clusters>
-    <clusters name="Couster118">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JLabel"/>
-    </clusters>
-    <clusters name="Couster119">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextComponent"/>
-    </clusters>
-    <clusters name="Couster120">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Dialog"/>
-    </clusters>
-    <clusters name="Couster121">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Collection"/>
-    </clusters>
-    <clusters name="Couster122">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RuntimeException"/>
-    </clusters>
-    <clusters name="Couster123">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="NumberFormatException"/>
-    </clusters>
-    <clusters name="Couster124">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JFrame"/>
-    </clusters>
-    <clusters name="Couster125">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Type"/>
-    </clusters>
-    <clusters name="Couster126">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LinkedList&lt;E>"/>
-    </clusters>
-    <clusters name="Couster127">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TransferHandler"/>
-    </clusters>
-    <clusters name="Couster128">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GenericDeclaration"/>
-    </clusters>
-    <clusters name="Couster129">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JComponent"/>
-    </clusters>
-    <clusters name="Couster130">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JMenuItem"/>
-    </clusters>
-    <clusters name="Couster131">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Serializable"/>
-    </clusters>
-    <clusters name="Couster132">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Flushable"/>
-    </clusters>
-    <clusters name="Couster133">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Number"/>
-    </clusters>
-    <clusters name="Couster134">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Statement"/>
-    </clusters>
-    <clusters name="Couster135">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="LayoutManager2"/>
-    </clusters>
-    <clusters name="Couster136">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Container"/>
-    </clusters>
-    <clusters name="Couster137">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Integer"/>
-    </clusters>
-    <clusters name="Couster138">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="MenuContainer"/>
-    </clusters>
-    <clusters name="Couster139">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="FileInputStream"/>
-    </clusters>
-    <clusters name="Couster140">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Math"/>
-    </clusters>
-    <clusters name="Couster141">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" tipoRelacion="pendiente!!"/>
-      </hijos>
-    </clusters>
-    <clusters name="Couster142">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="GridBagConstraints"/>
-    </clusters>
-    <clusters name="Couster143">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JOptionPane"/>
-    </clusters>
-    <clusters name="Couster144">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InputStreamReader"/>
-    </clusters>
-    <clusters name="Couster145">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Border"/>
-    </clusters>
-    <clusters name="Couster146">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AbstractButton"/>
-    </clusters>
-    <clusters name="Couster147">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JTextArea"/>
-    </clusters>
-    <clusters name="Couster148">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AWTEvent"/>
-    </clusters>
-  </visualizacionMetricas2:Aplicacion>
-  <visualizacionMetricas2:Aplicacion/>
-  <visualizacionMetricas2:Aplicacion/>
-  <visualizacionMetricas2:Aplicacion/>
-  <visualizacionMetricas2:Aplicacion/>
-  <visualizacionMetricas2:Aplicacion/>
+  <visualizacionMetricas2:Nodo name="InterfazBatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="InterfazBatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="BatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="PanelJugadores"/>
+  <visualizacionMetricas2:Nodo name="InterfazBatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="Jugador"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="Jugador"/>
+  <visualizacionMetricas2:Nodo name="AyudantePruebasCliente"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="Tablero"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Jugador"/>
+  <visualizacionMetricas2:Nodo name="PanelMensajes"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="Tablero"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="TableroFlota"/>
+  <visualizacionMetricas2:Nodo name="Tablero"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Tablero"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="TableroFlota"/>
+  <visualizacionMetricas2:Nodo name="Jugador"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="Jugador"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="TableroFlota"/>
+  <visualizacionMetricas2:Nodo name="Tablero"/>
+  <visualizacionMetricas2:Nodo name="Casilla"/>
+  <visualizacionMetricas2:Nodo name="Barco"/>
+  <visualizacionMetricas2:Nodo name="DecoradorServidorBatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="AyudantePruebasServidor"/>
+  <visualizacionMetricas2:Nodo name="Encuentro"/>
+  <visualizacionMetricas2:Nodo name="BatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="DecoradorEncuentro"/>
+  <visualizacionMetricas2:Nodo name="Encuentro"/>
+  <visualizacionMetricas2:Nodo name="BatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="JugadorRemoto"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="Encuentro"/>
+  <visualizacionMetricas2:Nodo name="JugadorRemoto"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="BatallaNavalException"/>
+  <visualizacionMetricas2:Nodo name="BatallaNaval"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="Encuentro"/>
+  <visualizacionMetricas2:Nodo name="AdministradorResultados"/>
+  <visualizacionMetricas2:Nodo name="Encuentro"/>
+  <visualizacionMetricas2:Nodo name="AyudantePruebasEncuentro"/>
+  <visualizacionMetricas2:Nodo name="RegistroJugador"/>
+  <visualizacionMetricas2:Nodo name="InterfazJugador"/>
+  <visualizacionMetricas2:Nodo name="PanelDatosJuego"/>
 </xmi:XMI>

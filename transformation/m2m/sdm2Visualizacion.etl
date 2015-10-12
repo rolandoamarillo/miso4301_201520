@@ -11,52 +11,90 @@ rule Segment2Aplicacion
 transform t: source!Segment
 to o: target!Aplicacion{
   guard : t.name <> "externals"
-  
-  o.EjectCluster();
+ 
+  o.clusters = EjectCluster();
 }
 
-//Ejecuta el algoritmo de clouster y mapea con los respectivos objetos de VisualizacionMetricascs
-operation target!Aplicacion EjectCluster(){
+//Ejecuta el algoritmo de clouster y mapea con los respectivos objetos de VisualizacionMetricas
+operation EjectCluster(){
+    var lista = new Sequence;
+    
     var count = 0;
+    var modExt = source!CodeModel.allInstances().select(x| x.name = "externals").first();
+	var sonsExt = modExt.getAllContents();
+	
    	var segment = source!CodeModel.allInstances().first();
    	var classLR = source!ClassLevelRelation.allInstances();
-	var classes = source!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(source!ClassUnit) or e.isTypeOf(source!InterfaceUnit) or e.isTypeOf(source!TemplateUnit)));
+	var classes = source!Segment.allInstances().first().getAllContents()->select(e| ((e.isTypeOf(source!ClassUnit) or e.isTypeOf(source!InterfaceUnit) or e.isTypeOf(source!TemplateUnit)) and not ExistsInExternals(sonsExt, e)));
 	
-	var clusterTool =new Native("subkdm.tools.ClusterCalculation");
+	var clusterTool = new Native("subkdm.tools.ClusterCalculation");
     clusterTool.sayHello().println();
     clusterTool.segment = segment;
     clusterTool.relations = classLR->asSet();
     clusterTool.classes = classes->asSet();
     clusterTool.segment.println();
-  
+	
     var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
-    clusterSet.println();
+    //clusterSet.println();
     
     for (cluster in clusterSet){
       var nodoCluster = new target!Cluster();
   	  count = count + 1;
-  	  nodoCluster.name ="Couster" + count;
+  	  nodoCluster.name ="Cluster" + count;
   	   
   	  for(c in cluster){
+  	     var pkg = nodoCluster.CreatePackages(c);
+  	     
   	     var nodoClasses = new target!Nodo();
-  	     c.println();
-  	     nodoClasses.name = c.name;
-  	     c.name.println();
-  	     nodoClasses.GetRelationsClass(classLR);
-  	     nodoCluster.hijos.add(nodoClasses);
+  		 nodoClasses.name = c.name;
+  		 nodoClasses.tipo = "Class";
+  		 nodoClasses.GetRelationsClass(classLR);
+  		 pkg.hijos.add(nodoClasses);
       }
       
-     self.clusters.add(nodoCluster);
+     lista.add(nodoCluster);
     }
+    
+   return lista;
+}
+
+//Crea los paquetes por cluster
+operation target!Nodo CreatePackages(item: source!CodeItem){     
+	//se obtiene el paquete al cual pertenece la clase
+  	var package = item.eContainer();
+  	      
+  	var nodoPack = self.hijos.select(x | x.name == package.name).first();
+	if(nodoPack.isDefined()){
+		return nodoPack;
+	}
+	else{
+		var nodoPack2 = new target!Nodo();
+		nodoPack2.name = package.name;
+		nodoPack2.tipo = "Package";
+		self.hijos.add(nodoPack2);
+		
+		return 	nodoPack2;
+	}
 }
 
 //Obtiene las relaciones de cada clase para mapear a dependencias
 operation target!Nodo GetRelationsClass(classLR: Sequence){
 	var relations = classLR.select(x | x.`from`.name == self.name);
-	for(rel in relations)
-	{
+	for(rel in relations){
+		var package = rel.`from`.eContainer();
 	    var dep = new target!Dependencia();
-		dep.tipoRelacion = "pendiente!!";
+	    var ClaseDep = new target!Nodo();
+	    ClaseDep.name = rel.`to`.name ;
+	     
+	    dep.dependiente =  ClaseDep;
+	    
+	    for(t in rel.typeRelations){
+	    	var tipoRel = new target!TipoRelacion();
+	    	tipoRel.name = t.name;
+	    	
+	    	dep.tiposrelacion.add(tipoRel);
+	    }
+	    
 		self.hijos.add(dep);
 	}
 }
@@ -69,4 +107,13 @@ operation source!ModelElement getAllContents(): Sequence{
 		set.addAll(e.getAllContents());
 	}
 	return set;
+}
+
+// identifica si un ClassUnit esta en el paquete de externos
+// para no inlcuirlas en las relaciones
+operation ExistsInExternals(lista: Sequence,item: source!CodeItem): Boolean{
+	if(lista.exists(a | a.equals(item)))
+	 return true;
+	else
+	 return false; 	
 }

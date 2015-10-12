@@ -20,7 +20,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Nodo"/>
   <eClassifiers xsi:type="ecore:EClass" name="Dependencia" eSuperTypes="#//Medible">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependiente" eType="#//Elemento"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoRelacion" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tiposrelacion" upperBound="-1"
+        eType="#//TipoRelacion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricaDibujable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -31,5 +32,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Medible" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="metricas" upperBound="-1"
         eType="#//MetricaDibujable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TipoRelacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
