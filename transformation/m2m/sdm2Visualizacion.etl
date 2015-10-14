@@ -3,6 +3,7 @@ pre {
 }
 
 post {
+	CreateDependecies();
 	"Done".println();
 }
 
@@ -48,7 +49,7 @@ operation EjectCluster(){
   	     var nodoClasses = new target!Nodo();
   		 nodoClasses.name = c.name;
   		 nodoClasses.tipo = "Class";
-  		 nodoClasses.GetRelationsClass(classLR);
+  		 //nodoClasses.GetRelationsClass(classLR);
   		 pkg.hijos.add(nodoClasses);
       }
       
@@ -77,15 +78,27 @@ operation target!Nodo CreatePackages(item: source!CodeItem){
 	}
 }
 
+//Crea las dependencias para cada clase en el modelo
+operation CreateDependecies(){
+
+	var classLR = source!ClassLevelRelation.allInstances();
+	var nodosClases = target!Nodo.allInstances().select(x | x.tipo = "Class");
+	
+	for(nodo in nodosClases)
+	{
+		nodo.GetRelationsClass(classLR, nodosClases);
+	}	
+}
+
 //Obtiene las relaciones de cada clase para mapear a dependencias
-operation target!Nodo GetRelationsClass(classLR: Sequence){
+operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence){
 	var relations = classLR.select(x | x.`from`.name == self.name);
+	
 	for(rel in relations){
 		var package = rel.`from`.eContainer();
 	    var dep = new target!Dependencia();
-	    var ClaseDep = new target!Nodo();
-	    ClaseDep.name = rel.`to`.name ;
-	     
+	    
+	    var ClaseDep = nodosClases.select(x | x.name == rel.`to`.name).first();
 	    dep.dependiente =  ClaseDep;
 	    
 	    for(t in rel.typeRelations){
@@ -99,7 +112,7 @@ operation target!Nodo GetRelationsClass(classLR: Sequence){
 	}
 }
 
-//Obtiene la lista de todos los elementos que conetiene un Modelo 
+//Obtiene la lista de todos los elementos que conetiene en el source
 operation source!ModelElement getAllContents(): Sequence{
 	var set = new Sequence;
 	set.addAll(self.eContents());
