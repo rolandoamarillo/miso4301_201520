@@ -172,6 +172,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CouplingBetweenObjectsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="WeightedMethodsPerClassMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberOfUsesMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberOfContainmentsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CalculatedCouplingMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
   </eSubpackages>
   <eSubpackages name="kdmRelations" nsURI="http://subkdm/kdmrelations" nsPrefix="kdmrelations">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship" eSuperTypes="#//kdmObjects/ModelElement">

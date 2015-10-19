@@ -21,17 +21,31 @@ operation sourcemodel!Segment defineMeasures () : List {
 	var resp = new List();
 	if(sourcemodel!ClassLevelRelation.allInstances().size() > 0)
 	{
-	var cbo = new sourcemodel!CouplingBetweenObjectsMeasure();
-	cbo.name = "CBO Coupling between Object Classes";
-	cbo.description = "Two classes are coupled when methods declared in one class use methods or instance variables defined by the other class. The uses relationship can go either way: both uses and used-by relationships are taken into account, but only once.";
-	resp.add(cbo);
+		var cbo = new sourcemodel!CouplingBetweenObjectsMeasure();
+		cbo.name = "CBO Coupling between Object Classes";
+		cbo.description = "Two classes are coupled when methods declared in one class use methods or instance variables defined by the other class. The uses relationship can go either way: both uses and used-by relationships are taken into account, but only once.";
+		resp.add(cbo);
 	}
 	if(sourcemodel!ClassUnit.allInstances().size() > 0)
 	{
-	var wmc = new sourcemodel!WeightedMethodsPerClassMeasure();
-	wmc.name = "WMC Weighted Methods Per Class";
-	wmc.description = "WMC is simply the method count for a class";
-	resp.add(wmc);
+		var wmc = new sourcemodel!WeightedMethodsPerClassMeasure();
+		wmc.name = "WMC Weighted Methods Per Class";
+		wmc.description = "WMC is simply the method count for a class";
+		resp.add(wmc);
+	}
+	if(sourcemodel!ClassLevelRelation.allInstances().size() > 0)
+	{	
+		var nou = new sourcemodel!NumberOfUsesMeasure();
+		nou.name = "NOU Number Of Uses";
+		nou.description = "Number of uses inside the class level relation object";
+		resp.add(nou);
+		var noc = new sourcemodel!NumberOfContainmentsMeasure();
+		noc.name = "NOC Number Of Containments";
+		noc.description = "Number of containments inside the class level relation object";
+		resp.add(noc);
+		var cc = new sourcemodel!CalculatedCouplingMeasure();
+		cc.name = "CC Calculated Coupling";
+		cc.description = "Calculation based on containments and uses";
 	}
 	return resp;
 }
@@ -41,12 +55,19 @@ operation calculateMeasurements () : List {
 	var cbos = sourcemodel!CouplingBetweenObjectsMeasure.allInstances();
 	if(cbos.size() > 0)
 	{
-	calculateCouplingBetweenObjects(resp, cbos.get(0));
+		calculateCouplingBetweenObjects(resp, cbos.get(0));
 	}
 	var wmcs = sourcemodel!WeightedMethodsPerClassMeasure.allInstances();
 	if(wmcs.size() > 0)
 	{
-	calculateWeightedMethodsPerClass(resp, wmcs.get(0));
+		calculateWeightedMethodsPerClass(resp, wmcs.get(0));
+	}
+	var nou = sourcemodel!NumberOfUsesMeasure.allInstances();
+	var noc = sourcemodel!NumberOfContainmentsMeasure.allInstances();
+	var cc = sourcemodel!CalculatedCouplingMeasure.allInstances();
+	if(nou.size() > 0 and noc.size() > 0 and cc.size > 0)
+	{
+		calculateNumberOfUsesAndContainmentMeasure(resp, nou.get(0), noc.get(0), cc.get(0));
 	}
 	return resp;
 }
@@ -54,17 +75,16 @@ operation calculateMeasurements () : List {
 operation calculateCouplingBetweenObjects(measurements : List, cbo : sourcemodel!CouplingBetweenObjectsMeasure) {
 	for(dataType in sourcemodel!DataType.allInstances())
 	{
-	var value = 0.0;
-	-- Se esta tomando el from/to sin mirar objeto. Se debe revisar que no sean duplicados. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
-	value = sourcemodel!ClassLevelRelation.allInstances().select( clr | clr.from = dataType or clr.`to` = dataType).size;
-	if(value > 0)
-	{
-	var measurement = new DimensionalMeasurement();
-	measurement.measurant = getMofElementFromModelElement(dataType);
-	measurement.measure = cbo;
-	measurement.value = value.asDouble();
-	measurements.add(measurement);
-	}
+		var value = 0.0;
+		value = sourcemodel!ClassLevelRelation.allInstances().select( clr | clr.from = dataType or clr.`to` = dataType).size;
+		--if(value > 0)
+		--{
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(dataType);
+		measurement.measure = cbo;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+		--}
 	}
 }
 
@@ -72,17 +92,49 @@ operation calculateWeightedMethodsPerClass(measurements: List, wmc: WeightedMeth
 {
 	for(class in sourcemodel!ClassUnit.allInstances())
 	{
-	var value = 0.0;
-	-- Se esta tomando getters y setters, se debe remover estos. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
-	value = class.codeElement.select( ce | ce.isTypeOf(sourcemodel!MethodUnit) ).size;
-	if(value > 0)
-	{
-	var measurement = new DimensionalMeasurement();
-	measurement.measurant = getMofElementFromModelElement(class);
-	measurement.measure = wmc;
-	measurement.value = value.asDouble();
-	measurements.add(measurement);
+		var value = 0.0;
+		-- Se esta tomando getters y setters, se debe remover estos. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
+		value = class.codeElement.select( ce | ce.isTypeOf(sourcemodel!MethodUnit) ).size;
+		if(value > 0)
+		{
+			var measurement = new DimensionalMeasurement();
+			measurement.measurant = getMofElementFromModelElement(class);
+			measurement.measure = wmc;
+			measurement.value = value.asDouble();
+			measurements.add(measurement);
+		}
 	}
+}
+
+operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: NumberOfUsesMeasure, noc: NumberOfContainmentsMeasure, cc: CalculatedCouplingMeasure)
+{
+	for(class in sourcemodel!ClassLevelRelation.allInstances())
+	{
+		var valueNou = 0.0;
+		valueNou = class.typeRelations.select( ce | ce.name.equalsIgnoreCase("Uses") ).size;
+		var measurement = new DimensionalMeasurement();
+		var mof = getMofElementFromModelElement(class);
+		measurement.measurant = mof;
+		measurement.measure = nou;
+		measurement.value = valueNou.asDouble();
+		measurements.add(measurement);
+		
+		var valueNoc = 0.0;
+		valueNoc = class.typeRelations.select( ce | ce.name.equalsIgnoreCase("Containment") ).size;
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = mof;
+		measurement.measure = noc;
+		measurement.value = valueNoc.asDouble();
+		measurements.add(measurement);
+		
+		var usesMultiplicator = 1.0;
+		var containmentMultiplicator = 2.0;
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = mof;
+		measurement.measure = cc;
+		var value = (usesMultiplicator * valueNou) + (containmentMultiplicator * valueNoc);
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
 	}
 }
 
