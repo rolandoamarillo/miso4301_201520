@@ -108,6 +108,16 @@ operation calculateWeightedMethodsPerClass(measurements: List, wmc: WeightedMeth
 
 operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: NumberOfUsesMeasure, noc: NumberOfContainmentsMeasure, cc: CalculatedCouplingMeasure)
 {
+
+	var usesMultiplicator = 1.0;
+	var containmentMultiplicator = 2.0;
+		
+	var str = System.User.promptInteger("Complexity value for USE relation", usesMultiplicator.asInteger());
+	usesMultiplicator = str.asDouble();
+		
+	var str = System.User.promptInteger("Complexity value for CONTAINMENT relation", containmentMultiplicator.asInteger());
+	containmentMultiplicator = str.asDouble();
+
 	for(class in sourcemodel!ClassLevelRelation.allInstances())
 	{
 		var valueNou = 0.0;
@@ -127,8 +137,8 @@ operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: Nu
 		measurement.value = valueNoc.asDouble();
 		measurements.add(measurement);
 		
-		var usesMultiplicator = 1.0;
-		var containmentMultiplicator = 2.0;
+		
+		
 		var measurement = new DimensionalMeasurement();
 		measurement.measurant = mof;
 		measurement.measure = cc;
