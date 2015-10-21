@@ -30,23 +30,28 @@ operation EjectCluster() : Sequence{
 	
 	//buscar pesos de las relaciones por clases...
 	var mofElements = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation));
-	mofElements.size().println();
-	var cx = 0;
 	
 	clusterTool.constructGraph(classes->asSet());
 	for(elem in mofElements)
 	{
-	  cx = cx + 1;
 	  var relation = elem.element;	
-	  var metricas = elem.measurant;
-	  //metricas.size().println();
-	  //var weightRelation = metricas.select(x | x.measure.isTypeOf(source!NumberOfUsesMeasure)).first();
-	  var peso = cx;
-	  
-	  clusterTool.addClassLevelRelation(relation, peso); 
+	  var measurant = elem.measurant;
+	  //measurant.println();
+	  var coupling = measurant.select(x| x.measure.isTypeOf(source!CalculatedCouplingMeasure)).first();
+	  var peso = 1;
+	  	
+	  if(coupling.value > 0)
+	    peso = coupling.value;
+	 	
+	  clusterTool.addClassLevelRelation(relation, peso.asInteger()); 
 	}
 	
-	var clusterSet = clusterTool.getClusters(5);
+	var k = 1;
+		
+	var str = System.User.promptInteger("Number of Clusters", k.asInteger());
+	k = str.asInteger();
+	
+	var clusterSet = clusterTool.getClusters(k);
 	    
 	for (cluster in clusterSet){
       var nodoCluster = new target!Cluster();
@@ -152,15 +157,14 @@ operation target!Arco CreateMeasuresRelations(relation: source!ClassLevelRelatio
 		var mofElement = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation) and x.element.equals(relation)).first();
 		var measurant = mofElement.measurant;
 		
+		//measurant.println();
 		for(m in measurant)
 		{
-			var met = new target!Metrica();
-			met.valor = m.value; 
-			if(m.measure.isDefined())
-			{
-				met.SetTipoMetrics(m.measure);
-			}
-			self.metricas.add(met);
+			var met1 = new target!Metrica();
+			met1.SetTipoMetrics(m.measure);
+			met1.valor = m.value.asDouble();
+			
+			self.metricas.add(met1);
 		}
 	}
 }
@@ -185,24 +189,25 @@ operation ExistsInExternals(lista: Sequence,item: source!CodeItem): Boolean{
 }
 
 //obtiene el tipo de metrica
-operation target!Metrica SetTipoMetrics(tipo: source!Measure){
-	if(tipo.isTypeOf(source!NumberOfUsesMeasure))
+operation target!Metrica SetTipoMetrics(tipoMeasure: source!Measure){
+	
+	if(tipoMeasure.isTypeOf(source!NumberOfUsesMeasure))
 	{
 		self.tipo = target!TipoMetrica#NumberOfUses;
 	}
-	else if(tipo.isTypeOf(source!NumberOfContainmentsMeasure))
+	else if(tipoMeasure.isTypeOf(source!NumberOfContainmentsMeasure))
 	{
 		self.tipo = target!TipoMetrica#NumberOfContainments;
 	}
-	else if(tipo.isTypeOf(source!CouplingBetweenObjectsMeasure))
-	{
-		self.tipo = target!TipoMetrica#CouplingBetweenObjects;
-	}
-	else if(tipo.isTypeOf(source!CalculatedCouplingMeasure))
+	else if(tipoMeasure.isTypeOf(source!CalculatedCouplingMeasure))
 	{
 		self.tipo = target!TipoMetrica#CalculatedCoupling;
 	}
-	else if(tipo.isTypeOf(source!WeightedMethodsPerClassMeasure))
+	else if(tipoMeasure.isTypeOf(source!CouplingBetweenObjectsMeasure))
+	{
+		self.tipo = target!TipoMetrica#CouplingBetweenObjects;
+	}
+	else if(tipoMeasure.isTypeOf(source!WeightedMethodsPerClassMeasure))
 	{
 		self.tipo = target!TipoMetrica#WeightedMethodsPerClass;
 	}

@@ -132,6 +132,7 @@ operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: Nu
 		measurement.measurant = mof;
 		measurement.measure = nou;
 		measurement.value = valueNou.asDouble();
+		valueNou.println(" use value: ");
 		measurements.add(measurement);
 		
 		var valueNoc = 0.0;
@@ -140,6 +141,7 @@ operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: Nu
 		measurement.measurant = mof;
 		measurement.measure = noc;
 		measurement.value = valueNoc.asDouble();
+		valueNou.println(" Containment value: ");
 		measurements.add(measurement);
 		
 		
