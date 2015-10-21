@@ -8,16 +8,15 @@ post {
 }
 
 //Raiz
-rule Segment2Aplicacion
-transform t: source!Segment
+rule Segment2NodoPrincipal
+transform t: source!CodeModel
 to o: target!Aplicacion{
   guard : t.name <> "externals"
- 
-  o.clusters = EjectCluster();
+  o.name = t.name;
+  o.hijos = EjectCluster();
 }
 
-//Ejecuta el algoritmo de clouster y mapea con los respectivos objetos de VisualizacionMetricas
-operation EjectCluster(){
+operation EjectCluster() : Sequence{
     var lista = new Sequence;
     
     var count = 0;
@@ -25,20 +24,31 @@ operation EjectCluster(){
 	var sonsExt = modExt.getAllContents();
 	
    	var segment = source!CodeModel.allInstances().first();
-   	var classLR = source!ClassLevelRelation.allInstances();
-	var classes = source!Segment.allInstances().first().getAllContents()->select(e| ((e.isTypeOf(source!ClassUnit) or e.isTypeOf(source!InterfaceUnit) or e.isTypeOf(source!TemplateUnit)) and not ExistsInExternals(sonsExt, e)));
+	var classes = source!Segment.allInstances().first().getAllContents()->select(e| e.isTypeOf(source!ClassUnit) and not ExistsInExternals(sonsExt, e));
 	
-	var clusterTool = new Native("subkdm.tools.ClusterCalculation");
-    clusterTool.sayHello().println();
-    clusterTool.segment = segment;
-    clusterTool.relations = classLR->asSet();
-    clusterTool.classes = classes->asSet();
-    clusterTool.segment.println();
+	var clusterTool = new Native("clusterer.MSTCluesterCalculation");
 	
-    var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
-    //clusterSet.println();
-    
-    for (cluster in clusterSet){
+	//buscar pesos de las relaciones por clases...
+	var mofElements = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation));
+	mofElements.size().println();
+	var cx = 0;
+	
+	clusterTool.constructGraph(classes->asSet());
+	for(elem in mofElements)
+	{
+	  cx = cx + 1;
+	  var relation = elem.element;	
+	  var metricas = elem.measurant;
+	  //metricas.size().println();
+	  //var weightRelation = metricas.select(x | x.measure.isTypeOf(source!NumberOfUsesMeasure)).first();
+	  var peso = cx;
+	  
+	  clusterTool.addClassLevelRelation(relation, peso); 
+	}
+	
+	var clusterSet = clusterTool.getClusters(5);
+	    
+	for (cluster in clusterSet){
       var nodoCluster = new target!Cluster();
   	  count = count + 1;
   	  nodoCluster.name ="Cluster" + count;
@@ -46,10 +56,9 @@ operation EjectCluster(){
   	  for(c in cluster){
   	     var pkg = nodoCluster.CreatePackages(c);
   	     
-  	     var nodoClasses = new target!Nodo();
+  	     var nodoClasses = new target!Clase();
   		 nodoClasses.name = c.name;
-  		 nodoClasses.tipo = "Class";
-  		 //nodoClasses.GetRelationsClass(classLR);
+  		 nodoClasses.tipo =  target!TipoElemento#CLASS;
   		 pkg.hijos.add(nodoClasses);
       }
       
@@ -60,7 +69,7 @@ operation EjectCluster(){
 }
 
 //Crea los paquetes por cluster
-operation target!Nodo CreatePackages(item: source!CodeItem){     
+operation target!Cluster CreatePackages(item: source!CodeItem){     
 	//se obtiene el paquete al cual pertenece la clase
   	var package = item.eContainer();
   	      
@@ -69,9 +78,9 @@ operation target!Nodo CreatePackages(item: source!CodeItem){
 		return nodoPack;
 	}
 	else{
-		var nodoPack2 = new target!Nodo();
+		var nodoPack2 = new target!Paquete();
 		nodoPack2.name = package.name;
-		nodoPack2.tipo = "Package";
+		nodoPack2.tipo = target!TipoElemento#PACKAGE;
 		self.hijos.add(nodoPack2);
 		
 		return 	nodoPack2;
@@ -82,7 +91,7 @@ operation target!Nodo CreatePackages(item: source!CodeItem){
 operation CreateDependecies(){
 
 	var classLR = source!ClassLevelRelation.allInstances();
-	var nodosClases = target!Nodo.allInstances().select(x | x.tipo = "Class");
+	var nodosClases = target!Nodo.allInstances().select(x | x.isTypeOf(target!Clase));
 	
 	for(nodo in nodosClases)
 	{
@@ -96,16 +105,15 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 	
 	for(rel in relations){
 		var package = rel.`from`.eContainer();
-	    var dep = new target!Dependencia();
+	    var dep = new target!Arco();
 	    
 	    var ClaseDep = nodosClases.select(x | x.name == rel.`to`.name).first();
-	    dep.dependiente =  ClaseDep;
+	    dep.target =  ClaseDep;
 	    
 	    for(t in rel.typeRelations){
-	    	var tipoRel = new target!TipoRelacion();
+	    	var tipoRel = new target!TipoArco();
 	    	tipoRel.name = t.name;
-	    	
-	    	dep.tiposrelacion.add(tipoRel);
+	    	dep.tipos.add(tipoRel);
 	    }
 	    
 		self.hijos.add(dep);

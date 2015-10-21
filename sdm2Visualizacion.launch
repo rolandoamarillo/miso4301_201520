@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.epsilon.etl.eclipse.dt.launching.EtlLaunchConfigurationDelegate">
-<booleanAttribute key="fine_grained_profiling" value="false"/>
+<booleanAttribute key="fine_grained_profiling" value="true"/>
 <listAttribute key="models">
-<listEntry value="#&#10;#Mon Oct 12 09:07:19 COT 2015&#10;isMetamodelFileBased=false&#10;name=source&#10;readOnLoad=true&#10;storeOnDisposal=true&#10;aliases=source&#10;cached=true&#10;fileBasedMetamodelUri=&#10;metamodelUri=http\://subkdm/kdmobjects,http\://subkdm/kdmrelations&#10;modelUri=platform\:/resource/miso4301_201520/models/kdmResultadoSub.xmi&#10;type=EMF&#10;modelFile=/miso4301_201520/models/kdmResultadoSub.xmi&#10;expand=true&#10;metamodelFile=&#10;"/>
-<listEntry value="#&#10;#Mon Oct 12 09:48:35 COT 2015&#10;isMetamodelFileBased=false&#10;name=target&#10;readOnLoad=true&#10;storeOnDisposal=true&#10;aliases=target&#10;cached=true&#10;fileBasedMetamodelUri=&#10;metamodelUri=http\://www.example.org/visualizacionMetricas2&#10;modelUri=platform\:/resource/miso4301_201520/models/Visualizacion.xmi&#10;type=EMF&#10;modelFile=/miso4301_201520/models/Visualizacion.xmi&#10;expand=true&#10;metamodelFile=&#10;"/>
+<listEntry value="#&#10;#Tue Oct 20 17:22:42 COT 2015&#10;isMetamodelFileBased=false&#10;name=source&#10;readOnLoad=true&#10;storeOnDisposal=true&#10;aliases=source&#10;cached=true&#10;fileBasedMetamodelUri=&#10;metamodelUri=http\://subkdm/kdmobjects,http\://subkdm/kdmrelations,http\://subkdm/sdm&#10;modelUri=platform\:/resource/miso4301_201520/models/kdmResultadoSub.xmi&#10;type=EMF&#10;modelFile=/miso4301_201520/models/kdmResultadoSub.xmi&#10;expand=true&#10;metamodelFile=&#10;"/>
+<listEntry value="#&#10;#Tue Oct 20 17:22:55 COT 2015&#10;isMetamodelFileBased=false&#10;name=target&#10;readOnLoad=true&#10;storeOnDisposal=true&#10;aliases=target&#10;cached=true&#10;fileBasedMetamodelUri=&#10;metamodelUri=http\://www.example.org/visualizacionMetricas&#10;modelUri=platform\:/resource/miso4301_201520/models/Visualizacion.xmi&#10;type=EMF&#10;modelFile=/miso4301_201520/models/Visualizacion.xmi&#10;expand=true&#10;metamodelFile=&#10;"/>
 </listAttribute>
-<booleanAttribute key="profile_model_loading" value="false"/>
-<booleanAttribute key="profiling_enabled" value="false"/>
-<booleanAttribute key="reset_profiler" value="false"/>
+<booleanAttribute key="profile_model_loading" value="true"/>
+<booleanAttribute key="profiling_enabled" value="true"/>
+<booleanAttribute key="reset_profiler" value="true"/>
 <stringAttribute key="source" value="/miso4301_201520/transformation/m2m/sdm2Visualizacion.etl"/>
 </launchConfiguration>

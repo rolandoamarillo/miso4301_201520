@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:h="http://subkdm/subkdm" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:main="http://subkdm/main" xmlns:micromodel="http://micromodel/1.0" xmlns:modisco.xml="http://www.eclipse.org/MoDisco/Xml/0.1.incubation/XML" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sdm="http://subkdm/sdm" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" selectedViews="_WSGicFJhEeWTjayuf0VR4w" version="8.1.1">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:code="http://www.eclipse.org/MoDisco/kdm/code" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:h="http://subkdm/subkdm" xmlns:kdm="http://www.eclipse.org/MoDisco/kdm/kdm" xmlns:kdmObjects="http://subkdm/kdmobjects" xmlns:main="http://subkdm/main" xmlns:micromodel="http://micromodel/1.0" xmlns:modisco.xml="http://www.eclipse.org/MoDisco/Xml/0.1.incubation/XML" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmlns:visualizacionMetricas="http://www.example.org/visualizacionMetricas" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://www.example.org/visualizacionMetricas http://www.example.org/visualizacionMetricas3/visualizacion" xmi:id="_nNCrgEYqEeW7N-vUJFfzUA" selectedViews="_WSGicFJhEeWTjayuf0VR4w" version="8.1.1">
   <models xmi:type="ecore:EPackage" href="metamodel/SimplifiedDecisionMetrics.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
   <models xmi:type="notation:Diagram" href="metamodel/SimplifiedDecisionMetrics.ecorediag#_Okeo4EX_EeWYeIof49VpUg"/>
@@ -15,8 +15,10 @@
   <models xmi:type="ecore:EPackage" href="src/main/resources/SubKDM.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="metamodel/visualizacionMetricas2.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"/>
-  <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
-  <models xmi:type="sdm:SimplifiedDecisionMetrics" href="models/SDM.xmi#/"/>
+  <models xmi:type="kdmObjects:Segment" href="models/SDM.xmi#/"/>
+  <models xmi:type="ecore:EPackage" href="metamodel/visualizacionMetricas.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2003/XMLType#/"/>
+  <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
@@ -60,6 +62,7 @@
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w" initialized="true">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDM2Model.design/description/SimplifiedDecisionMetrics.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
+  <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="h:Segment" href="models/kdmResultadoSub.xmi#/"/>
   <models xmi:type="h:Segment" href="models/My.subkdm#/"/>
   <models xmi:type="micromodel:MicroKDM" href="models/n6_buscaminas_MicroKDM.xmi#/"/>

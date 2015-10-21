@@ -21,7 +21,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Arco" eSuperTypes="#//Medible">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Elemento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tipos" upperBound="-1"
-        eType="#//TipoArco"/>
+        eType="#//TipoArco" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrica">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoMetrica"/>
@@ -54,6 +54,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Aplicacion" eSuperTypes="#//Nodo"/>
   </eSubpackages>
   <eSubpackages name="visualizacion" nsURI="http://www.example.org/visualizacionMetricas3/visualizacion"
       nsPrefix="visualizacionMetricas3.visualizacion">

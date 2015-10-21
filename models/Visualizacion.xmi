@@ -1,681 +1,306 @@
 <?xml version="1.0" encoding="ASCII"?>
-<visualizacionMetricas2:Aplicacion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:visualizacionMetricas2="http://www.example.org/visualizacionMetricas2">
-  <clusters name="Cluster1">
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazServidor" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazBatallaNaval" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.0/@hijos.0/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.0/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelJugadores" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelExtension" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.0/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelEncuentros" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.0/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+<visualizacionMetricas3.representacion:Aplicacion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:visualizacionMetricas="http://www.example.org/visualizacionMetricas" xmlns:visualizacionMetricas3.representacion="http://www.example.org/visualizacionMetricas3/representacion" xsi:schemaLocation="http://www.example.org/visualizacionMetricas3/representacion http://www.example.org/visualizacionMetricas#//representacion" name="carrito.service.subsystem">
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster1">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="entity">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoEntity">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.4/@hijos.0/@hijos.0">
+          <tipos name="Extends"/>
         </hijos>
       </hijos>
     </hijos>
-  </clusters>
-  <clusters name="Cluster2">
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazCliente" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelMensajes" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelTableros" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+  </hijos>
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster2">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="persistence">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoPersistence">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.0/@hijos.0">
+          <tipos name="Implements"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.7">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.1">
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.0/@hijos.1">
+          <tipos name="Extends"/>
         </hijos>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="InterfazJugador" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoPersistence">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.0/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.0/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarraMenu" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.1/@hijos.0">
+          <tipos name="Implements"/>
         </hijos>
       </hijos>
     </hijos>
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="testCliente" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasCliente" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BarcoTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TablerosJuegoTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.7">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="CasillaTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.1/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.7">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="api">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_ICarritoPersistence">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
       </hijos>
     </hijos>
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="cliente" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Jugador" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+  </hijos>
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster3">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="converter">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoConverter">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.7">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.0/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.4/@hijos.0/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
         </hijos>
       </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="TableroFlota" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.7">
-          <tiposrelacion name="Extends"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Casilla" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.6">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEsperarJugada" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNavalException" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadConectar" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Barco" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Tablero" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.2">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ThreadEnviarJugada" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Containment"/>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoConverter">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.0/@hijos.0">
+          <tipos name="Extends"/>
         </hijos>
       </hijos>
     </hijos>
-  </clusters>
-  <clusters name="Cluster3">
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="interfazCliente" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DialogoConectar" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.2/@hijos.0/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="PanelDatosJuego" tipo="Class"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="dto">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoDTO"/>
     </hijos>
-  </clusters>
-  <clusters name="Cluster4">
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="servidor" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="BatallaNaval" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="Encuentro" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.3">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultados" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="JugadorRemoto" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="RegistroJugador" tipo="Class"/>
-    </hijos>
-    <hijos xsi:type="visualizacionMetricas2:Nodo" name="testServidor" tipo="Package">
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasServidor" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AdministradorResultadosTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="AyudantePruebasEncuentro" tipo="Class"/>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="ServidorBatallaNavalTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.1/@hijos.4">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.1/@hijos.0">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.1">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.0">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorServidorBatallaNaval" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.1/@hijos.5">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.1">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.0">
-          <tiposrelacion name="Extends"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="DecoradorEncuentro" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.4">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.3">
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.1/@hijos.2/@hijos.4">
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.1">
-          <tiposrelacion name="Extends"/>
-        </hijos>
-      </hijos>
-      <hijos xsi:type="visualizacionMetricas2:Nodo" name="EncuentroTest" tipo="Class">
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.0/@hijos.1">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Uses"/>
-          <tiposrelacion name="Uses"/>
-        </hijos>
-        <hijos xsi:type="visualizacionMetricas2:Dependencia" dependiente="//@clusters.3/@hijos.1/@hijos.2">
-          <tiposrelacion name="Containment"/>
-          <tiposrelacion name="Containment"/>
+  </hijos>
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster4">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="api">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="ICarritoPersistence">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.1/@hijos.0">
+          <tipos name="Extends"/>
         </hijos>
       </hijos>
     </hijos>
-  </clusters>
-</visualizacionMetricas2:Aplicacion>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="persistence">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoPersistenceTest">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.0/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.4/@hijos.0/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.2/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+      </hijos>
+    </hijos>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="CarritoPersistenceTest">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="generateRandom"/>
+    </hijos>
+  </hijos>
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster5">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="entity">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoEntity"/>
+    </hijos>
+  </hijos>
+  <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="Cluster6">
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="ejb">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.1">
+          <tipos name="Implements"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.0/@hijos.2">
+          <tipos name="Extends"/>
+        </hijos>
+      </hijos>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoLogicServiceTest">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.1">
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.2/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+      </hijos>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.3/@hijos.0/@hijos.0">
+          <tipos name="Containment"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.1/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.0">
+          <tipos name="Implements"/>
+        </hijos>
+      </hijos>
+    </hijos>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="api">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_ICarritoLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+      </hijos>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="ICarritoLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.0">
+          <tipos name="Extends"/>
+        </hijos>
+      </hijos>
+    </hijos>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="mock">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoMockLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.1">
+          <tipos name="Implements"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.2/@hijos.1">
+          <tipos name="Extends"/>
+        </hijos>
+      </hijos>
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="_CarritoMockLogicService">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.4/@hijos.0">
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Containment"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.1/@hijos.0">
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+          <tipos name="Uses"/>
+        </hijos>
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.5/@hijos.1/@hijos.0">
+          <tipos name="Implements"/>
+        </hijos>
+      </hijos>
+    </hijos>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="CarritoLogicServiceTest">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="generateRandom"/>
+    </hijos>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Paquete" tipo="PACKAGE" name="dto">
+      <hijos xsi:type="visualizacionMetricas3.representacion:Clase" tipo="CLASS" name="CarritoDTO">
+        <hijos xsi:type="visualizacionMetricas:Arco" target="//@hijos.2/@hijos.1/@hijos.0">
+          <tipos name="Extends"/>
+        </hijos>
+      </hijos>
+    </hijos>
+  </hijos>
+</visualizacionMetricas3.representacion:Aplicacion>
