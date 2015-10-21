@@ -88,6 +88,8 @@ operation target!Cluster CreatePackages(item: source!CodeItem){
 }
 
 //Crea las dependencias para cada clase en el modelo
+//relaciones - arcos
+//metricas
 operation CreateDependecies(){
 
 	var classLR = source!ClassLevelRelation.allInstances();
@@ -96,7 +98,29 @@ operation CreateDependecies(){
 	for(nodo in nodosClases)
 	{
 		nodo.GetRelationsClass(classLR, nodosClases);
+		nodo.CreateMeasuresClasses();
 	}	
+}
+
+//asocia metricas de las clases
+operation target!Nodo CreateMeasuresClasses(){
+	//buscar pesos de las metricas por clases...
+	if(source!MofElement.allInstances().exists(x | x.element.isTypeOf(source!ClassUnit) and x.element.name == self.name))
+	{
+		var mofElement = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassUnit) and x.element.name == self.name).first();
+		var measurant = mofElement.measurant;
+		
+		for(m in measurant)
+		{
+			var met = new target!Metrica();
+			met.valor = m.value; 
+			if(m.measure.isDefined())
+			{
+				met.SetTipoMetrics(m.measure);
+			}
+			self.metricas.add(met);
+		}
+	}
 }
 
 //Obtiene las relaciones de cada clase para mapear a dependencias
@@ -109,7 +133,7 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 	    
 	    var ClaseDep = nodosClases.select(x | x.name == rel.`to`.name).first();
 	    dep.target =  ClaseDep;
-	    
+	    dep.CreateMeasuresRelations(rel);
 	    for(t in rel.typeRelations){
 	    	var tipoRel = new target!TipoArco();
 	    	tipoRel.name = t.name;
@@ -117,6 +141,27 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 	    }
 	    
 		self.hijos.add(dep);
+	}
+}
+
+//asocia metricas de relaciones - arcos
+operation target!Arco CreateMeasuresRelations(relation: source!ClassLevelRelation){
+	//buscar pesos de las metricas por clases...
+	if(source!MofElement.allInstances().exists(x | x.element.isTypeOf(source!ClassLevelRelation) and x.element.equals(relation)))
+	{
+		var mofElement = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation) and x.element.equals(relation)).first();
+		var measurant = mofElement.measurant;
+		
+		for(m in measurant)
+		{
+			var met = new target!Metrica();
+			met.valor = m.value; 
+			if(m.measure.isDefined())
+			{
+				met.SetTipoMetrics(m.measure);
+			}
+			self.metricas.add(met);
+		}
 	}
 }
 
@@ -137,4 +182,28 @@ operation ExistsInExternals(lista: Sequence,item: source!CodeItem): Boolean{
 	 return true;
 	else
 	 return false; 	
+}
+
+//obtiene el tipo de metrica
+operation target!Metrica SetTipoMetrics(tipo: source!Measure){
+	if(tipo.isTypeOf(source!NumberOfUsesMeasure))
+	{
+		self.tipo = target!TipoMetrica#NumberOfUses;
+	}
+	else if(tipo.isTypeOf(source!NumberOfContainmentsMeasure))
+	{
+		self.tipo = target!TipoMetrica#NumberOfContainments;
+	}
+	else if(tipo.isTypeOf(source!CouplingBetweenObjectsMeasure))
+	{
+		self.tipo = target!TipoMetrica#CouplingBetweenObjects;
+	}
+	else if(tipo.isTypeOf(source!CalculatedCouplingMeasure))
+	{
+		self.tipo = target!TipoMetrica#CalculatedCoupling;
+	}
+	else if(tipo.isTypeOf(source!WeightedMethodsPerClassMeasure))
+	{
+		self.tipo = target!TipoMetrica#WeightedMethodsPerClass;
+	}
 }

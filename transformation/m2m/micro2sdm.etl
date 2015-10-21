@@ -65,7 +65,12 @@ operation calculateMeasurements () : List {
 	var nou = sourcemodel!NumberOfUsesMeasure.allInstances();
 	var noc = sourcemodel!NumberOfContainmentsMeasure.allInstances();
 	var cc = sourcemodel!CalculatedCouplingMeasure.allInstances();
-	if(nou.size() > 0 and noc.size() > 0 and cc.size > 0)
+	
+	nou.size().println(); 
+	noc.size().println();
+	cc.size().println();
+	
+	if(nou.size() > 0 and noc.size() > 0 and cc.size() > 0)
 	{
 		calculateNumberOfUsesAndContainmentMeasure(resp, nou.get(0), noc.get(0), cc.get(0));
 	}
