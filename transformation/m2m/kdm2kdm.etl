@@ -5,28 +5,6 @@ pre {
 post {
 	generateClassLevelRelations();
 	"Done".println();
-	
-	/*var segment = kdmMicro!CodeModel.allInstances().first();
-	var classLR = kdmMicro!ClassLevelRelation.allInstances();
-	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| (e.isTypeOf(kdmMicro!ClassUnit) or e.isTypeOf(kdmMicro!InterfaceUnit) or e.isTypeOf(kdmMicro!TemplateUnit)));
-	
-	var clusterTool =new Native("subkdm.tools.ClusterCalculation");
-    clusterTool.sayHello().println();
-    clusterTool.segment = segment;
-    clusterTool.relations = classLR->asSet();
-    clusterTool.classes = classes->asSet();
-    clusterTool.segment.println();
-  
-    var clusterSet = clusterTool.clusteringAlgorithm(classLR->asSet());
-    clusterSet.println();
-     for(c in clusterSet){
-		c.println();
-    }
-    for (cluster in clusterSet){
-  	  for(c in cluster){
-  	  	c.println();
-      }
-    }*/
 }
 
 //Raiz
@@ -521,7 +499,7 @@ operation kdmMicro!ModelElement getAllContents(): Sequence{
 //Si la relacion ya existe se adiciona el tipo de asociacion a la relacion ya existente
 operation kdmMicro!CodeModel darRelation(a: kdmMicro!CodeItem, b: kdmMicro!CodeItem): kdmMicro!ClassLevelRelation{	
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
-	var rel = relations->select(e | (e.`from` = a  and e.`to` = b) or (e.`from` = b  and e.`to` = a)).first();
+	var rel = relations->select(e | (e.`from` = a  and e.`to` = b)).first();
 	if(rel.isDefined()){
 		return rel;
 	}
