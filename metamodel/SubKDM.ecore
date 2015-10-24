@@ -175,6 +175,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="NumberOfUsesMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="NumberOfContainmentsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="CalculatedCouplingMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrivesToEntityMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectMeasurement" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+          eType="#//kdmObjects/ModelElement"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="kdmRelations" nsURI="http://subkdm/kdmrelations" nsPrefix="kdmrelations">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship" eSuperTypes="#//kdmObjects/ModelElement">
