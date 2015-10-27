@@ -5,6 +5,74 @@ pre {
 post {
 	CreateDependecies();
 	"Done".println();
+	
+	var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
+	var relations = source!ClassLevelRelation.allInstances();
+	var clusterTool = new Native("clusterer.EJBClusterer");
+	
+	var ejbs = new Set;
+	var entities = new Set;
+	
+	for(c in classes){
+		if (c.containsEntity()){
+			entities.add(c);
+		}
+		else if(c.containsEJB()){
+			ejbs.add(c);
+		}
+	}
+	
+	clusterTool.constructGraph(classes->asSet(),relations->asSet());
+	
+	var clusters = clusterTool.makeCluster(ejbs,entities);
+	
+	for(cluster in clusters){
+		cluster.println();
+	}
+	
+	
+	var union = new Set;
+	for(cluster in clusters){
+		union.addAll(cluster);
+	}
+	
+	var noClasificadas = classes->asSet()->select(c|not union->includes(c));
+	
+	noClasificadas.println();
+	
+	var i = 1;
+	for(A in clusters){
+		var j=1;
+		for(B in clusters){
+			var union = new Set;
+			var intersect = new Set;
+			
+			union.addAll(A);
+			union.addAll(B);
+			
+			intersect.addAll(A->select(c|B->includes(c)));
+			
+			var value = new Real;
+			value = ((intersect->size()->asReal())/(A->size()->asReal())).max(((intersect->size()->asReal())/(B->size()->asReal())));
+			
+			(""+i+"--"+j+":"+value).println();
+			
+			j=j+1;
+		}
+		i=i+1;
+	}
+	
+	
+}
+
+operation source!CodeItem containsEntity(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
+}
+
+operation source!CodeItem containsEJB(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
 }
 
 //Raiz
