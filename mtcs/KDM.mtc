@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1">
+  <metamodels name="code" URI="" technology="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/kdm"/>
+  <metamodels name="kdmMicro" URI="SubKDM.ecore" alias="kdmMicro" metamodelURI=""/>
+  <metamodels name="KdmCode" URI="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/code"/>
+  <metamodels name="code" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/action"/>
+  <metamodels name="code" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/source"/>
+  <metamodels name="code" URI="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/core"/>
+  <models name="Kdm" URI="EJB_kdm.xmi" metamodels="//@metamodels.0 //@metamodels.2 //@metamodels.3 //@metamodels.4 //@metamodels.5"/>
+  <models name="SubKdm" URI="kdmResultadoSub.xmi" metamodels="//@metamodels.1"/>
+  <inputModels model="//@models.0" transformation="//@transformations.0"/>
+  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="Kdm2SubKdm" URI="kdm2kdm.etl"/>
+  <outputModels model="//@models.1" transformation="//@transformations.0"/>
+</com.mtcflow.model:MTC>
