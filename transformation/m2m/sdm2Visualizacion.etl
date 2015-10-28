@@ -6,7 +6,7 @@ post {
 	CreateDependecies();
 	"Done".println();
 	
-	var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
+	/*var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
 	var relations = source!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
@@ -60,20 +60,9 @@ post {
 			j=j+1;
 		}
 		i=i+1;
-	}
-	
-	
+	}*/
 }
 
-operation source!CodeItem containsEntity(): Boolean
-{
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
-}
-
-operation source!CodeItem containsEJB(): Boolean
-{
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
-}
 
 //Raiz
 rule Segment2NodoPrincipal
@@ -84,7 +73,70 @@ to o: target!Aplicacion{
   o.hijos = EjectCluster();
 }
 
-operation EjectCluster() : Sequence{
+/* valida tipo de cluster a generar si por peso o segun relacion EJB*/
+operation EjectCluster(): Sequence{
+ 	var lista = new Sequence;
+ 	var k = 1;	
+   	var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
+	k = str.asInteger();
+	
+	if(k = 1)
+	{
+		lista = EjectClusterWeight();
+	}
+	else
+	{
+		lista = EjectClusterEJB();
+	}
+	
+	return lista;
+}
+
+/*Arma cluster de acuerdo a relaciones entre EJBs*/
+operation EjectClusterEJB() : Sequence{
+ var lista = new Sequence;
+ 
+ var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
+	var relations = source!ClassLevelRelation.allInstances();
+	var clusterTool = new Native("clusterer.EJBClusterer");
+	
+	var ejbs = new Set;
+	var entities = new Set;
+	
+	for(c in classes){
+		if (c.containsEntity()){
+			entities.add(c);
+		}
+		else if(c.containsEJB()){
+			ejbs.add(c);
+		}
+	}
+	
+	clusterTool.constructGraph(classes->asSet(),relations->asSet());
+	
+	var clusterSet = clusterTool.makeCluster(ejbs,entities);
+	var count = 0;
+	for (cluster in clusterSet){
+      var nodoCluster = new target!Cluster();
+  	  count = count + 1;
+  	  nodoCluster.name ="Cluster" + count;
+  	   
+  	  for(c in cluster){
+  	     var pkg = nodoCluster.CreatePackages(c);
+  	     
+  	     var nodoClasses = new target!Clase();
+  		 nodoClasses.name = c.name;
+  		 nodoClasses.tipo =  target!TipoElemento#CLASS;
+  		 pkg.hijos.add(nodoClasses);
+      }
+      
+     lista.add(nodoCluster);
+    }
+    
+   return lista;
+}
+
+operation EjectClusterWeight() : Sequence{
     var lista = new Sequence;
     
     var count = 0;
@@ -279,4 +331,14 @@ operation target!Metrica SetTipoMetrics(tipoMeasure: source!Measure){
 	{
 		self.tipo = target!TipoMetrica#WeightedMethodsPerClass;
 	}
+}
+
+operation source!CodeItem containsEntity(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
+}
+
+operation source!CodeItem containsEJB(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
 }
