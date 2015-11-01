@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1">
   <metamodels name="code" URI="" technology="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/kdm"/>
-  <metamodels name="kdmMicro" URI="SubKDM.ecore" alias="kdmMicro" metamodelURI=""/>
+  <metamodels name="kdmMicro" URI="" alias="kdmMicro" metamodelURI="http://subkdm/main"/>
   <metamodels name="KdmCode" URI="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/code"/>
   <metamodels name="code" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/action"/>
   <metamodels name="code" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/source"/>
   <metamodels name="code" URI="" alias="code" metamodelURI="http://www.eclipse.org/MoDisco/kdm/core"/>
-  <models name="Kdm" URI="EJB_kdm.xmi" metamodels="//@metamodels.0 //@metamodels.2 //@metamodels.3 //@metamodels.4 //@metamodels.5"/>
+  <metamodels name="Visualizacion" URI="visualizacionMetricas.ecore" alias="target" metamodelURI=""/>
+  <models name="Kdm" URI="${KDM_xmi}" metamodels="//@metamodels.0 //@metamodels.2 //@metamodels.3 //@metamodels.4 //@metamodels.5"/>
   <models name="SubKdm" URI="kdmResultadoSub.xmi" metamodels="//@metamodels.1"/>
-  <inputModels model="//@models.0" transformation="//@transformations.0"/>
+  <models name="Cluster" URI="${Cluster_xmi}" metamodels="//@metamodels.6"/>
+  <inputModels model="//@models.0" modelAlias="code" transformation="//@transformations.0"/>
+  <inputModels model="//@models.1" modelAlias="kdmMicro" transformation="//@transformations.1" metamodelAlias="KdmMicro"/>
   <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="Kdm2SubKdm" URI="kdm2kdm.etl"/>
-  <outputModels model="//@models.1" transformation="//@transformations.0"/>
+  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="SDM2Cluster" URI="sdm2Cluster.etl"/>
+  <outputModels modelAlias="kdmMicro" model="//@models.1" transformation="//@transformations.0"/>
+  <outputModels modelAlias="target" model="//@models.2" transformation="//@transformations.1" metamodelAlias="target"/>
+  <configurations>
+    <variables name="KDM_xmi" defaultValue="EJB_kdm.xmi" type=""/>
+    <variables name="SubKdm_xmi" defaultValue="kdmResultadoSub.xmi"/>
+    <variables name="SDM_xmi" defaultValue="SDM.xmi"/>
+    <variables name="Cluster_xmi" defaultValue="Cluster.xmi"/>
+  </configurations>
 </com.mtcflow.model:MTC>

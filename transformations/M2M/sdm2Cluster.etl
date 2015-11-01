@@ -6,8 +6,8 @@ post {
 	CreateDependecies();
 	"Done".println();
 	
-	/*var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
-	var relations = source!ClassLevelRelation.allInstances();
+	/*var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
+	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
 	var ejbs = new Set;
@@ -66,7 +66,7 @@ post {
 
 //Raiz
 rule Segment2NodoPrincipal
-transform t: source!CodeModel
+transform t: kdmMicro!CodeModel
 to o: target!Aplicacion{
   guard : t.name <> "externals"
   o.name = t.name;
@@ -77,27 +77,29 @@ to o: target!Aplicacion{
 operation EjectCluster(): Sequence{
  	var lista = new Sequence;
  	var k = 1;	
-   	var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
-	k = str.asInteger();
+   	//var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
+	//k = str.asInteger();
 	
 	if(k = 1)
 	{
+		"creando Cluser x peso".println();
 		lista = EjectClusterWeight();
 	}
 	else
 	{
+		"creando Cluser x EJBs".println();
 		lista = EjectClusterEJB();
 	}
 	
 	return lista;
 }
 
-/*Arma cluster de acuerdo a relaciones entre EJBs*/
+/*Arma cluster de acuerdo a relaciones entre EJBs y los entities*/
 operation EjectClusterEJB() : Sequence{
  var lista = new Sequence;
  
- var classes = source!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(source!ClassUnit) or class.isTypeOf(source!InterfaceUnit) or class.isTypeOf(source!TemplateUnit));
-	var relations = source!ClassLevelRelation.allInstances();
+ var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
+	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
 	var ejbs = new Set;
@@ -136,20 +138,21 @@ operation EjectClusterEJB() : Sequence{
    return lista;
 }
 
+/*Ejecuta funcionalidad de crear cluster de acuerdo al peso de las relaciones */
 operation EjectClusterWeight() : Sequence{
     var lista = new Sequence;
     
     var count = 0;
-    var modExt = source!CodeModel.allInstances().select(x| x.name = "externals").first();
+    var modExt = kdmMicro!CodeModel.allInstances().select(x| x.name = "externals").first();
 	var sonsExt = modExt.getAllContents();
 	
-   	var segment = source!CodeModel.allInstances().first();
-	var classes = source!Segment.allInstances().first().getAllContents()->select(e| e.isTypeOf(source!ClassUnit) and not ExistsInExternals(sonsExt, e));
+   	var segment = kdmMicro!CodeModel.allInstances().first();
+	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| e.isTypeOf(kdmMicro!ClassUnit) and not ExistsInExternals(sonsExt, e));
 	
 	var clusterTool = new Native("clusterer.MSTCluesterCalculation");
 	
 	//buscar pesos de las relaciones por clases...
-	var mofElements = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation));
+	var mofElements = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation));
 	
 	clusterTool.constructGraph(classes->asSet());
 	for(elem in mofElements)
@@ -157,7 +160,7 @@ operation EjectClusterWeight() : Sequence{
 	  var relation = elem.element;	
 	  var measurant = elem.measurant;
 	  //measurant.println();
-	  var coupling = measurant.select(x| x.measure.isTypeOf(source!CalculatedCouplingMeasure)).first();
+	  var coupling = measurant.select(x| x.measure.isTypeOf(kdmMicro!CalculatedCouplingMeasure)).first();
 	  var peso = 1;
 	  	
 	  if(coupling.value > 0)
@@ -166,10 +169,10 @@ operation EjectClusterWeight() : Sequence{
 	  clusterTool.addClassLevelRelation(relation, peso.asInteger()); 
 	}
 	
-	var k = 1;
+	var k = 4;
 		
-	var str = System.User.promptInteger("Number of Clusters", k.asInteger());
-	k = str.asInteger();
+	//var str = System.User.promptInteger("Number of Clusters", k.asInteger());
+	//k = str.asInteger();
 	
 	var clusterSet = clusterTool.getClusters(k);
 	    
@@ -194,7 +197,7 @@ operation EjectClusterWeight() : Sequence{
 }
 
 //Crea los paquetes por cluster
-operation target!Cluster CreatePackages(item: source!CodeItem){     
+operation target!Cluster CreatePackages(item: kdmMicro!CodeItem){     
 	//se obtiene el paquete al cual pertenece la clase
   	var package = item.eContainer();
   	      
@@ -217,7 +220,7 @@ operation target!Cluster CreatePackages(item: source!CodeItem){
 //metricas
 operation CreateDependecies(){
 
-	var classLR = source!ClassLevelRelation.allInstances();
+	var classLR = kdmMicro!ClassLevelRelation.allInstances();
 	var nodosClases = target!Nodo.allInstances().select(x | x.isTypeOf(target!Clase));
 	
 	for(nodo in nodosClases)
@@ -230,9 +233,9 @@ operation CreateDependecies(){
 //asocia metricas de las clases
 operation target!Nodo CreateMeasuresClasses(){
 	//buscar pesos de las metricas por clases...
-	if(source!MofElement.allInstances().exists(x | x.element.isTypeOf(source!ClassUnit) and x.element.name == self.name))
+	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClassUnit) and x.element.name == self.name))
 	{
-		var mofElement = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassUnit) and x.element.name == self.name).first();
+		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassUnit) and x.element.name == self.name).first();
 		var measurant = mofElement.measurant;
 		
 		for(m in measurant)
@@ -270,11 +273,11 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 }
 
 //asocia metricas de relaciones - arcos
-operation target!Arco CreateMeasuresRelations(relation: source!ClassLevelRelation){
+operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelation){
 	//buscar pesos de las metricas por clases...
-	if(source!MofElement.allInstances().exists(x | x.element.isTypeOf(source!ClassLevelRelation) and x.element.equals(relation)))
+	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)))
 	{
-		var mofElement = source!MofElement.allInstances().select(x | x.element.isTypeOf(source!ClassLevelRelation) and x.element.equals(relation)).first();
+		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)).first();
 		var measurant = mofElement.measurant;
 		
 		//measurant.println();
@@ -290,7 +293,7 @@ operation target!Arco CreateMeasuresRelations(relation: source!ClassLevelRelatio
 }
 
 //Obtiene la lista de todos los elementos que conetiene en el source
-operation source!ModelElement getAllContents(): Sequence{
+operation kdmMicro!ModelElement getAllContents(): Sequence{
 	var set = new Sequence;
 	set.addAll(self.eContents());
 	for (e in  self.eContents()){
@@ -301,7 +304,7 @@ operation source!ModelElement getAllContents(): Sequence{
 
 // identifica si un ClassUnit esta en el paquete de externos
 // para no inlcuirlas en las relaciones
-operation ExistsInExternals(lista: Sequence,item: source!CodeItem): Boolean{
+operation ExistsInExternals(lista: Sequence,item: kdmMicro!CodeItem): Boolean{
 	if(lista.exists(a | a.equals(item)))
 	 return true;
 	else
@@ -309,36 +312,36 @@ operation ExistsInExternals(lista: Sequence,item: source!CodeItem): Boolean{
 }
 
 //obtiene el tipo de metrica
-operation target!Metrica SetTipoMetrics(tipoMeasure: source!Measure){
+operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure){
 	
-	if(tipoMeasure.isTypeOf(source!NumberOfUsesMeasure))
+	if(tipoMeasure.isTypeOf(kdmMicro!NumberOfUsesMeasure))
 	{
 		self.tipo = target!TipoMetrica#NumberOfUses;
 	}
-	else if(tipoMeasure.isTypeOf(source!NumberOfContainmentsMeasure))
+	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfContainmentsMeasure))
 	{
 		self.tipo = target!TipoMetrica#NumberOfContainments;
 	}
-	else if(tipoMeasure.isTypeOf(source!CalculatedCouplingMeasure))
+	else if(tipoMeasure.isTypeOf(kdmMicro!CalculatedCouplingMeasure))
 	{
 		self.tipo = target!TipoMetrica#CalculatedCoupling;
 	}
-	else if(tipoMeasure.isTypeOf(source!CouplingBetweenObjectsMeasure))
+	else if(tipoMeasure.isTypeOf(kdmMicro!CouplingBetweenObjectsMeasure))
 	{
 		self.tipo = target!TipoMetrica#CouplingBetweenObjects;
 	}
-	else if(tipoMeasure.isTypeOf(source!WeightedMethodsPerClassMeasure))
+	else if(tipoMeasure.isTypeOf(kdmMicro!WeightedMethodsPerClassMeasure))
 	{
 		self.tipo = target!TipoMetrica#WeightedMethodsPerClass;
 	}
 }
 
-operation source!CodeItem containsEntity(): Boolean
+operation kdmMicro!CodeItem containsEntity(): Boolean
 {
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
 }
 
-operation source!CodeItem containsEJB(): Boolean
+operation kdmMicro!CodeItem containsEJB(): Boolean
 {
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(source!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
 }

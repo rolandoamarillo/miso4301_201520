@@ -11,7 +11,7 @@
       <package
             uri="http://subkdm/kdmobjects"
             class="subkdm.kdmObjects.KdmObjectsPackage"
-            genModel="metamodel/SubKDM.genmodel"/>
+            genModel="metamodels/SubKDM.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,7 +19,7 @@
       <package
             uri="http://subkdm/sdm"
             class="subkdm.SimplifiedDecisionMetrics.SimplifiedDecisionMetricsPackage"
-            genModel="metamodel/SubKDM.genmodel"/>
+            genModel="metamodels/SubKDM.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -27,6 +27,6 @@
       <package
             uri="http://subkdm/kdmrelations"
             class="subkdm.kdmRelations.KdmRelationsPackage"
-            genModel="metamodel/SubKDM.genmodel"/>
+            genModel="metamodels/SubKDM.genmodel"/>
    </extension>
 </plugin>
