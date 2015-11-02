@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1">
-  <metamodels name="sourcemodel" URI="" alias="sourcemodel" autoregister="false" metamodelURI="http://subkdm/main"/>
-  <models name="subkdm" URI="kdmResultadoSub.xmi" metamodels="//@metamodels.0"/>
-  <models name="sdm" URI="kdmResultadoSub.xmi" metamodels="//@metamodels.0"/>
-  <inputModels model="//@models.0" modelAlias="sourcemodel" transformation="//@transformations.0"/>
-  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="kdm2sdm" URI="micro2sdm.etl"/>
-  <outputModels modelAlias="sourcemodel" model="//@models.1" transformation="//@transformations.0"/>
-</com.mtcflow.model:MTC>
