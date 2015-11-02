@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
+	<property name="Kdm" value="./models/EJB_kdm.xmi"></property>
+	<property name="SubKdm" value="./models/generated/KdmSub1.xmi"></property>
+	<property name="Cluster" value="./models//generated/Cluster1.xmi"></property>
+		
+	<!-- Tranformacion 1-->
+	<target name="loadModelsT1">
+		<epsilon.emf.loadModel name="code" modelfile="${Kdm}" metamodeluri="http://www.eclipse.org/MoDisco/kdm/code" read="true" store="false"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/main" expand="true" failonerrors="true" read="false" store="true"></epsilon.emf.loadModel>
+	</target>
+		
+	<target name="sourceModelT1">
+		<epsilon.storeModel model="kdmMicro"></epsilon.storeModel>	
+	</target>
+	
+	<target name="Kdm2Kdm" depends="loadModelsT1, sourceModelT1">
+		<epsilon.etl src="./transformations/M2M/kdm2kdm.etl">
+			<model ref="code"></model>
+			<model ref="kdmMicro"></model>
+		</epsilon.etl>
+	</target>
+	
+	<!-- Tranformacion 2-->
+	<target name="loadModelsT2">
+		<epsilon.emf.loadModel name="sourcemodel" modelfile="${SubKdm}" metamodeluri="http://subkdm/main" read="true" store="true"></epsilon.emf.loadModel>
+	</target>
+	
+	<target name="sourceModelT2">
+			<epsilon.storeModel model="sourcemodel"></epsilon.storeModel>	
+	</target>
+	
+	<target name="micro2sdm" depends="loadModelsT2, sourceModelT2">
+		<epsilon.etl src="./transformations/M2M/micro2sdm.etl">
+			<model ref="sourcemodel"></model>
+		</epsilon.etl>
+	</target>
+
+	<!-- Tranformacion 3-->
+	<target name="loadModelsT3">
+		<epsilon.emf.register file="./metamodels/visualizacionMetricas.ecore"></epsilon.emf.register>	
+		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/main" read="true" store="false"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="target" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3" read="false" store="true"></epsilon.emf.loadModel>
+	</target>
+	
+	<target name="sourceModelT3">
+			<epsilon.storeModel model="target"></epsilon.storeModel>	
+	</target>
+	
+	<target name="sdm2Cluster" depends="loadModelsT3, sourceModelT3">
+		<epsilon.etl src="./transformations/M2M/sdm2Cluster.etl">
+			<model ref="kdmMicro"></model>
+			<model ref="target"></model>
+		</epsilon.etl>
+	</target>
+	
+	<!-- Main -->
+	
+	<target name="main">
+		<delete dir="models/generated" failonerror="false" verbose="true"></delete>
+		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<!--<antcall target="micro2sdm"></antcall>
+		<antcall target="sdm2Cluster"></antcall>-->
+	</target>
+</project>

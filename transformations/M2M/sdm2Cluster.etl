@@ -77,8 +77,8 @@ to o: target!Aplicacion{
 operation EjectCluster(): Sequence{
  	var lista = new Sequence;
  	var k = 1;	
-   	//var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
-	//k = str.asInteger();
+   	var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
+	k = str.asInteger();
 	
 	if(k = 1)
 	{
@@ -128,7 +128,6 @@ operation EjectClusterEJB() : Sequence{
   	     
   	     var nodoClasses = new target!Clase();
   		 nodoClasses.name = c.name;
-  		 nodoClasses.tipo =  target!TipoElemento#CLASS;
   		 pkg.hijos.add(nodoClasses);
       }
       
@@ -171,8 +170,8 @@ operation EjectClusterWeight() : Sequence{
 	
 	var k = 4;
 		
-	//var str = System.User.promptInteger("Number of Clusters", k.asInteger());
-	//k = str.asInteger();
+	var str = System.User.promptInteger("Number of Clusters", k.asInteger());
+	k = str.asInteger();
 	
 	var clusterSet = clusterTool.getClusters(k);
 	    
@@ -186,7 +185,6 @@ operation EjectClusterWeight() : Sequence{
   	     
   	     var nodoClasses = new target!Clase();
   		 nodoClasses.name = c.name;
-  		 nodoClasses.tipo =  target!TipoElemento#CLASS;
   		 pkg.hijos.add(nodoClasses);
       }
       
@@ -208,7 +206,6 @@ operation target!Cluster CreatePackages(item: kdmMicro!CodeItem){
 	else{
 		var nodoPack2 = new target!Paquete();
 		nodoPack2.name = package.name;
-		nodoPack2.tipo = target!TipoElemento#PACKAGE;
 		self.hijos.add(nodoPack2);
 		
 		return 	nodoPack2;
@@ -251,7 +248,7 @@ operation target!Nodo CreateMeasuresClasses(){
 	}
 }
 
-//Obtiene las relaciones de cada clase para mapear a dependencias
+//Obtiene las relaciones de cada clase 
 operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence){
 	var relations = classLR.select(x | x.`from`.name == self.name);
 	
@@ -259,16 +256,42 @@ operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence
 		var package = rel.`from`.eContainer();
 	    var dep = new target!Arco();
 	    
-	    var ClaseDep = nodosClases.select(x | x.name == rel.`to`.name).first();
-	    dep.target =  ClaseDep;
+	    var ClaseTarg = nodosClases.select(x | x.name == rel.`to`.name).first();
+	    dep.target =  ClaseTarg;
+	    dep.source = self;
+	    
 	    dep.CreateMeasuresRelations(rel);
+	    
 	    for(t in rel.typeRelations){
-	    	var tipoRel = new target!TipoArco();
-	    	tipoRel.name = t.name;
-	    	dep.tipos.add(tipoRel);
+	    	dep.AddTypeRelation(t);
 	    }
 	    
 		self.hijos.add(dep);
+	}
+}
+
+/*Adiciona a un arco el tipo de relacion segun modelo visualizacion*/
+operation target!Arco AddTypeRelation(relation: kdmMicro!TypeRelation){
+	
+	if(relation.name == "Containment")
+	{
+		var tipoRel = new target!Composicion();
+		self.tipos.add(tipoRel);
+	}
+	else if(relation.name == "Uses")
+	{
+		var tipoRel = new target!Dependencia();
+		self.tipos.add(tipoRel);
+	}
+	else if(relation.name == "Implements")
+	{
+		var tipoRel = new target!Generalizacion();
+		self.tipos.add(tipoRel);
+	}
+	else if(relation.name == "Extends")
+	{
+		var tipoRel = new target!Generalizacion();
+		self.tipos.add(tipoRel);
 	}
 }
 
@@ -278,7 +301,7 @@ operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelat
 	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)))
 	{
 		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)).first();
-		var measurant = mofElement.measurant;
+		var measurant = mofElement.measurant.select(x | x.isTypeOf(kdmMicro!DimensionalMeasurement));
 		
 		//measurant.println();
 		for(m in measurant)

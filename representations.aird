@@ -17,11 +17,8 @@
   <models xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="metamodel/visualizacionMetricas.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2003/XMLType#/"/>
-  <models xmi:type="kdmObjects:Segment" href="workspace/kdmResultadoSub.xmi#/"/>
-  <models xmi:type="kdmObjects:Segment" href="workspace/SDM.xmi#/"/>
   <models xmi:type="com.mtcflow.model:MTC" href="mtcs/Visualizacion.mtc#/"/>
-  <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
-  <models xmi:type="com.mtcflow.model:MTC" href="mtcs/Metricas.mtc#/"/>
+  <models xmi:type="modisco.xml:Root" href="Build.xml#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
@@ -65,6 +62,7 @@
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w" initialized="true">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDM2Model.design/description/SimplifiedDecisionMetrics.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
+  <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="h:Segment" href="models/kdmResultadoSub.xmi#/"/>
   <models xmi:type="h:Segment" href="models/My.subkdm#/"/>

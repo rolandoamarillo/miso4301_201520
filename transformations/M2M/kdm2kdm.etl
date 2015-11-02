@@ -3,7 +3,12 @@ pre {
 }
 
 post {
-	generateClassLevelRelations();
+	
+	if(kdmMicro!CodeModel.allInstances().size() > 0)
+	{
+		generateClassLevelRelations();
+	}
+	
 	"Done".println();
 }
 
