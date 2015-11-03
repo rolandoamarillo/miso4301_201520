@@ -1,12 +1,7 @@
 pre {
   "Running Visulization Transformation".println();
-}
-
-post {
-	CreateDependecies();
-	"Done".println();
-	
-	/*var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
+  /*
+  var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
@@ -27,23 +22,43 @@ post {
 	var clusters = clusterTool.makeCluster(ejbs,entities);
 	
 	for(cluster in clusters){
-		cluster.println();
+		("-----------"+cluster.name+"------------").println();
+		for (hijo in cluster.hijos){
+			for (son in hijo.hijos){
+				son.name.println();
+			}
+		}
 	}
 	
 	
 	var union = new Set;
 	for(cluster in clusters){
-		union.addAll(cluster);
+		for(hijo in cluster.hijos){
+			union.addAll(hijo.hijos);
+		}
 	}
 	
-	var noClasificadas = classes->asSet()->select(c|not union->includes(c));
+	var noClasificadas = union->asSet()->select(c| classes->asSet()->select(a|a.name==c.name)->isEmpty());
 	
 	noClasificadas.println();
 	
 	var i = 1;
-	for(A in clusters){
+	for(a in clusters){
+		var A = new Set;
+		for(hijo in a.hijos){
+			for (son in hijo.hijos){
+				A.add(son.name);
+			}
+		}
 		var j=1;
-		for(B in clusters){
+		for(b in clusters){
+			var B = new Set;
+			for(hijo in b.hijos){
+				for (son in hijo.hijos){
+					B.add(son.name);
+				}
+			}
+		
 			var union = new Set;
 			var intersect = new Set;
 			
@@ -61,6 +76,13 @@ post {
 		}
 		i=i+1;
 	}*/
+}
+
+post {
+	CreateDependecies();
+	"Done".println();
+	
+	
 }
 
 
@@ -142,7 +164,8 @@ operation EjectClusterEJB() : Sequence{
 	clusterTool.constructGraph(classes->asSet(),relations->asSet());
 	
 	var clusterSet = clusterTool.makeCluster(ejbs,entities);
-	var count = 0;
+	
+	/*var count = 0;
 	for (cluster in clusterSet){
       var nodoCluster = new target!Cluster();
   	  count = count + 1;
@@ -158,6 +181,12 @@ operation EjectClusterEJB() : Sequence{
       }
       
      lista.add(nodoCluster);
+    }*/
+    
+    for(cluster in clusters){
+    	var nodoCluster = new target!Cluster();
+    	nodoCluster = cluster;
+    	lista.add(nodoCluster);
     }
     
    return lista;
