@@ -94,6 +94,31 @@ operation EjectCluster(): Sequence{
 	return lista;
 }
 
+/**/
+operation target!Cluster Calculate(cluster: Set, clusterSet: Set){
+		var A = cluster;
+		var j=1;
+		for(B in clusterSet){
+			var union = new Set;
+			var intersect = new Set;
+			
+			union.addAll(A);
+			union.addAll(B);
+			
+			intersect.addAll(A->select(c|B->includes(c)));
+			
+			var value = new Real;
+			value = ((intersect->size()->asDouble())/(A->size()->asDouble())).max(((intersect->size()->asDouble())/(B->size()->asDouble())));
+			
+			var cl = new target!Cluster();
+			cl.name = "Cluster " + j;
+			cl.value = value;
+			//(""+i+"--"+j+":"+value).println();
+			self.hijos.add(cl);
+			j=j+1;
+		}
+}
+
 /*Arma cluster de acuerdo a relaciones entre EJBs y los entities*/
 operation EjectClusterEJB() : Sequence{
  var lista = new Sequence;
@@ -123,6 +148,7 @@ operation EjectClusterEJB() : Sequence{
   	  count = count + 1;
   	  nodoCluster.name ="Cluster" + count;
   	   
+  	  nodoCluster.Calculate(cluster, clusterSet);
   	  for(c in cluster){
   	     var pkg = nodoCluster.CreatePackages(c);
   	     

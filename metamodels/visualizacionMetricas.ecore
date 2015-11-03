@@ -38,7 +38,9 @@
   </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
-    <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Nodo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Nodo"/>
