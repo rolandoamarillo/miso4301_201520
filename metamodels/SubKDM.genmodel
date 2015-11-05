@@ -5,7 +5,8 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>SubKDM.ecore</foreignModel>
   <genPackages prefix="Subkdm" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#/">
-    <nestedGenPackages prefix="KdmObjects" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#//kdmObjects">
+    <nestedGenPackages prefix="KdmObjects" basePackage="subkdm" disposableProviderFactory="true"
+        ecorePackage="SubKDM.ecore#//kdmObjects">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="SubKDM.ecore#//kdmObjects/MethoKind">
         <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/method"/>
         <genEnumLiterals ecoreEnumLiteral="SubKDM.ecore#//kdmObjects/MethoKind/constructos"/>
@@ -102,7 +103,6 @@
       <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/TemplateUnit">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/TemplateUnit/codeElement"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/CodeUnit"/>
       <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Signature">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Signature/parameterUnit"/>
       </genClasses>
@@ -120,22 +120,32 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Segment/model"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/Segment/name"/>
       </genClasses>
-      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ModelElement"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/ModelElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/ModelElement/annotation"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Annotation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmObjects/Annotation/text"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmObjects/Cluster">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmObjects/Cluster/codeElement"/>
+      </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="SimplifiedDecisionMetrics" disposableProviderFactory="true"
+    <nestedGenPackages prefix="SimplifiedDecisionMetrics" basePackage="subkdm" disposableProviderFactory="true"
         ecorePackage="SubKDM.ecore#//SimplifiedDecisionMetrics">
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Observation">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Observation/whenObserved"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/Observation/measures"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/Observation/measurements"/>
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Measure">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/Measure/measurements"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Measure/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Measure/description"/>
       </genClasses>
       <genClasses image="false" ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Measurement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/Measurement/measurant"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/Measurement/measure"/>
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/Grade">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//SimplifiedDecisionMetrics/Grade/value"/>
@@ -145,6 +155,7 @@
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/SimplifiedDecisionMetrics">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/SimplifiedDecisionMetrics/observations"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/SimplifiedDecisionMetrics/measures"/>
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/MofElement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -152,8 +163,19 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/MofElement/element"/>
       </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/CouplingBetweenObjectsMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/WeightedMethodsPerClassMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/NumberOfUsesMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/NumberOfContainmentsMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/CalculatedCouplingMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/ArrivesToEntityMeasure"/>
+      <genClasses ecoreClass="SubKDM.ecore#//SimplifiedDecisionMetrics/ObjectMeasurement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//SimplifiedDecisionMetrics/ObjectMeasurement/object"/>
+      </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="KdmRelations" disposableProviderFactory="true" ecorePackage="SubKDM.ecore#//kdmRelations">
+    <nestedGenPackages prefix="KdmRelations" basePackage="subkdm" disposableProviderFactory="true"
+        ecorePackage="SubKDM.ecore#//kdmRelations">
       <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/AbstractCodeRelationship">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractCodeRelationship/to"/>
@@ -175,6 +197,25 @@
             ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/AbstractActionRelationship/from"/>
       </genClasses>
       <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/Extends"/>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/ClassLevelRelation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClassLevelRelation/to"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClassLevelRelation/from"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmRelations/ClassLevelRelation/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClassLevelRelation/typeRelations"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/TypeRelation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SubKDM.ecore#//kdmRelations/TypeRelation/name"/>
+      </genClasses>
+      <genClasses ecoreClass="SubKDM.ecore#//kdmRelations/ClusterRelation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClusterRelation/to"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClusterRelation/from"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SubKDM.ecore#//kdmRelations/ClusterRelation/codeElement"/>
+      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
