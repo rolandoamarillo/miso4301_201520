@@ -1,81 +1,5 @@
 pre {
   "Running Visulization Transformation".println();
-  /*
-  var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
-	var relations = kdmMicro!ClassLevelRelation.allInstances();
-	var clusterTool = new Native("clusterer.EJBClusterer");
-	
-	var ejbs = new Set;
-	var entities = new Set;
-	
-	for(c in classes){
-		if (c.containsEntity()){
-			entities.add(c);
-		}
-		else if(c.containsEJB()){
-			ejbs.add(c);
-		}
-	}
-	
-	clusterTool.constructGraph(classes->asSet(),relations->asSet());
-	
-	var clusters = clusterTool.makeCluster(ejbs,entities);
-	
-	for(cluster in clusters){
-		("-----------"+cluster.name+"------------").println();
-		for (hijo in cluster.hijos){
-			for (son in hijo.hijos){
-				son.name.println();
-			}
-		}
-	}
-	
-	
-	var union = new Set;
-	for(cluster in clusters){
-		for(hijo in cluster.hijos){
-			union.addAll(hijo.hijos);
-		}
-	}
-	
-	var noClasificadas = union->asSet()->select(c| classes->asSet()->select(a|a.name==c.name)->isEmpty());
-	
-	noClasificadas.println();
-	
-	var i = 1;
-	for(a in clusters){
-		var A = new Set;
-		for(hijo in a.hijos){
-			for (son in hijo.hijos){
-				A.add(son.name);
-			}
-		}
-		var j=1;
-		for(b in clusters){
-			var B = new Set;
-			for(hijo in b.hijos){
-				for (son in hijo.hijos){
-					B.add(son.name);
-				}
-			}
-		
-			var union = new Set;
-			var intersect = new Set;
-			
-			union.addAll(A);
-			union.addAll(B);
-			
-			intersect.addAll(A->select(c|B->includes(c)));
-			
-			var value = new Real;
-			value = ((intersect->size()->asReal())/(A->size()->asReal())).max(((intersect->size()->asReal())/(B->size()->asReal())));
-			
-			(""+i+"--"+j+":"+value).println();
-			
-			j=j+1;
-		}
-		i=i+1;
-	}*/
 }
 
 post {
@@ -85,67 +9,58 @@ post {
 	
 }
 
-
 //Raiz
 rule Segment2NodoPrincipal
 transform t: kdmMicro!CodeModel
 to o: target!Aplicacion{
   guard : t.name <> "externals"
   o.name = t.name;
-  o.hijos = EjectCluster();
+  o.EjectClusterEJB();
 }
 
-/* valida tipo de cluster a generar si por peso o segun relacion EJB*/
-operation EjectCluster(): Sequence{
- 	var lista = new Sequence;
- 	var k = 1;	
-   	var str = System.User.promptInteger("Select ejecution: 1- ClusterWeight 2- Cluster EJB", k.asInteger());
-	k = str.asInteger();
-	
-	if(k = 1)
-	{
-		"creando Cluser x peso".println();
-		lista = EjectClusterWeight();
-	}
-	else
-	{
-		"creando Cluser x EJBs".println();
-		lista = EjectClusterEJB();
-	}
-	
-	return lista;
-}
-
-/**/
-operation target!Cluster Calculate(cluster: Set, clusterSet: Set){
-		var A = cluster;
-		var j=1;
+/*calcula dependencia entre clusters*/
+operation target!Cluster CalculateClusterDependencies(clusterSet: Set){
+		var A = self;
+		var clasesA = self.GetClasesCluster()->asSet();
+		
 		for(B in clusterSet){
-			var union = new Set;
+			var clasesB = B.GetClasesCluster()->asSet();
 			var intersect = new Set;
+			intersect.addAll(clasesA->select(c|clasesB->includes(c)));
 			
-			union.addAll(A);
-			union.addAll(B);
+			//var value = new Real;
+			//value = 0.0;//((intersect->size()->asDouble())/(A->size()->asDouble())).max(((intersect->size()->asDouble())/(B->size()->asDouble())));
 			
-			intersect.addAll(A->select(c|B->includes(c)));
-			
-			var value = new Real;
-			value = ((intersect->size()->asDouble())/(A->size()->asDouble())).max(((intersect->size()->asDouble())/(B->size()->asDouble())));
-			
-			var cl = new target!Cluster();
-			cl.name = "Cluster " + j;
-			cl.value = value;
-			//(""+i+"--"+j+":"+value).println();
+			var cl = new target!Arco();
+			var tipo = new target!Dependencia();
+			cl.target = B;
+			cl.source = A;
+			cl.tipos.add(tipo); 
+			//cl.value = value;
 			self.hijos.add(cl);
-			j=j+1;
 		}
 }
 
+//obtiene la lista de clases de un cluster
+operation target!Cluster GetClasesCluster(): Sequence{
+	var listClases = new Sequence();
+	var paquetes = self.hijos.select(x | x.isTypeOf(target!Paquete));
+	for(pk in paquetes)
+	{
+		var clases = paquetes.hijos.select(x | x.isTypeOf(target!Clase));
+		for(cl in clases)
+		{
+			listClases.add(cl);
+		}
+	}
+	
+	return listClases;
+}
+
 /*Arma cluster de acuerdo a relaciones entre EJBs y los entities*/
-operation EjectClusterEJB() : Sequence{
- var lista = new Sequence;
- 
- var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
+operation target!Aplicacion EjectClusterEJB() : Sequence{
+
+ 	var classes = kdmMicro!CodeModel.allInstances().first().getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
 	var relations = kdmMicro!ClassLevelRelation.allInstances();
 	var clusterTool = new Native("clusterer.EJBClusterer");
 	
@@ -162,109 +77,29 @@ operation EjectClusterEJB() : Sequence{
 	}
 	
 	clusterTool.constructGraph(classes->asSet(),relations->asSet());
-	
 	var clusterSet = clusterTool.makeCluster(ejbs,entities);
-	
-	/*var count = 0;
-	for (cluster in clusterSet){
-      var nodoCluster = new target!Cluster();
-  	  count = count + 1;
-  	  nodoCluster.name ="Cluster" + count;
-  	   
-  	  nodoCluster.Calculate(cluster, clusterSet);
-  	  for(c in cluster){
-  	     var pkg = nodoCluster.CreatePackages(c);
-  	     
-  	     var nodoClasses = new target!Clase();
-  		 nodoClasses.name = c.name;
-  		 pkg.hijos.add(nodoClasses);
-      }
-      
-     lista.add(nodoCluster);
-    }*/
-    
-    for(cluster in clusters){
-    	var nodoCluster = new target!Cluster();
-    	nodoCluster = cluster;
-    	lista.add(nodoCluster);
-    }
-    
-   return lista;
-}
-
-/*Ejecuta funcionalidad de crear cluster de acuerdo al peso de las relaciones */
-operation EjectClusterWeight() : Sequence{
-    var lista = new Sequence;
-    
-    var count = 0;
-    var modExt = kdmMicro!CodeModel.allInstances().select(x| x.name = "externals").first();
-	var sonsExt = modExt.getAllContents();
-	
-   	var segment = kdmMicro!CodeModel.allInstances().first();
-	var classes = kdmMicro!Segment.allInstances().first().getAllContents()->select(e| e.isTypeOf(kdmMicro!ClassUnit) and not ExistsInExternals(sonsExt, e));
-	
-	var clusterTool = new Native("clusterer.MSTCluesterCalculation");
-	
-	//buscar pesos de las relaciones por clases...
-	var mofElements = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation));
-	
-	clusterTool.constructGraph(classes->asSet());
-	for(elem in mofElements)
-	{
-	  var relation = elem.element;	
-	  var measurant = elem.measurant;
-	  //measurant.println();
-	  var coupling = measurant.select(x| x.measure.isTypeOf(kdmMicro!CalculatedCouplingMeasure)).first();
-	  var peso = 1;
-	  	
-	  if(coupling.value > 0)
-	    peso = coupling.value;
-	 	
-	  clusterTool.addClassLevelRelation(relation, peso.asInteger()); 
-	}
-	
-	var k = 4;
-		
-	var str = System.User.promptInteger("Number of Clusters", k.asInteger());
-	k = str.asInteger();
-	
-	var clusterSet = clusterTool.getClusters(k);
 	    
-	for (cluster in clusterSet){
-      var nodoCluster = new target!Cluster();
-  	  count = count + 1;
-  	  nodoCluster.name ="Cluster" + count;
-  	   
-  	  for(c in cluster){
-  	     var pkg = nodoCluster.CreatePackages(c);
-  	     
-  	     var nodoClasses = new target!Clase();
-  		 nodoClasses.name = c.name;
-  		 pkg.hijos.add(nodoClasses);
-      }
-      
-     lista.add(nodoCluster);
+    for(cluster in clusterSet){
+    	var nodoCluster = new target!Cluster();
+    	nodoCluster.name = cluster.name;
+    	for (pk in cluster.hijos)
+    	{
+    		var nodoPaquete = new target!Paquete();
+    		nodoPaquete.name = pk.name;
+    		
+    		for(cls in pk.hijos)
+    		{
+    			var nodoClase = new target!Clase();
+    			nodoClase.name=cls.name;
+    			nodoPaquete.hijos.add(nodoClase);
+    		}
+    		
+    		nodoCluster.hijos.add(nodoPaquete);
+    	}
+    	
+    	//nodoCluster.CalculateClusterDependencies(clusterSet);
+    	self.hijos.add(nodoCluster);
     }
-    
-   return lista;
-}
-
-//Crea los paquetes por cluster
-operation target!Cluster CreatePackages(item: kdmMicro!CodeItem){     
-	//se obtiene el paquete al cual pertenece la clase
-  	var package = item.eContainer();
-  	      
-  	var nodoPack = self.hijos.select(x | x.name == package.name).first();
-	if(nodoPack.isDefined()){
-		return nodoPack;
-	}
-	else{
-		var nodoPack2 = new target!Paquete();
-		nodoPack2.name = package.name;
-		self.hijos.add(nodoPack2);
-		
-		return 	nodoPack2;
-	}
 }
 
 //Crea las dependencias para cada clase en el modelo
