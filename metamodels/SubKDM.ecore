@@ -136,6 +136,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//kdmObjects/CodeItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//kdmObjects/CodeItem"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="SimplifiedDecisionMetrics" nsURI="http://subkdm/sdm" nsPrefix="sdm">
     <eClassifiers xsi:type="ecore:EClass" name="Observation">
@@ -159,6 +163,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="DimensionalMeasurement" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DimensionalToObjectMeasurement" eSuperTypes="#//SimplifiedDecisionMetrics/DimensionalMeasurement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+          eType="#//kdmObjects/AbstractCodeElement"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SimplifiedDecisionMetrics">
       <eStructuralFeatures xsi:type="ecore:EReference" name="observations" upperBound="-1"
           eType="#//SimplifiedDecisionMetrics/Observation" containment="true"/>
@@ -175,11 +183,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="NumberOfUsesMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="NumberOfContainmentsMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
     <eClassifiers xsi:type="ecore:EClass" name="CalculatedCouplingMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ArrivesToEntityMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectMeasurement" eSuperTypes="#//SimplifiedDecisionMetrics/Measurement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
-          eType="#//kdmObjects/ModelElement"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberOfClassesMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NumberOfLinesMeasure" eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClusterRelationConflictPercentageMeasure"
+        eSuperTypes="#//SimplifiedDecisionMetrics/Measure"/>
   </eSubpackages>
   <eSubpackages name="kdmRelations" nsURI="http://subkdm/kdmrelations" nsPrefix="kdmrelations">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCodeRelationship" eSuperTypes="#//kdmObjects/ModelElement">
@@ -211,6 +218,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TypeRelation" eSuperTypes="#//kdmObjects/ModelElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClusterRelation" eSuperTypes="#//kdmObjects/ModelElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//kdmObjects/Cluster"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//kdmObjects/Cluster"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeElement" upperBound="-1"
+          eType="#//kdmObjects/CodeItem"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

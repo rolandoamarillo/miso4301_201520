@@ -19,6 +19,7 @@ rule SubKDM2SimplifiedDecisionMetrics
 
 operation sourcemodel!Segment defineMeasures () : List {
 	var resp = new List();
+	
 	if(sourcemodel!ClassLevelRelation.allInstances().size() > 0)
 	{
 		var cbo = new sourcemodel!CouplingBetweenObjectsMeasure();
@@ -26,13 +27,20 @@ operation sourcemodel!Segment defineMeasures () : List {
 		cbo.description = "Two classes are coupled when methods declared in one class use methods or instance variables defined by the other class. The uses relationship can go either way: both uses and used-by relationships are taken into account, but only once.";
 		resp.add(cbo);
 	}
+	
 	if(sourcemodel!ClassUnit.allInstances().size() > 0)
 	{
 		var wmc = new sourcemodel!WeightedMethodsPerClassMeasure();
 		wmc.name = "WMC Weighted Methods Per Class";
 		wmc.description = "WMC is simply the method count for a class";
 		resp.add(wmc);
+		
+		var nol = new sourcemodel!NumberOfLinesMeasure();
+		nol.name = "NOL Number of Lines";
+		nol.description = "Number of lines contained in the object";
+		resp.add(nol);
 	}
+	
 	if(sourcemodel!ClassLevelRelation.allInstances().size() > 0)
 	{	
 		var nou = new sourcemodel!NumberOfUsesMeasure();
@@ -49,12 +57,21 @@ operation sourcemodel!Segment defineMeasures () : List {
 		cc.name = "CC Calculated Coupling";
 		cc.description = "Calculation based on containments and uses";
 		resp.add(cc);
-		
-		var aoe = new sourcemodel!ArrivesToEntityMeasure();
-		aoe.name = "AOE ArrivesToEntity";
-		aoe.description = "Calculates if there is any way to get to an Entity. It stops when the class evaluated has an EJB annotation";
-		resp.add(aoe);
 	}
+	
+	if(sourcemodel!Cluster.allInstances().size() > 0 or sourcemodel!ClusterRelation.allInstances().size() > 0)
+	{
+		var noc = new sourcemodel!NumberOfClassesMeasure();
+		noc.name = "NOC Number of Classes";
+		noc.description = "Number of Classes";
+		resp.add(noc);
+		
+		var crcp = new sourcemodel!ClusterRelationConflictPercentageMeasure();
+		crcp.name = "CRCP Cluster Relation Conflict Percentage";
+		crcp.description = "Cluster Relation Conflict Percentage is the value of total classes from the cluster conflicted divided by total classes on cluster";
+		resp.add(crcp);
+	}
+	
 	return resp;
 }
 
@@ -70,6 +87,13 @@ operation calculateMeasurements () : List {
 	{
 		calculateWeightedMethodsPerClass(resp, wmcs.get(0));
 	}
+	
+	var nol = sourcemodel!NumberOfLinesMeasure.allInstances();
+	if(nol.size() > 0)
+	{
+		calculateNumberOfLines(resp, nol.get(0));
+	}
+	
 	var nou = sourcemodel!NumberOfUsesMeasure.allInstances();
 	var noc = sourcemodel!NumberOfContainmentsMeasure.allInstances();
 	var cc = sourcemodel!CalculatedCouplingMeasure.allInstances();
@@ -79,10 +103,16 @@ operation calculateMeasurements () : List {
 		calculateNumberOfUsesAndContainmentMeasure(resp, nou.get(0), noc.get(0), cc.get(0));
 	}
 	
-	var aoe = sourcemodel!ArrivesToEntityMeasure.allInstances();
-	if(aoe.size() > 0)
+	var noc = sourcemodel!NumberOfClassesMeasure.allInstances();
+	if(noc.size() > 0)
 	{
-		calculateArrivesToEntityMeasure(resp, aoe.get(0));
+		calculateNumberOfClassesMeasure(resp, noc.get(0));
+	}
+	
+	var crcp = sourcemodel!ClusterRelationConflictPercentageMeasure.allInstances();
+	if(crcp.size() > 0)
+	{
+		calculateClusterRelationConflictPercentage(resp, crcp.get(0));
 	}
 	
 	return resp;
@@ -109,8 +139,7 @@ operation calculateWeightedMethodsPerClass(measurements: List, wmc: sourcemodel!
 	for(class in sourcemodel!ClassUnit.allInstances())
 	{
 		var value = 0.0;
-		-- Se esta tomando getters y setters, se debe remover estos. Definicion en http://www.aivosto.com/project/help/pm-oo-ck.html
-		value = class.codeElement.select( ce | ce.isTypeOf(sourcemodel!MethodUnit) ).size;
+		value = class.codeElement.select( ce | ce.isTypeOf(sourcemodel!MethodUnit) and ce.codeElement.size() == 1).size;
 		if(value > 0)
 		{
 			var measurement = new DimensionalMeasurement();
@@ -124,7 +153,6 @@ operation calculateWeightedMethodsPerClass(measurements: List, wmc: sourcemodel!
 
 operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: sourcemodel!NumberOfUsesMeasure, noc: sourcemodel!NumberOfContainmentsMeasure, cc: CalculatedCouplingMeasure)
 {
-
 	var usesMultiplicator = 1.0;
 	var containmentMultiplicator = 2.0;
 		
@@ -162,36 +190,109 @@ operation calculateNumberOfUsesAndContainmentMeasure(measurements: List, nou: so
 	}
 }
 
-operation calculateArrivesToEntityMeasure(measurements : List, aoe: sourcemodel!ArrivesToEntityMeasure)
+operation calculateNumberOfClassesMeasure(measurements: List, noc: sourcemodel!NumberOfClassesMeasure)
 {
-	var entities = sourcemodel!DataType.allInstances().select(dt | dt.containsEntity());
-	for(entity in entities)
+	for(cluster in sourcemodel!Cluster.allInstances())
 	{
-		var directlyToEntity = sourcemodel!ClassLevelRelation.allInstances().select(clr | clr.`to` == entity or clr.from == entity);
-		while(directlyToEntity.size() > 0)
-		{
-			directlyToEntity.size().println();
-			var object = directlyToEntity.get(0);
-			var mof = getMofElementFromModelElement(object);
-			if(mof.measurant.select(m | m.isTypeOf(sourcemodel!ObjectMeasurement) and m.object == entity).size() == 0)
-			{
-				var measurement = new ObjectMeasurement();
-				measurement.measurant = mof;
-				measurement.measure = aoe;
-				measurement.object = entity;
-				measurements.add(measurement);
-			}
-			directlyToEntity.remove(object);
-			var clrToObject = sourcemodel!ClassLevelRelation.allInstances().select(clr | clr.`to` == object.from);
-			clrToObject.size().println();
-			directlyToEntity.addAll(clrToObject);
-		}
+		var value = cluster.codeElement.size();
+		
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(cluster);
+		measurement.measure = noc;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+	}
+	
+	for(clusterRelation in sourcemodel!ClusterRelation.allInstances())
+	{
+		var value = clusterRelation.codeElement.size();
+		
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(clusterRelation);
+		measurement.measure = noc;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
 	}
 }
 
-operation sourcemodel!DataType containsEntity(): Boolean
+operation calculateNumberOfLines(measurements: List, nol: sourcemodel!NumberOfLinesMeasure)
 {
-	return self.codeRelation.select(hasValue | hasValue.isTypeOf(sourcemodel!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
+	for(class in sourcemodel!DataType.allInstances().select(object| object.isTypeOf(sourcemodel!ClassUnit) or object.isTypeOf(sourcemodel!InterfaceUnit) or object.isTypeOf(sourcemodel!TemplateUnit)))
+	{
+		var value = 0.0;
+		var list = class.codeElement;
+		value = value + class.codeElement.size();
+		
+		var controlElements = list.select(ce | ce.isTypeOf(sourcemodel!ControlElement));
+		for(elements in controlElements)
+		{
+			value = value + elements.codeElement.size();
+		}
+		
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(class);
+		measurement.measure = nol;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+	}
+	
+	--# of lines for cluster based on classes
+	for(cluster in sourcemodel!Cluster.allInstances())
+	{
+		var value = 0.0;
+		
+		for(codeElement in cluster.codeElement)
+		{
+			var dimensionMeasurant = getMofElementFromModelElement(codeElement).measurant.select(ce | ce.measure.isTypeOf(sourcemodel!NumberOfLinesMeasure));
+			value = value + dimensionMeasurant.first().value;
+		}
+		
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(cluster);
+		measurement.measure = nol;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+	}
+	
+	--# of lines for cluster relations based on classes
+	for(clusterRelation in sourcemodel!ClusterRelation.allInstances())
+	{
+		var value = 0.0;
+		
+		for(codeElement in clusterRelation.codeElement)
+		{
+			var dimensionMeasurant = getMofElementFromModelElement(codeElement).measurant.select(ce | ce.measure.isTypeOf(sourcemodel!NumberOfLinesMeasure));
+			value = value + dimensionMeasurant.first().value;
+		}
+		
+		var measurement = new DimensionalMeasurement();
+		measurement.measurant = getMofElementFromModelElement(clusterRelation);
+		measurement.measure = nol;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+	}
+}
+
+operation calculateClusterRelationConflictPercentage(measurements: List, crcp: sourcemodel!ClusterRelationConflictPercentageMeasure)
+{
+	for(clusterRelation in sourcemodel!ClusterRelation.allInstances())
+	{
+		var value = (clusterRelation.codeElement.size().asDouble() / clusterRelation.`to`.codeElement.size().asDouble());
+		var measurement = new DimensionalToObjectMeasurement();
+		measurement.measurant = getMofElementFromModelElement(clusterRelation);
+		measurement.measure = crcp;
+		measurement.object = clusterRelation.`to`;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+		
+		var value = (clusterRelation.codeElement.size().asDouble() / clusterRelation.`from`.codeElement.size().asDouble());
+		var measurement = new DimensionalToObjectMeasurement();
+		measurement.measurant = getMofElementFromModelElement(clusterRelation);
+		measurement.measure = crcp;
+		measurement.object = clusterRelation.`from`;
+		measurement.value = value.asDouble();
+		measurements.add(measurement);
+	}
 }
 
 operation getMofElementFromModelElement(modelElement : sourcemodel!ModelElement) : sourcemodel!MofElement

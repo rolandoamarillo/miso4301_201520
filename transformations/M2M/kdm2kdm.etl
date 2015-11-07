@@ -9,7 +9,88 @@ post {
 		generateClassLevelRelations();
 	}
 	
+	executeClusteres();
+	
 	"Done".println();
+}
+
+operation executeClusteres(){
+	var modelElem = kdmMicro!CodeModel.allInstances().first();
+  	var classes = modelElem.getAllContents()->select(class|class.isTypeOf(kdmMicro!ClassUnit) or class.isTypeOf(kdmMicro!InterfaceUnit) or class.isTypeOf(kdmMicro!TemplateUnit));
+	var relations = kdmMicro!ClassLevelRelation.allInstances();
+	var clusterTool = new Native("clusterer.EJBClusterer");
+	
+	var ejbs = new Set;
+	var entities = new Set;
+	
+	for(c in classes){
+		if (c.containsEntity()){
+			entities.add(c);
+		}
+		else if(c.containsEJB()){
+			ejbs.add(c);
+		}
+	}
+	
+	clusterTool.constructGraph(classes->asSet(),relations->asSet());
+	
+	var clus = clusterTool.makeCluster(ejbs,entities);
+	
+	for(cluster in clus){
+		var cl = new kdmMicro!Cluster;
+		cl.name = cluster.name;
+		cl.codeElement.addAll(cluster.codeElement);
+		modelElem.codeElement.add(cl);
+		("-----------"+cl.name+"------------").println();
+		for (elem in cl.codeElement){
+				elem.name.println();
+		}
+	}
+	
+	var clusters = kdmMicro!Cluster.allInstances();
+	
+	var union = new Set;
+	for(cluster in clusters){
+		union.addAll(cluster.codeElement);
+	}
+	
+	var noClasificadas = union->asSet()->select(c| classes->asSet()->select(a|a.name==c.name)->isEmpty());
+	
+	noClasificadas.println();
+	
+	var i = 1;
+	for(a in clusters){
+		var A = new Set;
+		A = a.codeElement;
+		var j=1;
+		for(b in clusters){
+			var B = new Set;
+			B = b.codeElement;
+		
+			var union = new Set;
+			var intersect = new Set;
+			
+			union.addAll(A);
+			union.addAll(B);
+			
+			intersect.addAll(A->select(c|B->includes(c)));
+			
+			if((not existClusterRelation(a, b)) and intersect->size()<>0 and a<>b){
+				var relation = new kdmMicro!ClusterRelation;
+				relation.`from`= a;
+				relation.`to` = b;
+				relation.codeElement.addAll(intersect);
+				modelElem.codeElement.add(relation);
+			}
+			var value = new Real;
+			value = ((intersect->size()->asReal())/(A->size()->asReal())).max(((intersect->size()->asReal())/(B->size()->asReal())));
+			
+			(""+i+"--"+j+":"+value).println();
+			
+			j=j+1;
+		}
+		i=i+1;
+	}
 }
 
 //Raiz
@@ -524,4 +605,26 @@ operation Sequence ValidateClassUnitExistsInExternals(class: kdmMicro!CodeItem):
 	 return true;
 	else
 	 return false; 	
+}
+
+operation existClusterRelation(i : kdmMicro!Cluster, j : kdmMicro!Cluster): Boolean{
+	var relations = kdmMicro!ClusterRelation.allInstances();
+	for (relation in relations)
+		{
+		if((relation.`from` == i and relation.`to` == j) or (relation.`from` == j and relation.`to` == i))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+operation kdmMicro!CodeItem containsEntity(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and hasValue.`to`.name.equalsIgnoreCase("Entity") ).size > 0;
+}
+
+operation kdmMicro!CodeItem containsEJB(): Boolean
+{
+	return self.codeRelation.select(hasValue | hasValue.isTypeOf(kdmMicro!HasValue) and hasValue.annotation.size() > 0 and (hasValue.`to`.name.equalsIgnoreCase("Stateless") or hasValue.`to`.name.equalsIgnoreCase("Stateful") or hasValue.`to`.name.equalsIgnoreCase("Remote") ) ).size > 0;
 }
