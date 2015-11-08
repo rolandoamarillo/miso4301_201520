@@ -21,7 +21,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Arco" eSuperTypes="#//Medible">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Elemento"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tipos" upperBound="-1"
-        eType="#//TipoRelacion" containment="true"/>
+        eType="#//TipoRelacion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Elemento"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metrica">
@@ -35,15 +35,22 @@
     <eLiterals name="NumberOfUses" value="2"/>
     <eLiterals name="NumberOfContainments" value="3"/>
     <eLiterals name="CouplingBetweenObjects" value="4" literal="CouplingBetweenObjects"/>
+    <eLiterals name="NumberOfClassesMeasure" value="5"/>
+    <eLiterals name="NumberOfLinesMeasure" value="6"/>
+    <eLiterals name="ClusterRelationConflictPercentageMeasure" value="7"/>
   </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
     <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//Nodo">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clases" upperBound="-1"
+          eType="#//representacion/Clase"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Paquete" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Nodo"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Nodo"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Nodo">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cluster" upperBound="-1"
+          eType="#//representacion/Cluster"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Archivo" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Servicio" eSuperTypes="#//Nodo"/>
     <eClassifiers xsi:type="ecore:EClass" name="Tabla" eSuperTypes="#//Nodo"/>

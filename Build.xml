@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
-	<property name="Kdm" value="./models/EJB_kdm.xmi"></property>
+	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/kdmResultadoSub.xmi"></property>
 	<property name="Cluster" value="./models/Cluster.xmi"></property>
 		

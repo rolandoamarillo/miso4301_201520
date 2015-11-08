@@ -6,16 +6,7 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: subkdm.SimplifiedDecisionMetrics,
- subkdm.SimplifiedDecisionMetrics.impl,
- subkdm.SimplifiedDecisionMetrics.util,
- subkdm.kdmObjects,
- subkdm.kdmObjects.impl,
- subkdm.kdmObjects.util,
- subkdm.kdmRelations,
- subkdm.kdmRelations.impl,
- subkdm.kdmRelations.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.epsilon.erl.engine;bundle-version="1.2.0",
