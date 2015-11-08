@@ -3,7 +3,7 @@
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/Cluster.xmi"></property>
+	<property name="Cluster" value="./models/visualizacionCluster.xmi"></property>
 		
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -41,19 +41,19 @@
 	</target>
 		
 	<target name="sdm2Cluster" depends="loadModelsT3">
-		<epsilon.etl src="./transformations/M2M/sdm2Cluster.etl">
+		<epsilon.etl src="./transformations/M2M/sdm2VisualizacionCluster.etl">
 			<model ref="kdmMicro"></model>
 			<model ref="target"></model>
 		</epsilon.etl>
 		
-		<epsilon.disposeModels></epsilon.disposeModels>
+		<epsilon.disposeModel model="target"></epsilon.disposeModel>
 	</target>
 	
 	<!-- Main -->
 	
 	<target name="main">		
-		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>-->
 		<antcall target="sdm2Cluster"></antcall>
 	</target>
 </project>

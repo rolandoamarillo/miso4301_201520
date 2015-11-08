@@ -29,12 +29,13 @@ transform t: kdmMicro!Cluster
 to o: target!Cluster{
   o.name = t.name;
   
-  //adiciona las clases del cluster
+  //adiciona paquetes y las clases del cluster
   for(codeItem in t.codeElement)
   {
   	var class = new target!Clase();
   	class.name = codeItem.name;
   	class.AddMetricsClass(codeItem);
+  	class.AddElementsToClass(codeItem);
   	AddClassToPackage(class, codeItem);
   	o.clases.add(class);
   }
@@ -51,6 +52,27 @@ to o: target!Cluster{
   		o.metricas.add(metrica);
   	}
   }
+}
+
+//Adiciona metodos y atributos a las clases
+operation target!Clase AddElementsToClass(codeItem : kdmMicro!CodeItem){
+	var methods = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!MethodUnit));
+	var atributes = codeItem.codeElement.select(x | x.isTypeOf(kdmMicro!StorableUnit));
+	
+	for(met in methods)
+	{
+		var newMethod =  new target!Metodo();
+		newMethod.name = met.name;
+		self.hijos.add(newMethod);
+	}
+	
+	for(atr in atributes)
+	{
+		var newAtribute =  new target!Atributo();
+		newAtribute.name = atr.name;
+		self.hijos.add(newAtribute);
+	}
+	
 }
 
 //Adiciona a la clase de un cluster las metricas obtenidas en subkdm
