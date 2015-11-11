@@ -7,20 +7,18 @@ pre {
   var composicion = new target!Composicion();
   var agregacion = new target!Agregacion();
   var generalizacion = new target!Generalizacion();
+  
+  var Codemodel = kdmMicro!CodeModel.allInstances().first();
+  var app = new target!Aplicacion();
+  app.name = Codemodel.name;
+  //app.hijos = Codemodel.codeElement.select(x | x.isTypeOf(kdmMicro!Cluster)).equivalent();
 }
 
 post {
     CreateDependecies();
+    CreateDependeciesCluster();
+	
 	"Done".println();
-}
-
-//Raiz
-rule Segment2NodoPrincipal
-transform t: kdmMicro!CodeModel
-to o: target!Aplicacion{
-  guard : t.name <> "externals"
-  o.name = t.name;
-  o.hijos =  t.codeElement.select(x | x.isTypeOf(kdmMicro!Cluster)).equivalent();
 }
 
 //creacion cluster con sus paquetes y clases
@@ -28,16 +26,23 @@ rule Cluster2Cluster
 transform t: kdmMicro!Cluster
 to o: target!Cluster{
   o.name = t.name;
-  
   //adiciona paquetes y las clases del cluster
   for(codeItem in t.codeElement)
   {
-  	var class = new target!Clase();
-  	class.name = codeItem.name;
-  	class.AddMetricsClass(codeItem);
-  	class.AddElementsToClass(codeItem);
-  	AddClassToPackage(class, codeItem);
-  	o.clases.add(class);
+  	var ListClases = target!Clase.allInstances();
+  	if(not ListClases.exists(x| x.name == codeItem.name))
+  	{
+	  	var class = new target!Clase();
+	  	class.name = codeItem.name;
+	  	class.AddMetricsClass(codeItem);
+	  	class.AddElementsToClass(codeItem);
+	  	AddClassToPackage(class, codeItem);
+	  	o.clases.add(class);
+  	}
+  	else{
+  		var class = ListClases.select(x| x.name == codeItem.name).first();
+  	 	o.clases.add(class);
+  	}
   }
   
   //adiciona las metricas del cluster
@@ -52,6 +57,8 @@ to o: target!Cluster{
   		o.metricas.add(metrica);
   	}
   }
+  
+  app.hijos.add(o);
 }
 
 //Adiciona metodos y atributos a las clases
@@ -142,6 +149,7 @@ operation AddClassToPackage(class:target!Clase, codEl: kdmMicro!CodeItem){
 	 	var package = new target!Paquete();
     	package.name = codEl.GetNamePackage();
     	package.hijos.add(class);
+    	app.hijos.add(package);
 	 }
 }
 
@@ -159,6 +167,52 @@ operation kdmMicro!AbstractCodeElement GetNamePackage(): String
 	return namePackage;
 }
 
+//Crea dependencias de los clusters
+operation CreateDependeciesCluster(){
+	var classLR = kdmMicro!ClusterRelation.allInstances();
+	var nodosCluster = target!Cluster.allInstances();
+	
+	for(nodo in nodosCluster)
+	{
+		nodo.GetRelationsCluster(classLR, nodosCluster);
+	}	
+}
+
+//Obtiene las relaciones de cada cluster 
+operation target!Cluster GetRelationsCluster(classLR: Sequence, nodosCluster: Sequence){
+	var relations = classLR.select(x | x.`from`.name == self.name);
+	
+	for(rel in relations){
+	    var dep = new target!Arco();
+	    
+	    var ClusterTarg = nodosCluster.select(x | x.name == rel.`to`.name).first();
+	    dep.target =  ClusterTarg;
+	    dep.source = self;
+	    
+	    dep.CreateMeasuresRelationsCluster(rel);   
+		self.relaciones.add(dep);
+	}
+}
+
+//asocia metricas de relaciones - arcos
+operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterRelation){
+	
+	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClusterRelation) and x.element.equals(relation)))
+	{
+		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClusterRelation) and x.element.equals(relation)).first();
+		var measurant = mofElement.measurant.select(x | x.isTypeOf(kdmMicro!DimensionalMeasurement));
+		
+		for(m in measurant)
+		{
+			var met1 = new target!Metrica();
+			met1.SetTipoMetrics(m.measure);
+			met1.valor = m.value.asDouble();
+			
+			self.metricas.add(met1);
+		}
+	}
+}
+
 //Crea las dependencias para cada clase en el modelo
 //relaciones - arcos
 operation CreateDependecies(){
@@ -167,7 +221,7 @@ operation CreateDependecies(){
 	var nodosClases = target!Clase.allInstances();
 	
 	for(nodo in nodosClases)
-	{
+	{	
 		nodo.GetRelationsClass(classLR, nodosClases);
 	}	
 }
@@ -175,28 +229,29 @@ operation CreateDependecies(){
 //Obtiene las relaciones de cada clase 
 operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence){
 	var relations = classLR.select(x | x.`from`.name == self.name);
-	
+
 	for(rel in relations){
-		var package = rel.`from`.eContainer();
-	    var dep = new target!Arco();
-	    
 	    var ClaseTarg = nodosClases.select(x | x.name == rel.`to`.name).first();
-	    dep.target =  ClaseTarg;
-	    dep.source = self;
 	    
-	    dep.CreateMeasuresRelations(rel);
-	    
-	    for(t in rel.typeRelations){
-	    	dep.AddTypeRelation(t);
+	    if(ClaseTarg.isDefined())
+	    {
+	    	var dep = new target!Arco();
+		    dep.target =  ClaseTarg;
+		    dep.source = self;
+		    dep.CreateMeasuresRelations(rel);
+		    
+		    for(t in rel.typeRelations){
+		    	dep.AddTypeRelation(t);
+		    }
+		    
+			self.relaciones.add(dep);
 	    }
-	    
-		self.hijos.add(dep);
 	}
 }
 
 //asocia metricas de relaciones - arcos
 operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelation){
-	//buscar pesos de las metricas por clases...
+	
 	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)))
 	{
 		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)).first();

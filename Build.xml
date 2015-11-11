@@ -3,7 +3,7 @@
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/visualizacionCluster.xmi"></property>
+	<property name="Cluster" value="./models/visualizacionCluster2.xmi"></property>
 		
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -34,13 +34,12 @@
 	</target>
 
 	<!-- Tranformacion 3-->
-	<target name="loadModelsT3">
-		<epsilon.emf.register file="./metamodels/visualizacionMetricas.ecore"></epsilon.emf.register>	
+	<target name="loadModelsT3">	
 		<epsilon.emf.loadModel name="kdmMicro" modelfile="${SubKdm}" metamodeluri="http://subkdm/kdmobjects,http://subkdm/kdmrelations,http://subkdm/sdm" read="true" store="false"></epsilon.emf.loadModel>
-		<epsilon.emf.loadModel name="target" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3" read="false" store="true"></epsilon.emf.loadModel>
+		<epsilon.emf.loadModel name="target" modelfile="${Cluster}" metamodeluri="http://visualizacionMetricas3,http://visualizacionMetricas3/representacion,http://visualizacionMetricas3/visualizacion" read="false" store="true"></epsilon.emf.loadModel>
 	</target>
 		
-	<target name="sdm2Cluster" depends="loadModelsT3">
+	<target name="sdm2Visualizacion" depends="loadModelsT3">
 		<epsilon.etl src="./transformations/M2M/sdm2VisualizacionCluster.etl">
 			<model ref="kdmMicro"></model>
 			<model ref="target"></model>
@@ -52,8 +51,8 @@
 	<!-- Main -->
 	
 	<target name="main">		
-		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>-->
-		<antcall target="sdm2Cluster"></antcall>
+		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>
+		<antcall target="sdm2Visualizacion"></antcall>
 	</target>
 </project>
