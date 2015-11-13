@@ -20,7 +20,7 @@
   <models xmi:type="com.mtcflow.model:MTC" href="mtcs/Visualizacion.mtc#/"/>
   <models xmi:type="modisco.xml:Root" href="Build.xml#/"/>
   <models xmi:type="kdmObjects:Segment" href="models/SDM.xmi#/0"/>
-  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/Copy%20of%20visualizacionCluster.xmi#/0"/>
+  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/visualizacionCluster6.xmi#/0"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_gT3RoEpmEeW6AbXvikMMBA" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_gfBYwEpmEeW6AbXvikMMBA" name="SimplifiedDecisionMetrics class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_gfU6wEpmEeW6AbXvikMMBA" source="GMF_DIAGRAMS">
@@ -64,6 +64,7 @@
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WSGicFJhEeWTjayuf0VR4w" initialized="true">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/KDM2Model.design/description/SimplifiedDecisionMetrics.odesign#//@ownedViewpoints[name='sdm']"/>
   </ownedViews>
+  <models xmi:type="visualizacionMetricas3.representacion:Dependencia" href="models/Copy%20of%20visualizacionCluster.xmi#/0"/>
   <models xmi:type="visualizacionMetricas:Nodo" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="visualizacionMetricas2:Aplicacion" href="models/Visualizacion.xmi#/"/>
   <models xmi:type="h:Segment" href="models/kdmResultadoSub.xmi#/"/>

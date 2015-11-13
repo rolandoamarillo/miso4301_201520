@@ -3,7 +3,7 @@
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
 	<property name="SubKdm" value="./models/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/visualizacionCluster2.xmi"></property>
+	<property name="Cluster" value="./models/visualizacionCluster6.xmi"></property>
 		
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -51,8 +51,8 @@
 	<!-- Main -->
 	
 	<target name="main">		
-		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>-->
 		<antcall target="sdm2Visualizacion"></antcall>
 	</target>
 </project>

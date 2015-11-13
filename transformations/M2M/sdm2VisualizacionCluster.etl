@@ -16,8 +16,7 @@ pre {
 
 post {
     CreateDependecies();
-    CreateDependeciesCluster();
-	
+    CreateDependeciesCluster();	
 	"Done".println();
 }
 
@@ -37,11 +36,11 @@ to o: target!Cluster{
 	  	class.AddMetricsClass(codeItem);
 	  	class.AddElementsToClass(codeItem);
 	  	AddClassToPackage(class, codeItem);
-	  	o.clases.add(class);
+	  	o.elementos.add(class);
   	}
   	else{
   		var class = ListClases.select(x| x.name == codeItem.name).first();
-  	 	o.clases.add(class);
+  	 	o.elementos.add(class);
   	}
   }
   
@@ -190,8 +189,27 @@ operation target!Cluster GetRelationsCluster(classLR: Sequence, nodosCluster: Se
 	    dep.source = self;
 	    
 	    dep.CreateMeasuresRelationsCluster(rel);   
+	    dep.CreateInterseptions(ClusterTarg, self);
 		self.relaciones.add(dep);
 	}
+}
+
+//adiciona las clases comunes entre clusters, se hace por cada relacion entre cluster existentes
+operation target!Arco CreateInterseptions (clusterTarget: target!Cluster, clusterSource: target!Cluster) {
+	var	clasesClusterTarget = clusterTarget.elementos.select(x| x.isTypeOf(target!Clase))->asSet();
+	var	clasesClusterSource = clusterSource.elementos.select(x| x.isTypeOf(target!Clase))->asSet();
+	
+ 	var intersect = new Set;	
+ 	intersect.addAll(clasesClusterTarget->select(c|clasesClusterSource->includes(c)));
+ 	var Interception = new target!Intercepcion();
+ 	Interception.name = clusterTarget.name + " - " + clusterSource.name;	
+ 	Interception.arco = self;
+ 	
+ 	for(inter in intersect){
+ 		Interception.elementos.add(inter);
+ 	}
+ 	
+ 	app.hijos.add(Interception);
 }
 
 //asocia metricas de relaciones - arcos
