@@ -188,6 +188,7 @@ operation target!Cluster GetRelationsCluster(classLR: Sequence, nodosCluster: Se
 	    dep.target =  ClusterTarg;
 	    dep.source = self;
 	    
+	    dep.tipos.add(asociacion);
 	    dep.CreateMeasuresRelationsCluster(rel);   
 	    dep.CreateInterseptions(ClusterTarg, self);
 		self.relaciones.add(dep);

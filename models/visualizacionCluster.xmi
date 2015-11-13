@@ -567,19 +567,19 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="CarritoPersistence" elementos="/5/@hijos.0/@hijos.0 /5/@hijos.0/@hijos.1 /5/@hijos.1/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.3/@hijos.0 /5/@hijos.4/@hijos.0 /5/@hijos.5/@hijos.0 /5/@hijos.6/@hijos.0 /5/@hijos.3/@hijos.1 /5/@hijos.6/@hijos.1 /5/@hijos.1/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.2/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.4/@hijos.1 /5/@hijos.3/@hijos.2 /5/@hijos.6/@hijos.3 /5/@hijos.4/@hijos.2 /5/@hijos.7/@hijos.0 /5/@hijos.7/@hijos.1">
       <metricas tipo="NumberOfLinesMeasure" valor="92.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="20.0"/>
-      <relaciones target="/5/@hijos.27" source="/5/@hijos.8">
+      <relaciones target="/5/@hijos.27" tipos="/1" source="/5/@hijos.8">
         <metricas tipo="NumberOfLinesMeasure" valor="13.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="4.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.34" source="/5/@hijos.8">
+      <relaciones target="/5/@hijos.34" tipos="/1" source="/5/@hijos.8">
         <metricas tipo="NumberOfLinesMeasure" valor="32.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="10.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.42" source="/5/@hijos.8">
+      <relaciones target="/5/@hijos.42" tipos="/1" source="/5/@hijos.8">
         <metricas tipo="NumberOfLinesMeasure" valor="42.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="9.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.43" source="/5/@hijos.8">
+      <relaciones target="/5/@hijos.43" tipos="/1" source="/5/@hijos.8">
         <metricas tipo="NumberOfLinesMeasure" valor="32.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="10.0"/>
       </relaciones>
@@ -817,7 +817,7 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="ClientLogicService" elementos="/5/@hijos.9/@hijos.0 /5/@hijos.10/@hijos.0 /5/@hijos.10/@hijos.1 /5/@hijos.11/@hijos.0 /5/@hijos.11/@hijos.1 /5/@hijos.11/@hijos.2 /5/@hijos.9/@hijos.1 /5/@hijos.12/@hijos.0 /5/@hijos.11/@hijos.3 /5/@hijos.10/@hijos.2 /5/@hijos.12/@hijos.1">
       <metricas tipo="NumberOfLinesMeasure" valor="49.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="11.0"/>
-      <relaciones target="/5/@hijos.31" source="/5/@hijos.13">
+      <relaciones target="/5/@hijos.31" tipos="/1" source="/5/@hijos.13">
         <metricas tipo="NumberOfLinesMeasure" valor="43.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="9.0"/>
       </relaciones>
@@ -1034,7 +1034,7 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="ProductoLogicService" elementos="/5/@hijos.14/@hijos.0 /5/@hijos.15/@hijos.0 /5/@hijos.16/@hijos.0 /5/@hijos.14/@hijos.1 /5/@hijos.14/@hijos.2 /5/@hijos.15/@hijos.1 /5/@hijos.17/@hijos.0 /5/@hijos.16/@hijos.1 /5/@hijos.17/@hijos.1 /5/@hijos.14/@hijos.3 /5/@hijos.17/@hijos.2">
       <metricas tipo="NumberOfLinesMeasure" valor="43.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="11.0"/>
-      <relaciones target="/5/@hijos.40" source="/5/@hijos.18">
+      <relaciones target="/5/@hijos.40" tipos="/1" source="/5/@hijos.18">
         <metricas tipo="NumberOfLinesMeasure" valor="37.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="9.0"/>
       </relaciones>
@@ -1467,15 +1467,15 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="ItemPersistence" elementos="/5/@hijos.19/@hijos.0 /5/@hijos.20/@hijos.0 /5/@hijos.19/@hijos.1 /5/@hijos.21/@hijos.0 /5/@hijos.22/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.21/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.23/@hijos.0 /5/@hijos.24/@hijos.0 /5/@hijos.19/@hijos.2 /5/@hijos.25/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.20/@hijos.1 /5/@hijos.24/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.22/@hijos.1 /5/@hijos.23/@hijos.1 /5/@hijos.26/@hijos.0 /5/@hijos.21/@hijos.3 /5/@hijos.25/@hijos.1 /5/@hijos.22/@hijos.2">
       <metricas tipo="NumberOfLinesMeasure" valor="111.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="23.0"/>
-      <relaciones target="/5/@hijos.34" source="/5/@hijos.27">
+      <relaciones target="/5/@hijos.34" tipos="/1" source="/5/@hijos.27">
         <metricas tipo="NumberOfLinesMeasure" valor="90.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="20.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.36" source="/5/@hijos.27">
+      <relaciones target="/5/@hijos.36" tipos="/1" source="/5/@hijos.27">
         <metricas tipo="NumberOfLinesMeasure" valor="41.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="9.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.43" source="/5/@hijos.27">
+      <relaciones target="/5/@hijos.43" tipos="/1" source="/5/@hijos.27">
         <metricas tipo="NumberOfLinesMeasure" valor="79.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="16.0"/>
       </relaciones>
@@ -1763,15 +1763,15 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="CarritoMasterLogicService" elementos="/5/@hijos.21/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.6/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.24/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.25/@hijos.0 /5/@hijos.20/@hijos.1 /5/@hijos.32/@hijos.0 /5/@hijos.23/@hijos.1 /5/@hijos.26/@hijos.0 /5/@hijos.21/@hijos.3 /5/@hijos.7/@hijos.0 /5/@hijos.33/@hijos.0 /5/@hijos.20/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.22/@hijos.0 /5/@hijos.6/@hijos.1 /5/@hijos.2/@hijos.1 /5/@hijos.24/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.22/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.25/@hijos.1 /5/@hijos.32/@hijos.1 /5/@hijos.22/@hijos.2 /5/@hijos.7/@hijos.1 /5/@hijos.33/@hijos.1">
       <metricas tipo="NumberOfLinesMeasure" valor="116.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="30.0"/>
-      <relaciones target="/5/@hijos.36" source="/5/@hijos.34">
+      <relaciones target="/5/@hijos.36" tipos="/1" source="/5/@hijos.34">
         <metricas tipo="NumberOfLinesMeasure" valor="20.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="6.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.42" source="/5/@hijos.34">
+      <relaciones target="/5/@hijos.42" tipos="/1" source="/5/@hijos.34">
         <metricas tipo="NumberOfLinesMeasure" valor="19.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="6.0"/>
       </relaciones>
-      <relaciones target="/5/@hijos.43" source="/5/@hijos.34">
+      <relaciones target="/5/@hijos.43" tipos="/1" source="/5/@hijos.34">
         <metricas tipo="NumberOfLinesMeasure" valor="105.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="24.0"/>
       </relaciones>
@@ -1805,7 +1805,7 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="ItemLogicService" elementos="/5/@hijos.19/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.20/@hijos.0 /5/@hijos.19/@hijos.1 /5/@hijos.35/@hijos.0 /5/@hijos.21/@hijos.1 /5/@hijos.21/@hijos.2 /5/@hijos.35/@hijos.1 /5/@hijos.21/@hijos.3 /5/@hijos.19/@hijos.2 /5/@hijos.20/@hijos.1">
       <metricas tipo="NumberOfLinesMeasure" valor="47.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="11.0"/>
-      <relaciones target="/5/@hijos.43" source="/5/@hijos.36">
+      <relaciones target="/5/@hijos.43" tipos="/1" source="/5/@hijos.36">
         <metricas tipo="NumberOfLinesMeasure" valor="9.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="2.0"/>
       </relaciones>
@@ -2021,7 +2021,7 @@
     <hijos xsi:type="visualizacionMetricas3.representacion:Cluster" name="CarritoLogicService" elementos="/5/@hijos.41/@hijos.0 /5/@hijos.4/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.4/@hijos.0 /5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.4/@hijos.2 /5/@hijos.41/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.7/@hijos.1">
       <metricas tipo="NumberOfLinesMeasure" valor="48.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="11.0"/>
-      <relaciones target="/5/@hijos.43" source="/5/@hijos.42">
+      <relaciones target="/5/@hijos.43" tipos="/1" source="/5/@hijos.42">
         <metricas tipo="NumberOfLinesMeasure" valor="19.0"/>
         <metricas tipo="NumberOfClassesMeasure" valor="6.0"/>
       </relaciones>
@@ -2030,19 +2030,19 @@
       <metricas tipo="NumberOfLinesMeasure" valor="105.0"/>
       <metricas tipo="NumberOfClassesMeasure" valor="24.0"/>
     </hijos>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemPersistence - CarritoPersistence" elementos="/5/@hijos.5/@hijos.1 /5/@hijos.2/@hijos.1 /5/@hijos.2/@hijos.0 /5/@hijos.5/@hijos.0" arco="/5/@hijos.8/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterLogicService - CarritoPersistence" elementos="/5/@hijos.5/@hijos.1 /5/@hijos.2/@hijos.1 /5/@hijos.2/@hijos.0 /5/@hijos.6/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.5/@hijos.0 /5/@hijos.7/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.6/@hijos.0" arco="/5/@hijos.8/@relaciones.1"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoLogicService - CarritoPersistence" elementos="/5/@hijos.4/@hijos.1 /5/@hijos.6/@hijos.1 /5/@hijos.4/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.7/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.6/@hijos.0 /5/@hijos.4/@hijos.2" arco="/5/@hijos.8/@relaciones.2"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoPersistence" elementos="/5/@hijos.5/@hijos.1 /5/@hijos.2/@hijos.1 /5/@hijos.6/@hijos.1 /5/@hijos.2/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.5/@hijos.0 /5/@hijos.7/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.6/@hijos.0" arco="/5/@hijos.8/@relaciones.3"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ClientPersistence - ClientLogicService" elementos="/5/@hijos.11/@hijos.0 /5/@hijos.9/@hijos.0 /5/@hijos.9/@hijos.1 /5/@hijos.10/@hijos.1 /5/@hijos.11/@hijos.3 /5/@hijos.10/@hijos.2 /5/@hijos.10/@hijos.0 /5/@hijos.11/@hijos.2 /5/@hijos.11/@hijos.1" arco="/5/@hijos.13/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ProductoPersistence - ProductoLogicService" elementos="/5/@hijos.14/@hijos.2 /5/@hijos.14/@hijos.3 /5/@hijos.14/@hijos.0 /5/@hijos.15/@hijos.0 /5/@hijos.17/@hijos.0 /5/@hijos.15/@hijos.1 /5/@hijos.17/@hijos.1 /5/@hijos.17/@hijos.2 /5/@hijos.14/@hijos.1" arco="/5/@hijos.18/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterLogicService - ItemPersistence" elementos="/5/@hijos.5/@hijos.1 /5/@hijos.20/@hijos.0 /5/@hijos.22/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.25/@hijos.0 /5/@hijos.24/@hijos.1 /5/@hijos.25/@hijos.1 /5/@hijos.20/@hijos.1 /5/@hijos.21/@hijos.1 /5/@hijos.26/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.2/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.24/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.23/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.2 /5/@hijos.21/@hijos.3" arco="/5/@hijos.27/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemLogicService - ItemPersistence" elementos="/5/@hijos.19/@hijos.0 /5/@hijos.21/@hijos.1 /5/@hijos.20/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.19/@hijos.2 /5/@hijos.21/@hijos.3 /5/@hijos.19/@hijos.1 /5/@hijos.20/@hijos.1" arco="/5/@hijos.27/@relaciones.1"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - ItemPersistence" elementos="/5/@hijos.5/@hijos.1 /5/@hijos.22/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.25/@hijos.0 /5/@hijos.25/@hijos.1 /5/@hijos.24/@hijos.1 /5/@hijos.21/@hijos.1 /5/@hijos.26/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.21/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.24/@hijos.0 /5/@hijos.23/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.2" arco="/5/@hijos.27/@relaciones.2"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemLogicService - CarritoMasterLogicService" elementos="/5/@hijos.21/@hijos.1 /5/@hijos.20/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.21/@hijos.3 /5/@hijos.20/@hijos.1" arco="/5/@hijos.34/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoLogicService - CarritoMasterLogicService" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.7/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.6/@hijos.0" arco="/5/@hijos.34/@relaciones.1"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoMasterLogicService" elementos="/5/@hijos.32/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.6/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.22/@hijos.1 /5/@hijos.7/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.25/@hijos.0 /5/@hijos.6/@hijos.0 /5/@hijos.25/@hijos.1 /5/@hijos.24/@hijos.1 /5/@hijos.21/@hijos.1 /5/@hijos.26/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.21/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.24/@hijos.0 /5/@hijos.23/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.5/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.2 /5/@hijos.6/@hijos.2 /5/@hijos.32/@hijos.0" arco="/5/@hijos.34/@relaciones.2"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - ItemLogicService" elementos="/5/@hijos.21/@hijos.1 /5/@hijos.21/@hijos.0" arco="/5/@hijos.36/@relaciones.0"/>
-    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoLogicService" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.7/@hijos.1 /5/@hijos.6/@hijos.2 /5/@hijos.6/@hijos.0" arco="/5/@hijos.42/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemPersistence - CarritoPersistence" elementos="/5/@hijos.2/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.5/@hijos.1" arco="/5/@hijos.8/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterLogicService - CarritoPersistence" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.6/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.7/@hijos.0 /5/@hijos.5/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.7/@hijos.1 /5/@hijos.5/@hijos.1" arco="/5/@hijos.8/@relaciones.1"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoLogicService - CarritoPersistence" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.4/@hijos.2 /5/@hijos.6/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.4/@hijos.0 /5/@hijos.7/@hijos.1 /5/@hijos.4/@hijos.1" arco="/5/@hijos.8/@relaciones.2"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoPersistence" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.6/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.5/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.7/@hijos.1 /5/@hijos.5/@hijos.1" arco="/5/@hijos.8/@relaciones.3"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ClientPersistence - ClientLogicService" elementos="/5/@hijos.11/@hijos.3 /5/@hijos.11/@hijos.1 /5/@hijos.10/@hijos.0 /5/@hijos.10/@hijos.2 /5/@hijos.9/@hijos.0 /5/@hijos.9/@hijos.1 /5/@hijos.11/@hijos.2 /5/@hijos.11/@hijos.0 /5/@hijos.10/@hijos.1" arco="/5/@hijos.13/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ProductoPersistence - ProductoLogicService" elementos="/5/@hijos.17/@hijos.1 /5/@hijos.15/@hijos.0 /5/@hijos.14/@hijos.1 /5/@hijos.14/@hijos.0 /5/@hijos.17/@hijos.0 /5/@hijos.17/@hijos.2 /5/@hijos.14/@hijos.3 /5/@hijos.15/@hijos.1 /5/@hijos.14/@hijos.2" arco="/5/@hijos.18/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterLogicService - ItemPersistence" elementos="/5/@hijos.25/@hijos.0 /5/@hijos.24/@hijos.1 /5/@hijos.20/@hijos.0 /5/@hijos.5/@hijos.0 /5/@hijos.21/@hijos.2 /5/@hijos.21/@hijos.3 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.1 /5/@hijos.23/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.20/@hijos.1 /5/@hijos.25/@hijos.1 /5/@hijos.24/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.26/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.22/@hijos.2 /5/@hijos.21/@hijos.1" arco="/5/@hijos.27/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemLogicService - ItemPersistence" elementos="/5/@hijos.20/@hijos.1 /5/@hijos.19/@hijos.2 /5/@hijos.20/@hijos.0 /5/@hijos.19/@hijos.1 /5/@hijos.21/@hijos.3 /5/@hijos.21/@hijos.2 /5/@hijos.21/@hijos.0 /5/@hijos.19/@hijos.0 /5/@hijos.21/@hijos.1" arco="/5/@hijos.27/@relaciones.1"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - ItemPersistence" elementos="/5/@hijos.24/@hijos.1 /5/@hijos.25/@hijos.0 /5/@hijos.5/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.1 /5/@hijos.23/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.25/@hijos.1 /5/@hijos.24/@hijos.0 /5/@hijos.2/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.26/@hijos.0 /5/@hijos.21/@hijos.0 /5/@hijos.22/@hijos.2 /5/@hijos.21/@hijos.1" arco="/5/@hijos.27/@relaciones.2"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="ItemLogicService - CarritoMasterLogicService" elementos="/5/@hijos.20/@hijos.1 /5/@hijos.20/@hijos.0 /5/@hijos.21/@hijos.3 /5/@hijos.21/@hijos.2 /5/@hijos.21/@hijos.0 /5/@hijos.21/@hijos.1" arco="/5/@hijos.34/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoLogicService - CarritoMasterLogicService" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.6/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.7/@hijos.1" arco="/5/@hijos.34/@relaciones.1"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoMasterLogicService" elementos="/5/@hijos.32/@hijos.1 /5/@hijos.24/@hijos.1 /5/@hijos.6/@hijos.1 /5/@hijos.25/@hijos.0 /5/@hijos.32/@hijos.0 /5/@hijos.6/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.5/@hijos.0 /5/@hijos.23/@hijos.0 /5/@hijos.22/@hijos.1 /5/@hijos.23/@hijos.1 /5/@hijos.5/@hijos.1 /5/@hijos.25/@hijos.1 /5/@hijos.24/@hijos.0 /5/@hijos.6/@hijos.3 /5/@hijos.2/@hijos.0 /5/@hijos.2/@hijos.1 /5/@hijos.22/@hijos.0 /5/@hijos.26/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.21/@hijos.0 /5/@hijos.22/@hijos.2 /5/@hijos.7/@hijos.1 /5/@hijos.21/@hijos.1" arco="/5/@hijos.34/@relaciones.2"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - ItemLogicService" elementos="/5/@hijos.21/@hijos.0 /5/@hijos.21/@hijos.1" arco="/5/@hijos.36/@relaciones.0"/>
+    <hijos xsi:type="visualizacionMetricas3.representacion:Intercepcion" name="CarritoMasterPersistence - CarritoLogicService" elementos="/5/@hijos.6/@hijos.1 /5/@hijos.6/@hijos.3 /5/@hijos.6/@hijos.0 /5/@hijos.7/@hijos.0 /5/@hijos.6/@hijos.2 /5/@hijos.7/@hijos.1" arco="/5/@hijos.42/@relaciones.0"/>
   </visualizacionMetricas3.representacion:Aplicacion>
 </xmi:XMI>
