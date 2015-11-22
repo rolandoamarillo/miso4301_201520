@@ -40,7 +40,8 @@
     <eLiterals name="CouplingBetweenObjects" value="4"/>
     <eLiterals name="NumberOfClassesMeasure" value="5"/>
     <eLiterals name="NumberOfLinesMeasure" value="6"/>
-    <eLiterals name="ClusterRelationConflictPercentageMeasure" value="7"/>
+    <eLiterals name="ClusterRelationConflictPercentageMeasureTarget" value="7" literal="ClusterRelationConflictPercentageMeasureTarget"/>
+    <eLiterals name="ClusterRelationConflictPercentageMeasureSource" value="8" literal="ClusterRelationConflictPercentageMeasureSource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vinculo" abstract="true" interface="true"
       eSuperTypes="#//Elemento">

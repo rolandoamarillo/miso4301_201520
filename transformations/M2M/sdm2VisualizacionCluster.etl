@@ -52,7 +52,7 @@ to o: target!Cluster{
   	for(measurant in mofCluster.measurant)
   	{
   		var metrica = new target!Metrica();
-  		metrica.SetTipoMetrics(measurant.measure);
+  		metrica.SetTipoMetrics(measurant.measure, "");
   		metrica.valor = measurant.value;
   		o.metricas.add(metrica);
   	}
@@ -90,7 +90,7 @@ operation target!Clase AddMetricsClass(class : kdmMicro!CodeItem){
   	for(measurant in mofClass.measurant)
   	{
   		var metrica = new target!Metrica();
-  		metrica.SetTipoMetrics(measurant.measure);
+  		metrica.SetTipoMetrics(measurant.measure, "");
   		metrica.valor = measurant.value;
   		self.metricas.add(metrica);
   	}
@@ -98,7 +98,7 @@ operation target!Clase AddMetricsClass(class : kdmMicro!CodeItem){
 }
 
 //Obtiene el tipo de metrica
-operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure){
+operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure, tipoPor: String){
 	var mensaje = "";
 	if(tipoMeasure.isTypeOf(kdmMicro!CouplingBetweenObjectsMeasure))
 	{
@@ -138,7 +138,15 @@ operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure){
 	else if(tipoMeasure.isTypeOf(kdmMicro!ClusterRelationConflictPercentageMeasure))
 	{
 		mensaje = "ClusterRelationConflictPercentageMeasure";
-		self.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasure;
+		tipoPor.println();
+		if(tipoPor == "1")
+		{
+			self.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureTarget;
+		}
+		else
+		{
+			self.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasureSource;
+		}
 	}
 }
 
@@ -199,7 +207,7 @@ operation target!Cluster GetRelationsCluster(classLR: Sequence, nodosCluster: Se
 	    dep.source = self;
 	    
 	    dep.tipos.add(asociacion);
-	    dep.CreateMeasuresRelationsCluster(rel);   
+	    dep.CreateMeasuresRelationsCluster(rel, ClusterTarg, self);   
 	    dep.CreateInterseptions(ClusterTarg, self);
 		self.relaciones.add(dep);
 	}
@@ -224,7 +232,7 @@ operation target!Arco CreateInterseptions (clusterTarget: target!Cluster, cluste
 }
 
 //asocia metricas de relaciones - arcos
-operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterRelation){
+operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterRelation, clusterTarget: target!Cluster, clusterSource: target!Cluster){
 	
 	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClusterRelation) and x.element.equals(relation)))
 	{
@@ -233,9 +241,27 @@ operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterR
 		
 		for(m in measurant)
 		{  
+			var tipoPor = "";
 			var met1 = new target!Metrica();
-			met1.SetTipoMetrics(m.measure);
 			met1.valor = m.value.asDouble();
+			
+			if(m.isTypeOf(kdmMicro!DimensionalToObjectMeasurement))
+			{
+				m.object.name.println();
+				clusterTarget.name.println();
+				clusterSource.name.println();
+				if(m.object.name.equals(clusterTarget.name))
+				{
+					tipoPor = "1";
+				}
+				else if(m.object.name.equals(clusterSource.name))
+				{
+					tipoPor = "2";
+				}
+			}
+			
+			met1.SetTipoMetrics(m.measure, tipoPor);
+			
 			
 			self.metricas.add(met1);
 		}
@@ -289,7 +315,7 @@ operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelat
 		{
 			var met1 = new target!Metrica();
 			met1.valor = m.value.asDouble();
-			met1.SetTipoMetrics(m.measure);
+			met1.SetTipoMetrics(m.measure, "");
 			self.metricas.add(met1);
 		}
 	}
