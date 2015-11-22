@@ -11,11 +11,12 @@ pre {
   var Codemodel = kdmMicro!CodeModel.allInstances().first();
   var app = new target!Aplicacion();
   app.name = Codemodel.name;
-  //app.hijos = Codemodel.codeElement.select(x | x.isTypeOf(kdmMicro!Cluster)).equivalent();
 }
 
 post {
+    "Creando dependencias clases".println();
     CreateDependecies();
+    "Creando dependencias Cluster".println();
     CreateDependeciesCluster();	
 	"Done".println();
 }
@@ -98,36 +99,45 @@ operation target!Clase AddMetricsClass(class : kdmMicro!CodeItem){
 
 //Obtiene el tipo de metrica
 operation target!Metrica SetTipoMetrics(tipoMeasure: kdmMicro!Measure){
-	if(tipoMeasure.isTypeOf(kdmMicro!NumberOfUsesMeasure))
+	var mensaje = "";
+	if(tipoMeasure.isTypeOf(kdmMicro!CouplingBetweenObjectsMeasure))
 	{
-		self.tipo = target!TipoMetrica#NumberOfUses;
-	}
-	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfContainmentsMeasure))
-	{
-		self.tipo = target!TipoMetrica#NumberOfContainments;
-	}
-	else if(tipoMeasure.isTypeOf(kdmMicro!CalculatedCouplingMeasure))
-	{
-		self.tipo = target!TipoMetrica#CalculatedCoupling;
-	}
-	else if(tipoMeasure.isTypeOf(kdmMicro!CouplingBetweenObjectsMeasure))
-	{
+		mensaje = "CouplingBetweenObjectsMeasure";
 		self.tipo = target!TipoMetrica#CouplingBetweenObjects;
 	}
 	else if(tipoMeasure.isTypeOf(kdmMicro!WeightedMethodsPerClassMeasure))
 	{
+		mensaje = "WeightedMethodsPerClassMeasure";
 		self.tipo = target!TipoMetrica#WeightedMethodsPerClass;
+	}
+	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfUsesMeasure))
+	{
+		mensaje = "NumberOfUsesMeasure";
+		self.tipo = target!TipoMetrica#NumberOfUses;
+	}
+	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfContainmentsMeasure))
+	{
+		mensaje = "NumberOfContainmentsMeasure";
+		self.tipo = target!TipoMetrica#NumberOfContainments;
+	}
+	else if(tipoMeasure.isTypeOf(kdmMicro!CalculatedCouplingMeasure))
+	{
+		mensaje = "CalculatedCouplingMeasure";
+		self.tipo = target!TipoMetrica#CalculatedCoupling;
 	}
 	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfClassesMeasure))
 	{
+		mensaje = "NumberOfClassesMeasure";
 		self.tipo = target!TipoMetrica#NumberOfClassesMeasure;
 	}
 	else if(tipoMeasure.isTypeOf(kdmMicro!NumberOfLinesMeasure))
 	{
+		mensaje = "NumberOfLinesMeasure";
 		self.tipo = target!TipoMetrica#NumberOfLinesMeasure;
 	}
 	else if(tipoMeasure.isTypeOf(kdmMicro!ClusterRelationConflictPercentageMeasure))
 	{
+		mensaje = "ClusterRelationConflictPercentageMeasure";
 		self.tipo = target!TipoMetrica#ClusterRelationConflictPercentageMeasure;
 	}
 }
@@ -219,10 +229,10 @@ operation target!Arco CreateMeasuresRelationsCluster(relation: kdmMicro!ClusterR
 	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClusterRelation) and x.element.equals(relation)))
 	{
 		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClusterRelation) and x.element.equals(relation)).first();
-		var measurant = mofElement.measurant.select(x | x.isTypeOf(kdmMicro!DimensionalMeasurement));
+		var measurant = mofElement.measurant;
 		
 		for(m in measurant)
-		{
+		{  
 			var met1 = new target!Metrica();
 			met1.SetTipoMetrics(m.measure);
 			met1.valor = m.value.asDouble();
@@ -248,7 +258,6 @@ operation CreateDependecies(){
 //Obtiene las relaciones de cada clase 
 operation target!Nodo GetRelationsClass(classLR: Sequence, nodosClases: Sequence){
 	var relations = classLR.select(x | x.`from`.name == self.name);
-
 	for(rel in relations){
 	    var ClaseTarg = nodosClases.select(x | x.name == rel.`to`.name).first();
 	    
@@ -274,14 +283,13 @@ operation target!Arco CreateMeasuresRelations(relation: kdmMicro!ClassLevelRelat
 	if(kdmMicro!MofElement.allInstances().exists(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)))
 	{
 		var mofElement = kdmMicro!MofElement.allInstances().select(x | x.element.isTypeOf(kdmMicro!ClassLevelRelation) and x.element.equals(relation)).first();
-		var measurant = mofElement.measurant.select(x | x.isTypeOf(kdmMicro!DimensionalMeasurement));
+		var measurant = mofElement.measurant;
 		
 		for(m in measurant)
 		{
 			var met1 = new target!Metrica();
-			met1.SetTipoMetrics(m.measure);
 			met1.valor = m.value.asDouble();
-			
+			met1.SetTipoMetrics(m.measure);
 			self.metricas.add(met1);
 		}
 	}
