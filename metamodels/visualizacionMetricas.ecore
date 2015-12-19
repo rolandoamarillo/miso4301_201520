@@ -30,8 +30,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoMetrica"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TipoRelacion" abstract="true" interface="true"
-      eSuperTypes="#//Medible"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TipoRelacion" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EEnum" name="TipoMetrica">
     <eLiterals name="CalculatedCoupling"/>
     <eLiterals name="WeightedMethodsPerClass" value="1"/>
@@ -40,13 +39,16 @@
     <eLiterals name="CouplingBetweenObjects" value="4"/>
     <eLiterals name="NumberOfClassesMeasure" value="5"/>
     <eLiterals name="NumberOfLinesMeasure" value="6"/>
-    <eLiterals name="ClusterRelationConflictPercentageMeasureTarget" value="7" literal="ClusterRelationConflictPercentageMeasureTarget"/>
-    <eLiterals name="ClusterRelationConflictPercentageMeasureSource" value="8" literal="ClusterRelationConflictPercentageMeasureSource"/>
+    <eLiterals name="ClusterRelationConflictPercentageMeasureTarget" value="7"/>
+    <eLiterals name="ClusterRelationConflictPercentageMeasureSource" value="8"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vinculo" abstract="true" interface="true"
       eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" upperBound="-1"
         eType="#//Elemento"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetricaRelacion" eSuperTypes="#//Metrica">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relacion" eType="#//Elemento"/>
   </eClassifiers>
   <eSubpackages name="representacion" nsURI="http://visualizacionMetricas3/representacion"
       nsPrefix="visualizacionMetricas3.representacion">
@@ -144,16 +146,9 @@
       <eLiterals name="BORDE"/>
       <eLiterals name="NODO" value="1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Borde">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="grosor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"
-          defaultValueLiteral="0"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//visualizacion/Color"
-          defaultValueLiteral="black"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Conector" abstract="true" eSuperTypes="#//visualizacion/NavegacionDiagrama">
+    <eClassifiers xsi:type="ecore:EClass" name="Borde" eSuperTypes="#//visualizacion/Dibujable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Conector" abstract="true" eSuperTypes="#//visualizacion/NavegacionDiagrama #//visualizacion/Dibujable">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//visualizacion/Color"
-          defaultValueLiteral="black"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="estilo" eType="#//visualizacion/EstiloLinea"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="enrutamiento" eType="#//visualizacion/TipoEnrutamiento"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="flecha_source" eType="#//visualizacion/TipoFlecha"
@@ -164,6 +159,8 @@
           eType="#//visualizacion/ElementoDiagrama"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
           eType="#//visualizacion/ElementoDiagrama"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameTarget" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EstiloLinea">
       <eLiterals name="SOLIDA"/>
@@ -198,6 +195,12 @@
     <eClassifiers xsi:type="ecore:EClass" name="Composicion" eSuperTypes="#//visualizacion/Conector"/>
     <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//visualizacion/ElementoDiagrama">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="icono" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Dibujable" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="grosor" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//visualizacion/Color"
+          defaultValueLiteral="black"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

@@ -7,6 +7,16 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8,
+ 
+Export-Package: visualizacionMetricas3,
+ visualizacionMetricas3.impl,
+ visualizacionMetricas3.representacion,
+ visualizacionMetricas3.representacion.impl,
+ visualizacionMetricas3.representacion.util,
+ visualizacionMetricas3.util,
+ visualizacionMetricas3.visualizacion,
+ visualizacionMetricas3.visualizacion.impl,
+ visualizacionMetricas3.visualizacion.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.epsilon.erl.engine;bundle-version="1.2.0",
@@ -19,6 +29,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.modisco.kdm.source.discoverer;bundle-version="0.12.2",
  org.eclipse.gmt.modisco.kdm.source.discoverer;bundle-version="0.12.2",
  KDM2Model;bundle-version="1.0.0",
- com.mtcflow.model,com.mtcflow.engine,com.mtcflow.engin
- e.core
+ com.mtcflow.model,
+ com.mtcflow.engine,
+ com.mtcflow.engine.core
 Bundle-ActivationPolicy: lazy
