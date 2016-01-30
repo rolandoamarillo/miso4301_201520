@@ -2,9 +2,9 @@
 <project xmlns:qvto="http://www.eclipse.org/qvt/1.0.0/Operational" name="kdm" default="main">
 	
 	<property name="Kdm" value="./models/carrito.logic_kdm.xmi"></property>
-	<property name="SubKdm" value="./models/res1/kdmResultadoSub.xmi"></property>
-	<property name="Cluster" value="./models/res1/representacion.xmi"></property>
-	<property name="Visualizacion" value="./models/res1/visualizacion3.xmi"></property>
+	<property name="SubKdm" value="./models/res/kdmResultadoSub.xmi"></property>
+	<property name="Cluster" value="./models/res/representacion44.xmi"></property>
+	<property name="Visualizacion" value="./models/res/visualizacion3.xmi"></property>
 			
 	<!-- Tranformacion 1-->
 	<target name="loadModelsT1">
@@ -18,7 +18,7 @@
 			<model ref="kdmMicro"></model>
 		</epsilon.etl>
 		
-		<!--<epsilon.disposeModel model="kdmMicro"></epsilon.disposeModel>-->
+		<epsilon.disposeModel model="kdmMicro"></epsilon.disposeModel>
 	</target>
 	
 	<!-- Tranformacion 2-->
@@ -31,7 +31,7 @@
 			<model ref="sourcemodel"></model>
 		</epsilon.etl>
 		
-		<!--<epsilon.disposeModel model="sourcemodel"></epsilon.disposeModel>-->
+		<epsilon.disposeModel model="sourcemodel"></epsilon.disposeModel>
 	</target>
 
 	<!-- Tranformacion 3-->
@@ -65,11 +65,11 @@
 	<!-- Main -->
 	
 	<target name="main">		
-		<antcall target="Kdm2Kdm" inheritall="true"></antcall>
-		<antcall target="micro2sdm"></antcall>
+		<!--<antcall target="Kdm2Kdm" inheritall="true"></antcall>
+		<antcall target="micro2sdm"></antcall>--> 
 		<antcall target="sdm2Representacion"></antcall>
-		<antcall target="sdm2Visualizacion"></antcall>
+		<!--<antcall target="sdm2Visualizacion"></antcall>-->
 		
-		 <epsilon.disposeModels></epsilon.disposeModels> 
+		 <!---epsilon.disposeModels></epsilon.disposeModels>--> 
 	</target>
 </project>
